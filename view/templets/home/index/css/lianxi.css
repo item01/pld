@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+
+.mainbox{ width:100%;}
+.mainbox .main{ width:1000px; margin:0 auto; background-color:#fff; padding:0 0 50px 0}
+.mainbox .main .mainone{ background-color:#fff; padding:25px 0 10px 0;}
+.mainbox .main .mainone li{ margin-left:15px;}
+.mainbox .main .mainone li span{ color:#238dd2}
+.mainbox .main .maintwo{ overflow:hidden;}
+.mainbox .main .maintwo .left{ float:left; margin-left:15px;}
+.mainbox .main .maintwo .left div{ width:150px; height:30px; text-align:center; background-color:#f2f0f0; margin-top:10px;}
+.mainbox .main .maintwo .left div a{ line-height:30px;}
+.mainbox .main .maintwo .left .current1{ background-color:#238dd2;}
+.mainbox .main .maintwo .left .current1 a{ color:#fff;}
+.mainbox .main .maintwo .left div:hover{ background-color:#238dd2;}
+.mainbox .main .maintwo .left div a:hover{ color:#fff;}
+.mainbox .main .maintwo .right{ float:right; width:800px; padding-right:15px;}
+.mainbox .main .maintwo .right .ll{ margin-top:20px;}
+.mainbox .main .maintwo .right .ll h3{ height:20px; border-left: solid 5px #238dd2; font-size:16px; color:#333132; line-height:20px; font-weight:bold; padding-left:6px;}
+.mainbox .main .maintwo .right .ll p{ width:700px; margin-top:15px;} 
+.mainbox .main .maintwo .right .ll p a{ margin-left:20px; line-height:28px;}
+.mainbox .main .maintwo .right .ll p a:hover{color:#238dd2;}
+.mainbox .main .maintwo .right dl{ overflow:hidden; line-height:30px; margin-top:20px; margin-left:20px;}
+.mainbox .main .maintwo .right dl dt{ float:left; text-align:right; font-size:16px; color:#333; width:100px;}
+.mainbox .main .maintwo .right dl dd{ float:left; margin-left:15px;}
+.mainbox .main .maintwo .right dl dd select{ width:100px; height:20px; font-size:14px; line-height:20px;}
+.mainbox .main .maintwo .right dl dd input{ width:160px; height:20px; border:1px solid #aaabb0}
+.mainbox .main .maintwo .right dl dd textarea{ min-width:240px;min-height:80px;border:1px solid #aaabb0}
+.mainbox .main .maintwo .right button{ background-color:#0081bf; width:140px; height:26px; text-align:center; line-height:26px; color:#fff; margin-left:135px; margin-top:30px;}
+.mainbox .main .maintwo .right .zhu{ margin-top:50px;}
+.mainbox .main .maintwo .right .zhu p{ line-height:26px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

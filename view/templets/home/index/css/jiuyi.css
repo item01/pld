@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+.mainbox{ width:100%;}
+.mainbox .main{ width:1000px; margin:0 auto; background-color:#fff; padding:0 0 50px 0}
+.mainbox .main .mainone{ background-color:#fff; padding:25px 0 10px 0;}
+.mainbox .main .mainone li{ margin-left:15px;}
+.mainbox .main .mainone li span{ color:#238dd2}
+.mainbox .main .maintwo{ overflow:hidden;}
+.mainbox .main .maintwo .left{ float:left; margin-left:15px;}
+.mainbox .main .maintwo .left div{ width:150px; height:30px; text-align:center; background-color:#f2f0f0; margin-top:10px;}
+.mainbox .main .maintwo .left div a{ line-height:30px;}
+.mainbox .main .maintwo .left .current1{ background-color:#238dd2;}
+.mainbox .main .maintwo .left .current1 a{ color:#fff;}
+.mainbox .main .maintwo .left div:hover{ background-color:#238dd2;}
+.mainbox .main .maintwo .left div a:hover{ color:#fff;}
+.mainbox .main .maintwo .right{ float:right; width:800px; padding-right:15px;}
+.mainbox .main .maintwo .right p{ color:#444; line-height:26px; margin-top:15px;}
+.mainbox .main .maintwo .right .di{ line-height:28px; margin-top:15px;}
+
+.iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+.iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}

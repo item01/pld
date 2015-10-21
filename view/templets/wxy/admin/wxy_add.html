@@ -1,0 +1,304 @@
+<{include file="common_head.html"}>
+  <style>
+  *{padding: 0; margin: 0;}
+    .box{margin: 10px;}
+    .img_box{position: relative;}
+    .img_box .maodian{position: absolute; padding: 5px 10px; border-right: 5px; background: #fff; 
+/*      filter:alpha(opacity=40); 
+      -moz-opacity:0.9; 
+      opacity:0.9;*/
+      top:10px;
+      left:10px;
+      color:#000;
+      font-size: 12px;
+      font-family: "宋体";
+      cursor: pointer;
+      background:rgba(255, 255, 255, 0.05) none repeat scroll 0 0 !important;
+      filter:Alpha(opacity=80); background:#fff;/*实现IE背景透明*/
+    }
+
+
+    .maodian a{ text-decoration: none;
+      color: #000;
+    }
+  </style>
+  <script>
+    $(function(){
+      var obj = null ;
+      $("#add").click(function(){
+        var link = $("#w_send").val();
+        var title =$("#w_send").find("option:selected").html();
+        var html = "<p class='maodian' style='height:30px'><a href='"+link+"' class='"+link+"'>"+title+"</a></p>";
+        $(".img_box").append(html);
+      });
+
+      $(".img_box").delegate(".maodian","mousedown",function(e){
+        obj = $(this);
+        if(obj.setCapture){
+          obj.setCapture();
+        }
+        $("input[name=title]").val(obj.find("a").text());
+          var _x = e.pageX - obj.offset().left;
+          var _y = e.pageY - obj.offset().top;
+          var oWidth = $(this).outerWidth();
+          var oHeight = $(this).outerHeight();
+          var x=0,y=0;
+
+          $(".img_box").bind("mousemove",function(e){
+            var img_position = $(".img_box").offset();
+             x = e.pageX -_x - img_position.left;
+             y = e.pageY -_y - img_position.top;
+            if(x<0){
+              x = 0;
+            }else if(x>($(".img_box img").width()-oWidth)){
+              x = $(".img_box img").width()-oWidth;
+            }
+
+            if(y<0){
+              y = 0;
+            }else if(y>($(".img_box img").height()-oHeight)){
+              y = $(".img_box img").height()-oHeight;
+            }
+            obj.css({"left":x,"top":y});
+          });
+
+          $(".img_box").bind("mouseup",function(){
+            $('.img_box').unbind("mousemove");
+            $(this).unbind("mouseup");
+            if(obj.releaseCapture){
+            obj.releaseCapture();
+          }
+            
+          });
+           return false;
+      });
+
+      $(".img_box").delegate(".maodian","dblclick",function(){
+        $(this).remove();
+      })
+
+      $("#show").click(function(){
+        obj.find("a").text($("input[name=title]").val()).attr("href",link);
+      })
+
+      $(".img_box").delegate("a","click",function(){
+        return false;
+      })
+
+      $("#save").click(function(){
+        alert($(".img_box").html());
+      })
+
+    })
+  </script>	
+<body>
+<div id="wrapper">
+     <!-- Navigation -->
+        <{include file="common_left.html"}>
+        <div id="page-wrapper">
+        <div class="graphs">
+	     <div class="xs">
+  	       <h3>Forms</h3>
+  	         <div class="tab-content">
+						<div class="tab-pane active" id="horizontal-form">
+							<form class="form-horizontal" id="form2">
+
+					
+								<div class="form-group">
+									<label for="mediuminput" class="col-sm-2 control-label">快递名称</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control1" name="e1" value="" placeholder="">
+									</div>
+								</div>
+                <div class="form-group">
+                  <label for="mediuminput" class="col-sm-2 control-label">快递背景图</label>
+                  <div class="col-sm-8">
+                    <button class="" id="file_upload0"><span>上传</span></button><label>预览：</label><img id="img0" style="hight:64px;width:64px" src=""><input type="hidden" id="img_url0" name="e2" value="">
+                  </div>
+                </div>				
+                <div class="form-group">
+                  <label for="mediuminput" class="col-sm-2 control-label">快递单编辑</label>
+                  <div class="col-sm-8">
+                   
+  <div class="box">
+<!--     <input type="text" name="title">
+    <input type="text" name="link" value="http://"> -->
+    
+    <select id="w_send">
+      <option value="0">选择</option>
+      <option value="send1">发货点名称</option>
+      <option value="send2">发货地区-省</option>
+      <option value="send3">发货地区-市</option>
+      <option value="send4">发货地区-区</option>
+      <option value="send5">发货地区-地址</option>
+      <option value="send6">发货地-邮编</option>
+      <option value="send7">发货-电话</option>
+      <option value="send8">发货人</option>
+
+      <option value="name">收件人-姓名</option>
+      <option value="province">收件人地区-省</option>
+      <option value="city">收件人地区-市</option>    
+      <option value="address">收件人地区-地址</option>
+      <option value="tel">收件人-电话</option>
+      <option value="remark">收件人-备注</option>
+     
+
+  </select>
+
+     
+
+    <input type="button" value="添加信息" id="add">
+ <!--    <input type="button" value="编辑" id="show"> -->
+    <!-- <input type="button" value="保存" id="save"> -->
+  </div>
+  <div class="img_box">
+   
+    
+  </div>
+
+                  </div>
+                </div>  
+
+
+ <div id="dtBox"></div>
+
+
+							</form>
+						</div>
+					</div>
+  
+      <div class="panel-footer">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<button class="btn-success btn" id="sub_form2">提交</button>
+				<button class="btn-default btn" onclick="history.go(-1)">取消</button>
+			</div>
+		</div>
+	 </div>
+    </form>
+  </div>
+  </div>
+  </div>
+      </div>
+      <!-- /#page-wrapper -->
+   </div>
+    <!-- /#wrapper -->
+
+
+
+
+
+
+
+	<script type="text/javascript">
+			$(function(){
+				$('#sub_form2').click(function(){
+          var e1=$("input[name=e1]").val();
+          var e2=$("input[name=e2]").val();
+          var e3=$(".img_box").html();
+				
+				
+					$.post("<{$url}>/index.php/wxy/admin/do_add/table/express/",{e1:e1,e2:e2,e3:e3},function(data){
+						
+						if (data==1) {
+							alert("修改成功");
+      
+              history.go(-1);
+             
+						
+					}else{alert('失败');};
+					})
+				})
+
+			})
+
+		</script>
+
+
+
+<script type="text/javascript" src="<{$url}>/public/uploadify/jquery.uploadify.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+
+
+
+
+$('#file_upload0').uploadify({
+
+        //'debug' : true,
+         'buttonText':'上传',
+        // 'width':'130',
+        // 'height':'40',
+        // 'buttonImage':'<{$templets}>/images/sc_03_06.jpg',
+        'queueID'  : 'some_file_queue',//取消上传进度显示
+        'swf'      : "<{$url}>/public/uploadify/uploadify.swf",
+        'uploader' : "<{$url}>/index.php/home/index/upload_img",
+        'onFallback':function(){
+            alert("您未安装FLASH控件，无法上传图片！请安装FLASH控件后再试。");
+        },
+        "onUploadSuccess":function(file, data, response){
+            if (data!=-1) {
+              
+
+               $('#img0').attr('src',"/uploads/avatar/"+data);
+              $('#img_url0').val("/uploads/avatar/"+data); 
+              $(".img_box").html('<img src="/uploads/avatar/'+data+'">');
+              // $.post("<{$url}>/index.php/home/index/do_save_avatar",{str:data},function(){
+              //   alert('修改成功');
+              // });
+
+            }else{
+              alert('上传失败，请重新上传');alert(data);
+            }
+        }
+        // Put your options here
+    });	
+
+
+})
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Nav CSS -->
+<link href="<{$templets}>/css/custom.css" rel="stylesheet">
+<!-- Metis Menu Plugin JavaScript -->
+<script src="<{$templets}>/js/metisMenu.min.js"></script>
+<script src="<{$templets}>/js/custom.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/mingyi-xiangqing.css" rel="stylesheet" type="text/css">
+<{include file="common_header.html"}>
+
+
+<!--��������-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:<a class="one" href="/index.php/home/index/index">首页</a>&nbsp;>&nbsp;<span>名医荟萃</span></li>
+        </ul>
+        <ul class="maintwo">
+        	<li class="left">
+            	<div class="current1"><a href="/index.php/home/index/mingyi">名医荟萃</a></div>
+            </li>
+            <li class="right">
+                <{section name=v loop=$mingyi_xq}>
+            	<h2><{$mingyi_xq[v].d_name}></h2>
+                <p>作者：<{$mingyi_xq[v].d_author}></p>
+                <div class="right_main">
+                    <table class="right_tab" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td rowspan="7" class="image"><img src="<{$mingyi_xq[v].d_pic}>"></td>
+                            <td>专家姓名</td>
+                            <td><{$mingyi_xq[v].d_name}></td>
+                        </tr>
+                        <tr>
+                            <td>所属科室</td>
+                            <td><{$mingyi_xq[v].keshi}></td>
+                        </tr>
+                        <tr>
+                            <td>职务职称</td>
+                            <td><{$mingyi_xq[v].work}></td>
+                        </tr>
+                        <tr>
+                            <td>业务专长</td>
+                            <td><{$mingyi_xq[v].spe}></td>
+                        </tr>
+                        <tr>
+                            <td>出诊时间</td>
+                            <td><{$mingyi_xq[v].call_time}></td>
+                        </tr>
+                        <tr>
+                            <td>联系方式</td>
+                            <td><{$mingyi_xq[v].d_tel}></td>
+                        </tr>
+                        <tr>
+                            <td>其他说明</td>
+                            <td><{$mingyi_xq[v].other}></td>
+                        </tr>
+                    
+                        <tr>
+                            <td colspan="3">
+                                <div class="content">
+                                    <{$mingyi_xq[v].jieshao}>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <{/section}>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>

@@ -1,0 +1,33 @@
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/rencai.css" rel="stylesheet" type="text/css">
+<{include file="common_header.html"}>
+
+
+
+
+<!--人才招聘-->
+<div class="mainbox">
+    <div class="main">
+        <ul class="mainone">
+            <li>您现在的位置:<a class="one" href="/index.php/home/index/index">首页</a>&nbsp;>&nbsp;<a class="two" href="/index.php/home/index/news/id/15/tid/3">新闻动态</a>&nbsp;>&nbsp;<span>视频专区</span></li>
+        </ul>
+        <ul class="maintwo">
+            <li class="left"> 
+                <{section name=v loop=$type_list}>
+                <div <{if $id eq $type_list[v].id}> class="current1"<{/if}>><a href="/index.php/home/index/<{$type_list[v].n_link}>/id/<{$type_list[v].id}>/tid/<{$type_list[v].tid}>"><{$type_list[v].n_name}></a></div>
+                <{/section}>           
+            </li>
+            <li class="right">
+              <{section name=v loop=$list}>
+                <dl>
+                    <dd><h2><a href="<{$list[v].url}>"><{$list[v].v_title}></a></h2><span><{$list[v].c_time}></span></dd>
+                </dl>
+              <{/section}><br>
+              <{$pagenav}>     
+          </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>

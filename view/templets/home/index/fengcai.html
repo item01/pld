@@ -1,0 +1,53 @@
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/yuangongfengcai.css" rel="stylesheet" type="text/css">
+<link href="<{$templets}>/index/css/Css.css" rel="stylesheet" type="text/css">
+<{include file="common_header.html"}>
+
+<script>
+$(function(){
+	
+	$('.right').kkPages({
+		
+		PagesClass:'dl', //需要分页的元素
+		PagesMth:5, //每页显示个数		
+		PagesNavMth:3 //显示导航个数
+		});
+});
+</script>
+<script type="text/javascript">
+$(function(){
+     var na=$(".current1").children().html();
+     $("#w_sd").html(na);
+})
+</script>
+
+<!--主体区域-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:<a class="one" href="/index.php/home/index/index/">&nbsp;首页</a>&nbsp;>&nbsp;<a class="two" href="/index.php/home/index/about/id/10/tid/2">关于博爱</a>&nbsp;>&nbsp;<span id="w_sd">医院简介</span></li>
+        </ul>
+        <ul class="maintwo">
+        	<li class="left" class="current1">
+               <{section name=v loop=$type_list}>
+                <div <{if $id eq $type_list[v].id}> class="current1"<{/if}>><a href="/index.php/home/index/about/id/<{$type_list[v].id}>/tid/<{$type_list[v].tid}>"><{$type_list[v].n_name}></a></div>
+                <{/section}>
+            </li>
+
+            <li class="right">
+                <{section name=v loop=$index_list}>
+                    <dl>
+                        <dd><img src="<{$index_list[v].f_pic}>"></dd>
+                        <dt><{$index_list[v].miaoshu}></dt>
+                    </dl>
+                <{/section}>
+            </li>    
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>
+
+</body>
+</html>

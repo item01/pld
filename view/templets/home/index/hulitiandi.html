@@ -1,0 +1,33 @@
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/news.css" rel="stylesheet" type="text/css">
+<link href="<{$templets}>/index/css/Css.css" rel="stylesheet" type="text/css">
+<{include file="common_header.html"}>
+
+<!--��������-->
+<div class="mainbox">
+    <div class="main">
+        <ul class="mainone">
+            <li>您现在的位置:<a class="one" href="/index.php/home/index/index">首页</a>&nbsp;>&nbsp;<a class="two" href="/index.php/home/index/tesezhenliao/id/21/tid/6">健康天地</a>&nbsp;>&nbsp;<span>护理天地</span></li>
+        </ul>
+        <ul class="maintwo">
+            <li class="left">
+                <div><a href="/index.php/home/index/tesezhenliao/id/21/tid/6">特色诊疗</a></div>
+                <div class="current1"><a href="/index.php/home/index/hulitiandi/id/22/tid/6">护理天地</a></div>
+                <div><a href="/index.php/home/index/jkcs/id/23/tid/6">健康常识</a></div>
+            </li>
+            <li class="right">
+                <{section name=v loop=$news}>
+                <dl>
+                    <dd><h2><a href="/index.php/home/index/hltd_xq/id/<{$news[v].id}>/tid/<{$tid}>"><{$news[v].a_title}></a></h2><span><{$news[v].s_time}></span></dd>
+                    <dt><{$news[v].content}></dt>
+                </dl>
+                <{/section}>
+                <br>
+                <{$pagenav}>
+          </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>

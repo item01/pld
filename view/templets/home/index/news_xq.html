@@ -1,0 +1,50 @@
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/news-xiangqing.css" rel="stylesheet" type="text/css">
+<{include file="common_header.html"}>
+
+
+
+
+<script type="text/javascript">
+$(function(){
+     var na=$(".current1").children().html();
+     $("#w_sd").html(na);
+})
+</script>
+
+<!--��������-->
+<div class="mainbox">
+    <div class="main">
+        <ul class="mainone">
+            <li>您现在的位置:<a class="one" href="/index.php/home/index/index">首页</a>&nbsp;>&nbsp;<a class="two" href="/index.php/home/index/news/id/15/tid/3">新闻动态</a>&nbsp;>&nbsp;<span id="w_sd">医院新闻</span></li>
+        </ul>
+        <ul class="maintwo">
+        	<li class="left">
+            	 <{section name=v loop=$type_list}>
+                <div <{if $newsxq_list.tid eq $type_list[v].id}> class="current1"<{/if}>><a href="/index.php/home/index/<{$type_list[v].n_link}>/id/<{$type_list[v].id}>/tid/<{$type_list[v].tid}>"><{$type_list[v].n_name}></a></div>
+                <{/section}>
+            </li>
+            <li class="right">
+           	 	<h2><{$newsxq_list.a_title}></h2>
+                <div>来源：<{$newsxq_list.source}><span>发布时间：<{$newsxq_list.c_time}></span><b>点击：<{$newsxq_list.click}></b></div>
+                <p><{$newsxq_list.content}></p>             
+			      <!-- <a class="shang" href="">上一篇：暂无上一篇</a>
+            <a class="xia" href="">下一篇：智能家居——舒适环境的缔造者</a> -->
+            <{if $prev.id neq ""}>
+
+                <a class="shang" href="/index.php/home/index/news_xq/id/<{$prev.id}>/tid/<{$tid}>/"><b>上一篇：<{$prev.a_title}></b></a>
+            <{else}>
+                <a class="shang" href="javascript:void(0)"><b>上一篇：暂无上一篇</b></a> 
+            <{/if}>
+            <{if $next.id neq ""}>
+                <a class="xia" href="/index.php/home/index/news_xq/id/<{$next.id}>/tid/<{$tid}>"><b>下一篇：<{$next.a_title}></b></a>
+            <{else}>
+                <a class="xia" href="javascript:void(0)"><b>下一篇：暂无下一篇</b></a>
+            <{/if}>
+          </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>

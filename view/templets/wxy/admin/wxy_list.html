@@ -1,0 +1,303 @@
+
+<{include file="common_head.html"}>
+<body>
+<div id="wrapper">
+     <!-- Navigation -->
+<{include file="common_left.html"}>
+        <div id="page-wrapper">
+        <div class="col-md-12 graphs">
+     <div class="xs">
+      <h3>列表</h3>
+      <div class="row">
+
+
+<{if $order_id gt 0}>
+<{else}>
+<a class="add" href="<{$url}>/index.php/wxy/admin/express_add/">新增</a> 
+<{/if}>
+
+
+
+
+
+     
+ 
+        
+      </div>
+    
+    <script type="text/javascript">
+    $(function(){
+
+      $(".w_col").children().each(function(){
+        var p=$(this);
+        var n=p.index()+1;
+        var m=n%5;
+        //alert(m);
+        if (m==1) {p.addClass("active")};
+        if (m==2) {};
+        if (m==3) {p.addClass("success")};
+        if (m==4) {};
+        if (m==0) {p.addClass("info")};
+      })
+    })
+    </script>  
+    <div class="bs-example4 w_tb" data-example-id="contextual-table">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>选中</th>
+          
+          <th>ID</th>
+          <th>快递名称</th>
+
+          
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody class="w_col">
+<{section name=v loop=$list}>
+          <tr class="w_tr">
+            <th class="hidden-xs" aid="<{$list[v].id}>"><input type="checkbox" class="checkbox"></th>            
+            <th ><{$list[v].id}></th>
+            <th ><{$list[v].e1}></th>
+
+
+            <td class="">
+
+<{if $order_id gt 0}>
+<a href="/index.php/wxy/admin/send_list/id/<{$list[v].id}>/order_id/<{$order_id}>" class="" aid="<{$list[v].id}>">&nbsp;&nbsp;|&nbsp;&nbsp;<span class="w_decor">选择</span></a>
+<{else}>            
+            <a href="javascript:void(0)" class="w_del" aid="<{$list[v].id}>">删除</a>           
+            <a href="/index.php/wxy/admin/express_edit/id/<{$list[v].id}>" class="" aid="<{$list[v].id}>">&nbsp;&nbsp;|&nbsp;&nbsp;<span class="w_decor">编辑</span></a>
+  <{/if}>          
+            </td>
+        </tr>
+<{/section}>
+      </tbody>
+
+    </table>
+
+<script type="text/javascript">
+$(function(){
+
+  $(".del_all").click(function(){
+      var ids="";
+      
+      $(".hidden-xs").each(function(){
+          var p=$(this);
+          if (p.children().is(":checked")) {
+            ids+=p.attr('aid')+',';
+          }
+
+
+      })
+ 
+          if (ids=="") {alert("您什么都没有选择呢");return false};
+          var r=confirm("确认删除吗");
+          if (r==true){
+          }else{
+            return false;
+          }          
+          $.get("/index.php/wxy/admin/do_delete/table/express/ids/"+ids,function(data){
+            if (data>0) {alert("删除成功");location.reload()}else{
+              alert("失败");alert(data);
+            }
+          })
+
+     
+  })
+
+
+
+  $(".w_del").click(function(){
+    var r=confirm("确认删除吗");
+    if (r==true){
+    }else{
+      return false;
+    } 
+    var p=$(this);
+    var id=$(this).attr("aid");
+    $.post('<{$url}>/index.php/wxy/admin/do_delete/table/express/',{id:id},function(data){
+      if (data==1) {
+      alert("删除成功")     
+      p.parent().parent().remove();return false;
+      };
+    });
+  })
+
+  $(".w_e").click(function(){
+    var r=confirm("确认发货？");
+    if (r==true) {}else{
+      return false;
+    }
+    var p=$(this);
+    var id=$(this).attr("aid");
+    $.get("/index.php/wxy/admin/send_prize/id/"+id,function(data){
+      if (data==1) {
+        alert("发货成功");
+        p.children().html("已发货");
+        p.unbind("click");
+        }
+        else{
+          alert("失败");alert(data);
+        }
+    })
+  })
+
+
+  $(".w_sh").click(function(){
+    var p=$(this);
+      $("#name").val(p.attr("name"));      
+      $("#money").val(p.attr("money"));      
+      $("#province").val(p.attr("province"));
+      $("#city").val(p.attr("city"));
+      $("#address").val(p.attr("address"));
+      $("#tel").val(p.attr("tel"));
+      $("#remark").val(p.attr("remark"));
+      $("#w_sh_id").val(p.attr("aid"));
+
+  })
+
+  $("#w_sh_sb").click(function(){
+      var id=$("#w_sh_id").val();
+      if (id==0) {alert("未选择");return false};
+      var map=$("#form2").serialize();
+      $.post("/index.php/wxy/admin/do_edit/table/express/id/"+id,map,function(data){
+        if (data==1) {location.reload()}else{
+          alert("失败");alert(data);
+        }
+      })
+
+  })
+
+})
+
+</script>
+
+
+
+
+
+
+
+
+
+<div id="w_ss"></div>
+<div class="del btn btn-success btn-warng1 del_all">删除</div>
+   </div>
+   </div>
+      </div>
+      <!-- /#page-wrapper -->
+   </div>
+
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+              收货信息 
+            </h4>
+         </div>
+         <div class="modal-body">
+         <div class="tab-pane active" id="horizontal-form">
+         <input type="hidden" class="form-control1" id="w_sh_id" value="0">
+          <form class="form-horizontal" id="form2">
+
+                <div class="form-group">
+                  <label for="mediuminput" class="col-sm-3 control-label">总金额：</label>
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control1" name="money" id="money">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="mediuminput" class="col-sm-3 control-label">收货人姓名：</label>
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control1" name="name" id="name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="mediuminput" class="col-sm-3 control-label">省：</label>
+                  <div class="col-sm-7">
+                    <input type="text" name="province" class="form-control1" id="province">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="mediuminput" class="col-sm-3 control-label">市：</label>
+                  <div class="col-sm-7">
+                    <input type="text" name="city" class="form-control1" id="city">
+                  </div>
+                </div>  
+                <div class="form-group">
+                  <label for="mediuminput" class="col-sm-3 control-label">详细地址：</label>
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control1" name="address" id="address">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="mediuminput" class="col-sm-3 control-label">电话：</label>
+                  <div class="col-sm-7">
+                    <input type="text" name="tel" class="form-control1" id="tel">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="mediuminput" class="col-sm-3 control-label">备注：</label>
+                  <div class="col-sm-7">
+                    <input type="text" name="remark" class="form-control1" id="remark">
+                  </div>
+                </div>  
+
+
+              </form> 
+              </div>            
+
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭
+            </button>
+            <button type="button" id="w_sh_sb" class="btn btn-primary">
+               提交更改
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+</div>
+
+
+
+
+
+
+
+
+
+   
+    <!-- /#wrapper -->
+<!-- Nav CSS -->
+<link href="<{$templets}>/css/custom.css" rel="stylesheet">
+<!-- Metis Menu Plugin JavaScript -->
+<script src="<{$templets}>/js/metisMenu.min.js"></script>
+<script src="<{$templets}>/js/custom.js"></script>
+
+<script src="<{$templets}>/js/jquery.kkPages.js"></script>
+<script type="text/javascript">
+  $('.w_tb').kkPages({ 
+   PagesClass:'.w_tr', //需要分页的元素
+   PagesMth:20, //每页显示个数 
+   PagesNavMth:5 //显示导航个数
+});
+</script>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

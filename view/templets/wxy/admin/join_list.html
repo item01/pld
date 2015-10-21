@@ -1,0 +1,219 @@
+
+<{include file="common_head.html"}>
+<body>
+<div id="wrapper">
+     <!-- Navigation -->
+<{include file="common_left.html"}>
+        <div id="page-wrapper">
+        <div class="col-md-12 graphs">
+     <div class="xs">
+      <h3>列表</h3>
+      <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+ 
+        
+      </div>
+    
+    <script type="text/javascript">
+    $(function(){
+
+      $(".w_col").children().each(function(){
+        var p=$(this);
+        var n=p.index()+1;
+        var m=n%5;
+        //alert(m);
+        if (m==1) {p.addClass("active")};
+        if (m==2) {};
+        if (m==3) {p.addClass("success")};
+        if (m==4) {};
+        if (m==0) {p.addClass("info")};
+      })
+    })
+    </script>  
+    <div class="bs-example4 w_tb" data-example-id="contextual-table">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>选中</th>
+          <th>ID</th>
+          
+          <th>姓名</th>
+          <th>应聘职位</th>
+          <th>联系电话</th>
+          <th>邮箱</th>
+          <th>学历</th>
+          <th>毕业院校</th>
+          <th>院校专业</th>
+          <th>工作经验</th>
+          <th>申请时间</th>
+   
+          
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody class="w_col">
+<{section name=v loop=$list}>
+          <tr class="w_tr">
+            <th class="hidden-xs" aid="<{$list[v].id}>"><input type="checkbox" class="checkbox"></th>            
+            <th ><{$list[v].id}></th>
+            <th ><{$list[v].name}></th>
+            <th ><{$list[v].job}></th>
+            <th ><{$list[v].tel}></th>
+            <th ><{$list[v].email}></th>
+            <th ><{$list[v].education}></th>
+            <th ><{$list[v].school}></th>
+            <th ><{$list[v].major}></th>
+            <th ><{$list[v].content}></th>
+          
+            <th ><{$list[v].c_time}></th>
+            <td class="">
+
+            
+            <a href="javascript:void(0)" class="w_del" aid="<{$list[v].id}>">删除</a>
+
+          
+
+             
+            </td>
+        </tr>
+<{/section}>
+      </tbody>
+
+    </table>
+
+<script type="text/javascript">
+$(function(){
+  $(".del_all").click(function(){
+      var ids="";
+      
+      $(".hidden-xs").each(function(){
+          var p=$(this);
+          if (p.children().is(":checked")) {
+            ids+=p.attr('aid')+',';
+          }
+
+
+      })
+ 
+          if (ids=="") {alert("您什么都没有选择呢");return false};
+          var r=confirm("确认删除吗");
+          if (r==true){
+          }else{
+            return false;
+          }          
+          $.get("/index.php/wxy/admin/do_delete/table/join_list/ids/"+ids,function(data){
+            if (data>0) {alert("删除成功");location.reload()}else{
+              alert("失败");alert(data);
+            }
+          })
+
+     
+  })
+
+  $(".w_del").click(function(){
+    var r=confirm("确认删除吗");
+    if (r==true){
+    }else{
+      return false;
+    } 
+    var p=$(this);
+    var id=$(this).attr("aid");
+    $.post('<{$url}>/index.php/wxy/admin/do_delete/table/join_list/',{id:id},function(data){
+      if (data==1) {
+      alert("删除成功")     
+      p.parent().parent().remove();return false;
+      };
+    });
+  })
+
+})
+
+</script>
+
+
+
+
+
+
+
+
+
+<div id="w_ss"></div>
+    <div class="del btn btn-success btn-warng1 del_all">删除</div>
+   </div>
+   </div>
+      </div>
+      <!-- /#page-wrapper -->
+   </div>
+
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+              状态 
+            </h4>
+         </div>
+         <div class="modal-body">
+           <label><input type="radio" name="zhta"> 状态 1</label><label><input type="radio" name="zhta"> 状态 2</label>
+           <label><input type="radio" name="zhta"> 状态 3</label><label><input type="radio" name="zhta"> 状态 4</label>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭
+            </button>
+            <button type="button" class="btn btn-primary">
+               提交更改
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+</div>
+
+
+
+
+
+
+
+
+
+   
+    <!-- /#wrapper -->
+<!-- Nav CSS -->
+<link href="<{$templets}>/css/custom.css" rel="stylesheet">
+<!-- Metis Menu Plugin JavaScript -->
+<script src="<{$templets}>/js/metisMenu.min.js"></script>
+<script src="<{$templets}>/js/custom.js"></script>
+
+<script src="<{$templets}>/js/jquery.kkPages.js"></script>
+<script type="text/javascript">
+  $('.w_tb').kkPages({ 
+   PagesClass:'.w_tr', //需要分页的元素
+   PagesMth:20, //每页显示个数 
+   PagesNavMth:5 //显示导航个数
+});
+</script>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

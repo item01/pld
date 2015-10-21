@@ -1,0 +1,33 @@
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/news-xiangqing1.css" rel="stylesheet" type="text/css">
+<{include file="common_header.html"}>
+
+
+<!--��������-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:&nbsp;&nbsp;<a class="one" href="/index.php/home/index/index">首页</a>&nbsp;>&nbsp;<span>搜索</span></li>
+        </ul>
+        <ul class="maintwo">
+          <li class="right1">
+         	 	<h2><{$news_xq['a_title']}></h2>
+            <div>来源：<{$news_xq['source']}><span>发布时间：<{$news_xq['s_time']}></span><b>点击：<{$news_xq['click']}></b></div>
+            <{$news_xq['content']}>
+            <{if $prev.id eq ''}>
+  	        <a class="shang" href="javascript:void(0)">上一篇：暂无上一篇</a>
+            <{else}>
+            <a class="shang" href="/index.php/home/index/article_xq/id/<{$prev['id']}>">上一篇：<{$prev['a_title']}></a>
+            <{/if}>
+            <{if $next['id'] eq ""}>
+            <a class="xia" href="javascript:void(0)">下一篇：暂无下一篇</a>
+            <{else}>
+            <a class="xia" href="/index.php/home/index/article_xq/id/<{$next['id']}>">下一篇：<{$next['a_title']}></a>
+            <{/if}>
+          </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>

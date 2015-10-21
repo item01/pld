@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+.mainbox{ width:100%;}
+.mainbox .main{ width:1000px; margin:0 auto; background-color:#fff; padding:0 0 50px 0}
+.mainbox .main .mainone{ background-color:#fff; padding:25px 0 10px 0;}
+.mainbox .main .mainone li{ margin-left:15px;}
+.mainbox .main .mainone li span{ color:#238dd2}
+.mainbox .main .maintwo{ overflow:hidden;}
+.mainbox .main .maintwo .left{ float:left; margin-left:15px;}
+.mainbox .main .maintwo .left div{ width:150px; height:30px; text-align:center; background-color:#f2f0f0; margin-top:10px;}
+.mainbox .main .maintwo .left div a{ line-height:30px;}
+.mainbox .main .maintwo .left .current1{ background-color:#238dd2;}
+.mainbox .main .maintwo .left .current1 a{ color:#fff;}
+.mainbox .main .maintwo .left div:hover{ background-color:#238dd2;}
+.mainbox .main .maintwo .left div a:hover{ color:#fff;}
+.mainbox .main .maintwo .right{ float:right; width:800px; padding-right:15px; overflow:hidden;}
+.mainbox .main .maintwo .right h2{ font-size:15px; font-weight:bold; text-align:center; color:#333; margin-top:15px; width:800px;padding-bottom:5px;}
+.mainbox .main .maintwo .right p{ font-size:14px; font-weight:bold; text-align:center; color:#999;width:800px; border-bottom:dashed 1px #dedede; padding-bottom:10px;}
+.mainbox .main .maintwo .right img{width: 250px;height:280px;}
+.mainbox .main .maintwo .right .right_main{margin-top: 20px;}
+.mainbox .main .maintwo .right table{border-collapse:collapse;}
+.mainbox .main .maintwo .right td{border:1px solid #333;color:#333;text-align: center;}
+.mainbox .main .maintwo .right .image{width:250px;height:280px;}
+.mainbox .main .maintwo .right td p{text-align: left;color:#333;border:none;width:755px;}
+.mainbox .main .maintwo .right .content{padding:15px;width:755px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

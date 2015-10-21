@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+
+.mainbox{ width:100%;}
+.mainbox .main{ width:1000px; margin:0 auto; background-color:#fff; padding:0 0 50px 0}
+.mainbox .main .mainone{ background-color:#fff; padding:25px 0 10px 0;}
+.mainbox .main .mainone li{ margin-left:15px;}
+.mainbox .main .mainone li span{ color:#238dd2}
+.mainbox .main .maintwo{ overflow:hidden;}
+.mainbox .main .maintwo .left{ float:left; margin-left:15px;}
+.mainbox .main .maintwo .left div{ width:150px; height:30px; text-align:center; background-color:#f2f0f0; margin-top:10px;}
+.mainbox .main .maintwo .left div a{ line-height:30px;}
+.mainbox .main .maintwo .left .current1{ background-color:#238dd2;}
+.mainbox .main .maintwo .left .current1 a{ color:#fff;}
+.mainbox .main .maintwo .left div:hover{ background-color:#238dd2;}
+.mainbox .main .maintwo .left div a:hover{ color:#fff;}
+.mainbox .main .maintwo .right{ float:right; width:800px; padding-right:15px; overflow:hidden;}
+.mainbox .main .maintwo .right dl{ width:800px; margin-top:20px; border-bottom:1px solid #dedede; padding-bottom:15px;}
+.mainbox .main .maintwo .right dl dd{ overflow:hidden}
+.mainbox .main .maintwo .right dl dd h2 a{ color:#1e8cdb; font-size:14px; float:left;}
+.mainbox .main .maintwo .right dl dd h2 a:hover{ text-decoration:underline;}
+.mainbox .main .maintwo .right dl dd span{ color:#888; font-size:14px; float:right;}
+.mainbox .main .maintwo .right dl dt{ margin-top:10px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

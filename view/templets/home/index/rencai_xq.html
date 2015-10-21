@@ -1,0 +1,39 @@
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/news-xiangqing.css" rel="stylesheet" type="text/css">
+<{include file="common_header.html"}>
+
+
+
+
+<!--招聘信息详情-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:<a class="one" href="/index.php/home/index/index">首页</a>&nbsp;>&nbsp;<a class="two" href="/index.php/home/index/rencai/id/27/tid/8">人才招聘</a>&nbsp;>&nbsp;<span>招聘信息</span></li>
+        </ul>
+        <ul class="maintwo">
+        	<li class="left">
+            	<div class="current1"><a href="/index.php/home/index/rencai/id/27/">招聘信息</a></div>
+              <div><a href="/index.php/home/index/yingpinzhiwei/id/28/">应聘职位</a></div>
+            </li>
+            <li class="right">
+           	 	<h2><{$list.a_title}></h2>
+                <div>来源：<{$list.source}><span>发布时间：<{$list.s_time}></span><b>点击：<{$list.click}></b></div>
+                <p><{$list.content}></p>
+              <{if $prev.id neq ""}>   
+			          <a class="shang" href="/index.php/home/index/rencai_xq/id/<{$prev.id}>/tid/<{$tid}>">上一篇：<{$prev.a_title}></a>
+              <{else}>
+                <a class="shang" href="javascript:void(0)">上一篇：暂无上一篇</a>
+              <{/if}>
+              <{if $next.id neq ""}>
+                <a class="xia" href="/index.php/home/index/rencai_xq/id/<{$next.id}>/tid/<{$tid}>">下一篇：<{$next.a_title}></a>
+              <{else}>
+                <a class="xia" href="javascript:void(0)">下一篇：暂无下一篇</a>
+              <{/if}>
+          </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>
