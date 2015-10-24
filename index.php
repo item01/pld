@@ -18,5 +18,9 @@ require dirname(__FILE__).'/system/app.php';
 require dirname(__FILE__).'/config/config.php';
 //require dirname(__FILE__).'/system/safe.php';
 
-fwrfrefwdqe
+
+
+
+
+
 Application::run($CG);
