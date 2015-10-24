@@ -17,5 +17,5 @@ function is_weixin2(){
 require dirname(__FILE__).'/system/app.php';
 require dirname(__FILE__).'/config/config.php';
 //require dirname(__FILE__).'/system/safe.php';
-
+fwrfref
 Application::run($CG);
