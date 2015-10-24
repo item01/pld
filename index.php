@@ -22,13 +22,5 @@ require dirname(__FILE__).'/config/config.php';
 
 
 
-
-
+胜多负少
 Application::run($CG);
-
-
-
-
-
-
-
