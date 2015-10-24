@@ -24,7 +24,6 @@ require dirname(__FILE__).'/config/config.php';
 
 
 
-
 Application::run($CG);
 
 
