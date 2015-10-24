@@ -19,8 +19,8 @@ require dirname(__FILE__).'/config/config.php';
 //require dirname(__FILE__).'/system/safe.php';
 
 
-
+共和国复合
 2454545
-
+各家各户
 胜多负少
 Application::run($CG);
