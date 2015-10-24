@@ -1,0 +1,41 @@
+@charset "utf-8";
+.hua{width:1200px;margin:0 auto;overflow:hidden;}
+.hua_left{width:500px;float:left;margin-top:260px;}
+.hua01{width:500px;height:300px;}
+.hua_liulan{}
+.hua_liulan a{display:block;font-size:14px;line-height:22px;color:#fff;background-image:url(../images/sanjiao.png);background-repeat:no-repeat;background-position:left center;padding-left:15px;}
+.hua_liulan a:hover{text-decoration:underline;}
+.hua_right{width:611px;float:right;}
+.hua02{width:1200px;margin:0 auto;}
+.hua02 img{width:1200px;height:2px;}
+.meigui{width:1200px;overflow:hidden;margin:20px auto;}
+.meigui_left{float:left;background-image:url(../images/fanhui.png);background-repeat:no-repeat;background-position:left center;padding-left:25px;margin-top:20px;}
+.meigui_left a{display:block;font-size:18px;line-height:22px;color:#fff;}
+.meigui_left a:hover{text-decoration:underline;}
+.meigui_center{width:990px;float:left;font-size:18px;line-height:22px;color:#fff;text-align:center;}
+.meigui_center span{font-size:45px;line-height:45px;color:#fff;}
+.meigui_right{float:right;margin-top:15px;}
+.peitu{width:1000px;margin:10px auto;}
+.peitu img{width:1000px;height:600px;}
+.peitu_jieshao{font-size:15px;line-height:22px;color:#fff;text-align:center;font-family:"宋体";font-style:italic;}
+.miaoshu01{font-size:15px;line-height:22px;color:#fff;margin:20px 0;text-indent:28px;}
+.miaoshu01 span{font-size:30px;line-height:32px;}
+.peizi{width:1000px;margin:0 auto;}
+.xingqu{overflow:hidden;margin:10px 0;padding-right:10px;}
+.xingqu a{font-size:14px;line-height:22px;color:#999;text-align:right;font-style:italic;float:right;background-image:url(../images/fanhui.png);background-repeat:no-repeat;background-position:left center;padding-left:25px;font-family:"宋体";}
+.xingqu a:hover{text-decoration:underline;}
+.zaifan{width:1200px;margin:20px auto;margin-bottom:60px;}
+.zaifan a{font-size:16px;line-height:22px;color:#fff;background-image:url(../images/fanhui.png);background-repeat:no-repeat;background-position:left center;padding-left:25px;font-family:"宋体";font-style:italic;display:block;}
+.zaifan a:hover{text-decoration:underline;}
+.xixian{width:1200px;margin:40px auto;}
+.xixian img{width:1200px;height:12px;}
+.chanpin_box{width:1200px;margin:20px auto;overflow:hidden;margin-bottom:70px;}
+.chanpin01{width:586px;float:left;background-image:url(../images/bei.png);background-repeat:no-repeat;background-position:top center;padding-top:86px;}
+.tu_ji{width:400px;margin:0 auto;}
+.tu_ji li{width:400px;display:none;}
+.tu_ji li img{width:400px;height:400px;}
+.chanpin_leibie{font-size:30px;line-height:50px;color:#fff;text-align:center;font-family:"黑体";background-image:url(../images/ii.png);background-repeat:no-repeat;background-position:bottom center;}
+.zhishi{overflow:hidden;width:450px;margin:0 auto;}
+.zhishi li{text-align:center;display:inline-block;float:left;background-image:url(../images/lv.png);background-repeat:no-repeat;background-position:left center;padding-left:15px;margin:0 20px;}
+.zhishi li a{display:block;font-size:20px;line-height:30px;color:#fff;font-family:"黑体";}
+.zhishi li a:hover{text-decoration:underline;}

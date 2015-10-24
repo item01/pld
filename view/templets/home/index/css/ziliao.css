@@ -1,0 +1,75 @@
+@charset "utf-8";
+.guize{font-size:14px;line-height:24px;color:#fff;font-family:"宋体";margin:20px 0;}
+.guize a{color:#fff;}
+.guize a:hover{text-decoration:underline;}
+.jiben{overflow:hidden;background-image:url(../images/a2.png);background-repeat:no-repeat;background-position:bottom center;}
+.jiben li{font-size:14px;line-height:24px;color:#fff;font-family:"宋体";margin:0 20px;display:inline-block;float:left;padding-bottom:15px;cursor:pointer;}
+.jiben .cur_jiben{background-image:url(../images/xia.png);background-repeat:no-repeat;background-position:bottom center;}
+.xiaobiaoge{width:750px;margin:20px auto;border:solid 1px #999;}
+.xiaobiaoge td{font-size:14px;line-height:34px;color:#999;font-family:"宋体";text-align:center;border:solid 1px #999;}
+.xiaobiaoge .hie{color:#fff;}
+.sange{height:200px;}
+.xiaobiaoge01 td{color:#fff;}
+.zhans01{display:none;}
+.yema{overflow:hidden;border-bottom:dotted 1px #666;}
+.yema_left{font-size:14px;line-height:34px;color:#e5e5e5;float:left;font-family:"宋体";}
+.yema_right{float:right;margin-top:5px;}
+.yema_right li{display:inline-block;float:left;background-image:url(../images/touming.png);margin-left:3px;padding:5px 7px;cursor:pointer;}
+.yema_right li:hover{background-image:url(../images/touming01.png);}
+.jihua{font-size:14px;line-height:24px;color:#fff;font-family:"宋体";margin:20px 0;}
+.dianji{margin-top:80px;}
+.dianji a{font-size:14px;line-height:24px;color:#fff;font-family:"宋体";display:block;text-align:right;}
+.dianji a:hover{text-decoration:underline;}
+.wddd{margin:30px 0;}
+.wddd td{font-size:14px;line-height:24px;color:#fff;font-family:"宋体";text-align:center;padding:10px 0;}
+.wddd td a{color:#fff;margin:0 5px;}
+.wddd td a:hover{text-decoration:underline;}
+.wddd td .nimo{display:block;width:90%;margin:0 auto;font-size:14px;line-height:30px;color:#fff;font-family:"宋体";text-align:center;background-image:url(../images/beijing01.png);}
+.wddd td .nimo:hover{background-image:url(../images/beijing02.png);text-decoration:none;}
+.wenben{margin-top:4px;}
+.wenben textarea{width:257px;font-size:14px;line-height:30px;color:#333;}
+.qubc{width:500px;overflow:hidden;margin-left:120px;}
+.qubc li{width:100px;display:inline-block;float:left;margin:0 5px;}
+.qubc li input{width:100px;font-size:14px;line-height:26px;color:#fff;text-align:center;background-image:url(../images/beijing01.png);border:none;cursor:pointer;}
+.qubc li input:hover{background-image:url(../images/beijing02.png);}
+.qubc li label{font-size:11px;line-height:20px;color:#fff;}
+.com_dan_right01{float:left;font-size:14px;line-height:30px;color:#fff;font-family:"宋体";margin-right:10px;}
+.com_dan_right01 span{color:#3771b7;}
+.com_dan_right02{float:left;background-image:url(../images/touming.png);padding:5px;}
+.sou input{width:150px;font-size:14px;padding:;color:#fff;font-family:"宋体";font-style:italic;background-color:transparent;border:none;}
+.sou{float:left;}
+.suo{float:right;width:20px;}
+.suo img{width:20px;height:24px;}
+.guanzhu_box{width:750px;overflow:hidden;margin:30px 0;}
+.guanzhu_box .guanzhu01{width:160px;display:inline-block;float:left;margin:7px 10px;background-image:url(../images/touming.png);border:solid 1px #666;padding-bottom:10px;}
+.gz_img{width:90px;margin:10px auto;}
+.gz_img img{width:90px;height:90px;filter:alpha(poacity=80);opacity:0.8;}
+.gz_img img:hover{filter:alpha(poacity=100);opacity:1;}
+.gz_name a{display:block;font-size:14px;line-height:20px;color:#fff;font-family:"宋体";text-align:center;background-image:url(../images/lin.png);background-repeat:no-repeat;background-position:bottom center;padding-bottom:5px;}
+.gz_name a:hover{text-decoration:underline;}
+.tx{width:138px;overflow:hidden;margin:6px auto;}
+.tx li{width:40px;display:inline-block;float:left;margin:0 3px;}
+.tx li img{width:40px;height:40px;}
+.qxgz{width:132px;margin:0 auto;}
+.qxgz a{display:block;width:132px;font-size:14px;line-height:24px;color:#fff;text-align:center;background-image:url(../images/beijing01.png);}
+.qxgz a:hover{background-image:url(../images/beijing02.png);}
+.xuanqu{width:160px;}
+.xuanqu img{width:160px;heihg:120px;filter:alpha(poacity=80);opacity:0.8;}
+.xuanqu img:hover{filter:alpha(poacity=100);opacity:1;}
+.xuanqu_name a{display:block;font-size:14px;line-height:24px;color:#fff;text-align:center;}
+.xuanqu_name a:hover{text-decoration:underline;}
+.shangsheng{width:150px;overflow:hidden;margin:0 auto;margin-top:5px;}
+.shangsheng_left{float:left;background-image:url(../images/top.png);background-repeat:no-repeat;background-position:left center;padding-left:15px;font-size:14px;line-height:24px;color:#fff;}
+.shangsheng_left span{color:#3771b7;}
+.shangsheng_right{float:right;width:55px;}
+.shangsheng_right a{display:block;font-size:12px;line-height:24px;color:#fff;text-align:center;background-image:url(../images/beijing01.png);}
+.shangsheng_right a:hover{background-image:url(../images/beijing02.png);}
+.shenqingTK{border:none;margin:20px 0;}
+.shenqingTK td{font-size:14px;line-height:24px;color:#fff;text-align:center;border:none;padding:5px 0;}
+.chengnuo{margin-left:220px;margin-bottom:20px;font-size:14px;line-height:24px;color:#fff;}
+.fanxiu{font-size:14px;line-height:24px;color:#fff;margin:20px 0;background-image:url(../images/a2.png);background-repeat:no-repeat;background-position:bottom center;padding-bottom:10px;}
+.fanxiu a{color:#3771b7;}
+.fanxiu a:hover{text-decoration:underline;}
+.tousu_hezi{overflow:hidden;width:700px;margin:30px auto;}
+.tousu_left{width:400px;float:left;}
+.tousu_right{width:280px;font-size:14px;line-height:24px;color:#fff;margin-top:80px;float:right;}

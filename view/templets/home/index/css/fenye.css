@@ -1,0 +1,22 @@
+@charset "utf-8";
+.fenye_content{width:900px;margin:0 auto;}
+.left01{width:366px;padding-top:500px;}
+.left01 img{width:366px;height:149px;}
+.fajue{font-size:18px;line-height:28px;color:#fffeff;margin:30px 0;margin-left:100px;}
+.liulan{position:absolute;bottom:0;left:100px;}
+.liulan a{display:block;font-size:14px;line-height:28px;color:#fffeff;background-image:url(../images/sanjiao.png);background-repeat:no-repeat;background-position:left 10px;padding-left:20px;}
+.liulan a:hover{text-decoration:underline;}
+.qiehuan01{background-image:url(../images/back01.jpg);background-repeat:no-repeat;background-position:top center;background-size:cover;}
+.qiehuan_content{width:1200px;height:942px;margin:0 auto;position:relative;}
+.julebu{top:300px;height:280px;position:absolute;left:-200px;}
+.qiehuan02{background-image:url(../images/back02.jpg);background-repeat:no-repeat;background-position:top center;background-size:cover;}
+.qiehuan03{background-image:url(../images/back03.jpg);background-repeat:no-repeat;background-position:top center;background-size:cover;}
+.qiehuan04{background-image:url(../images/back04.jpg);background-repeat:no-repeat;background-position:top center;background-size:cover;}
+.qiehuan05{background-image:url(../images/back05.jpg);background-repeat:no-repeat;background-position:top center;background-size:cover;}
+.qiehuan06{background-image:url(../images/back06.jpg);background-repeat:no-repeat;background-position:top center;background-size:cover;}
+.qiehuan07{background-image:url(../images/back07.jpg);background-repeat:no-repeat;background-position:top center;background-size:cover;}
+.qiehuan08{background-image:url(../images/back08.jpg);background-repeat:no-repeat;background-position:top center;background-size:cover;}
+@media(max-width:1400px){
+	.julebu{top:290px;height:220px;position:absolute;left:-200px;}
+	
+	}

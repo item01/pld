@@ -1,0 +1,35 @@
+@charset "utf-8";
+.wj_box{width:420px;margin:60px auto;}
+.zh{}
+.zh li{overflow:hidden;margin:20px 0;}
+.zhao_left{width:170px;font-size:14px;line-height:25px;color:#fff;text-align:right;float:left;}
+.zhao_right{width:230px;float:left;}
+.zhao_right input{width:230px;font-size:14px;padding:3px 5px;color:#333;}
+.yyna{width:61px;float:left;margin:1px 10px;float:left;}
+.yyna img{width:61px;height:24px;}
+.hhhh{float:left;}
+.hhhh a{font-size:14px;line-height:25px;color:#fff;}
+.hhhh a:hover{text-decoration:underline;}
+.yyy{width:200px;margin:50px 0;margin-left:150px;}
+.yyy input{width:200px;font-size:14px;line-height:30px;color:#fff;background-image:url(../images/xindizhi.png);background-color:transparent;border:none;cursor:pointer;}
+.yyy input:hover{text-decoration:underline;}
+.sfsf{width:300px;}
+.sfsf option{font-size:14px;padding:3px 5px;color:#333;}
+
+.yx01{width:170px;float:left;}
+.yx01 input{width:160px;font-size:14px;padding:5px 5px;color:#333;border:none;}
+.yx02{width:120px;float:left;background-color:white;margin-left:10px;}
+.yx02 a{display:block;font-size:14px;line-height:28px;color:#333;text-align:center;}
+.yx02 a:hover{text-decoration:underline;}
+.dxyz{width:290px;ont-size:14px;padding:5px 5px;color:#333;border:none;}
+.loji{width:215px;margin:80px auto;}
+.loji img{width:215px;height:133px;}
+.opopop{overflow:hidden;width:300px;margin:0 auto;}
+.opopop a{width:140px;font-size:14px;line-height:30px;color:#fff;background-image:url(../images/xindizhi.png);float:left;text-align:center;margin:0 5px;}
+.opopop a:hover{text-decoration:underline;}
+.yyy01{display:none;}
+.fasong{font-size:14px;line-height:28px;color:#fff;text-align:center;margin-top:80px;}
+.fasong a{color:#356db1;}
+.fasong a:hover{text-decoration:underline;}
+.you{width:109px;margin:0 auto;}
+.you img{width:109px;height:109px;}

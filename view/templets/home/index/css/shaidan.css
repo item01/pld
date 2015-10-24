@@ -1,0 +1,14 @@
+@charset "utf-8";
+.ju_box{}
+.ju_box .ju01{overflow:hidden;margin:25px 0;}
+.ju01_left{width:32%;float:left;margin-right:3%;margin-top:5px;}
+.ju01_left a{font-size:14px;line-height:22px;color:#fff;}
+.ju01_left a:hover{text-decoration:underline;}
+.ju01_center{width:15%;font-size:14px;line-height:22px;color:#fff;float:left;text-align:center;margin-top:20px;}
+.ju01_right{width:50%;float:right;}
+.baaaa{overflow:hidden;width:90%;margin-left:10%;height:57px;}
+.baaaa li{width:79px;display:inline-block;float:left;margin:0 2px;}
+.baaaa li img{width:79px;hright:56px;border:solid 1px #666;}
+.shengcheng a{font-size:14px;line-height:22px;color:#fff;background-image:url(../images/sanjiao.png);background-repeat:no-repeat;background-position:left center;padding-left:15px;}
+.shengcheng{position:absolute;bottom:130px;right:0;}
+.shengcheng a:hover{text-decoration:underline;}

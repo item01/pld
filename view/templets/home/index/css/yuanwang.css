@@ -1,0 +1,46 @@
+@charset "utf-8";
+.wang01{border:none;margin:10px 0;background-image:url(../images/hou.png);background-repeat:no-repeat;background-position:0 34px;}
+.wang01 td{font-size:16px;line-height:28px;color:#fff;text-align:center;border:none;padding:5px 0;}
+.wang01 td a{color:#fff;}
+.wang01 td span{color:#ad0404;}
+.wang01 td a:hover{text-decoration:underline;}
+.mai_chanpin{overflow:hidden;padding:0 10px;}
+.mai_left{float:left;width:20%;margin-top:15px;}
+.mai_center{width:20%;float:left;}
+.mai_center img{width:70%;margin:0 auto; }
+.mai_right{width:60%;margin-top:15px;}
+.mai_right a{font-size:14px;line-height:28px;color:#fff;display:block;width:100%;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.jia{width:1200px;}
+.jia img{width:1200px;height:1px;}
+.jieshu{overflow:hidden;padding:20px 10px;}
+.jieshu01{float:left;}
+.jieshu01 label{font-size:14px;line-height:28px;color:#fff;margin-left:30px;}
+.jieshu02{float:left;margin-left:200px;font-size:14px;line-height:28px;color:#fff;}
+.jieshu02 span{color:#ad0404;}
+.jieshu03{float:right;margin-right:90px;}
+.jieshu03 a{font-size:14px;line-height:28px;color:#fff;}
+.jieshu03 a:hover{text-decoration:underline;}
+.jieshu04{float:right;font-size:14px;line-height:28px;color:#fff;margin-right:100px;}
+.jieshu04 span{font-size:24px;line-height:30px;color:#ad0404;}
+.shop{overflow:hidden;padding-right:90px;}
+.shop a{width:150px;float:right;font-size:14px;line-height:34px;color:#fff;text-align:center;margin:0 5px;background-image:url(../images/xindizhi.png);}
+.shop a:hover{text-decoration:underline;}
+.peisong01{padding:10px 30px;background-image:url(../images/er.png);background-repeat:no-repeat;background-position:bottom center;padding-bottom:10px;}
+.peisong_top{font-size:16px;line-height:30px;color:#fff;margin:5px 0;}
+.peisong_top a{font-size:12px;line-height:30px;color:#fff;margin-left:10px;}
+.peisong_top a:hover{text-decoration:underline;}
+.rmfs{overflow:hidden;}
+.rmfs label{float:left;margin-right:10px;font-size:14px;line-height:24px;color:#fff;}
+.shou_dizhi{font-size:14px;line-height:24px;color:#fff;}
+.z_tj{margin:10px 0;}
+.z_tj a{display:block;font-size:14px;line-height:26px;color:#fff;text-align:center;background-image:url(../images/xindizhi.png);width:160px;}
+.z_tj a:hover{text-decoration:underline;}
+.rm_zhufu{overflow:hidden;margin:10px 0;}
+.rm_zhufu01{float:left;margin-right:20px;}
+.rm_zhufu01 label{float:left;margin-top:5px;}
+.rm_zhufu01 img{float:left;margin-left:5px;width:147px;height:31px;}
+.taitou{margin:10px 0;}
+.taitou span{font-size:14px;line-height:22px;color:#fff;}
+.taitou input{width:200px;font-size:14px;padding:4px 5px;color:#fff;border:solid 1px #666;background-color:transparent;}
+.yunfei001{font-size:18px;line-height:26px;color:#fff;text-align:right;padding-right:60px;margin:20px 0;}
+.yunfei001 span{color:#ad0404;}
