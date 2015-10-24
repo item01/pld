@@ -18,10 +18,7 @@ require dirname(__FILE__).'/system/app.php';
 require dirname(__FILE__).'/config/config.php';
 //require dirname(__FILE__).'/system/safe.php';
 
-4214redgdf
-gedrggdewdget 54326
-2121
-htyjtjsfsgdvbdfeyrt
+sfsdf
 
 
 Application::run($CG);
