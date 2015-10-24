@@ -19,8 +19,8 @@ require dirname(__FILE__).'/config/config.php';
 //require dirname(__FILE__).'/system/safe.php';
 
 
-
-2454545
-
+阿斯顿发送到
+245uuuu4545
+阿萨德
 胜多负少
 Application::run($CG);
