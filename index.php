@@ -19,7 +19,7 @@ require dirname(__FILE__).'/config/config.php';
 //require dirname(__FILE__).'/system/safe.php';
 
 
-小小34
+小小34543
 
 
 
