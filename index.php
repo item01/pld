@@ -18,4 +18,9 @@ require dirname(__FILE__).'/system/app.php';
 require dirname(__FILE__).'/config/config.php';
 //require dirname(__FILE__).'/system/safe.php';
 
+
+小小3454323天太热121SAWdrtery
+
+
+
 Application::run($CG);
