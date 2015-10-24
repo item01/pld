@@ -38,7 +38,7 @@
 
 					// 计算数量,页数
 					var PagesMth = Math.ceil($AllMth / $Mth); // 计算页数
-					var PagesMthTxt = "";
+					var PagesMthTxt = "<span>共<b>"+$AllMth+"</b>条，共<b>"+PagesMth+"</b>页</span>";
 					$this.append(PagesNavHtml).find(".Pagination").append(PagesMthTxt);
 					
 					
