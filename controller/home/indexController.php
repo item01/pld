@@ -290,14 +290,7 @@ class indexController extends Controller{
 		$this->display("video.html");
 	}
 
-	//新闻列表页面
-	public function news($id="",$tid=""){
-		$this->get_type_list($tid);
-		$this->assign("id",$id);
-		$this->get_news($id);
-		$this->assign("tid",$tid);
-		$this->display("news.html");
-	}
+
 
 	//新闻详情页面
 	public function news_xq($id="",$tid=7){
