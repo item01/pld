@@ -7,9 +7,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>普罗蒂</title>
 <link href="css/base.css" rel="stylesheet" type="text/css">
-<link href="css/fenye.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<link href="css/gr.css" rel="stylesheet" type="text/css">
+<link href="css/guize.css" rel="stylesheet" type="text/css">
+<link href="css/yuanwang.css" rel="stylesheet" type="text/css">
+<link href="css/wangji.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/gr.js"></script>
 <script>
 $(function(){
 	$(".yi01").hover(function(){
@@ -24,25 +27,63 @@ $(function(){
 <script>
 $(function(){
 	$(".erjinav").hover(function(){
+		
 		},function(){
 		$(this).hide();	
 			})
 	})
 </script>
-<style>
-body{overflow:hidden;}
-</style>
 </head>
 
-<body>
-<div class="header">
-	<div class="header_content">
-    	<div class="login"><a href="gr_tiaokuan.html">注册</a><a href="gr_denglu.html">登录</a></div>
-        <div class="login_text">立即注册成为会员</div>
+<body style="background-image:url(images/gr_back.png);">
+<div class="header" style="position:static;">
+	<div class="header_content" style="overflow:visible;">
+    	<div class="vip01">尊敬的    小花，您好&nbsp;&nbsp;|<a href="">退出</a></div>
+        <div class="vip02">
+        	<div class="gouwu">购物车<span>2</span>件</div>
+            <div class="jairu">
+            	<div class="zuijin">最近加入的宝贝：</div>
+                <ul class="bao">
+                	<li>
+                    	<div class="bao_left"><a href="zhubao_xq.html"><img src="images/chanpin05.png"></a></div>
+                        <div class="bao_right">
+                        	<div class="bao_name"><a href="zhubao_xq.html">精美吊坠精美吊坠精美吊坠</a></div>
+                            <div class="bao_name01">款式类型：经典</div>
+                        </div>
+                        <div class="bao_right01">
+                        	<div class="bao_jiage">￥<span>39999.90</span></div>
+                            <div class="bao_jiage01"><a href="">删除</a></div>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="bao_left"><a href="zhubao_xq.html"><img src="images/chanpin05.png"></a></div>
+                        <div class="bao_right">
+                        	<div class="bao_name"><a href="zhubao_xq.html">精美吊坠精美吊坠精美吊坠</a></div>
+                            <div class="bao_name01">款式类型：经典</div>
+                        </div>
+                        <div class="bao_right01">
+                        	<div class="bao_jiage">￥<span>39999.90</span></div>
+                            <div class="bao_jiage01"><a href="">删除</a></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="chakan"><a href="yuanwang.html">查看我的愿望中心</a></div>
+            </div>
+        </div>
+        <div class="vip03">
+        	<div class="gouwu">我的 PROTY</div>
+            <ul class="me">
+            	<li><a href="vip.html">用户中心</a></li>
+                <li><a href="yuanwang.html">我的愿望中心</a></li>
+                <li><a href="vip_dingdan.html">我的订单</a></li>
+            </ul>
+        </div>
+        <div class="vip04">400-155-3023</div>
+        <div style="clear:both;"></div>
     </div>
 </div>
-<div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
-<div class="nav_box">
+<div class="logo" style="position:static;margin-top:38px;"><a href="index.html"><img src="images/logo.png"></a></div>
+<div class="nav_box" style="position:static;margin-top:18px;">
     <ul class="nav">
         <li class="yiyiyi">
             <a href="daoru01.html" class="yi01">俱乐部</a>
@@ -120,14 +161,29 @@ body{overflow:hidden;}
     </ul>
     <div style="clear:both;"></div>
 </div>
-<div class="qiehuan02 fenye">
-    <div class="qiehuan_content">
-        <div class="julebu"><img src="images/julebu02.png" height="239" width="371"></div>
-        <div class="liulan"><a href="xingzuo.html">查看详情</a></div>
+<div class="about">
+	<div class="qingdan_top"><img src="images/wangji03.png"></div>
+    <div class="fu"><img src="images/wj03.png" width="88" height="22"></div>
+    <div class="wj_box">
+    	<ul class="zh">
+            <li>
+            	<input type="password" placeholder="设置密码  6-20位大小写字母，数字及'-'、'_'组合" class="dxyz">
+            </li>
+            <li>
+            	<input type="password" placeholder="请再输入密码" class="dxyz">
+            </li>
+        </ul>
+        <div class="yyy" style="width:300px;margin:0;"><a href="vip_wangji_mima04.html"><input type="submit" value="下一步" style="width:300px;"></a></div>
+    
+    
     </div>
+    
+    
+    
+    
+    
+   
 </div>
-
-
 <!--footer-->
 <{include file="common_foot.html"}>
 

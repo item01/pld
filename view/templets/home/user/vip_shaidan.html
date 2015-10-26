@@ -8,6 +8,9 @@
 <title>普罗蒂</title>
 <link href="css/base.css" rel="stylesheet" type="text/css">
 <link href="css/vip.css" rel="stylesheet" type="text/css">
+<link href="css/dingdan.css" rel="stylesheet" type="text/css">
+<link href="css/ziliao.css" rel="stylesheet" type="text/css">
+<link href="css/shaidan.css" rel="stylesheet" type="text/css">
 <link href="css/Css.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/gr.js"></script>
@@ -34,12 +37,16 @@ $(function(){
 </script>
 <script>
 $(function(){
-		$('.dan_box').kkPages({
-		PagesClass:'.dan01', //需要分页的元素
+		$('.ju_box').kkPages({
+		PagesClass:'.ju01', //需要分页的元素
 		PagesMth:4, //每页显示个数
 		});
 			});
-</script>  
+</script>
+<style>
+.Pagination{margin-top:80px;}
+
+</style>
 </head>
 
 <body style="background-image:url(images/gr_back.png);">
@@ -172,106 +179,139 @@ $(function(){
 <div class="vip_content">
 	<div class="vip_left">
     	<div class="vip_top"><img src="images/vip_left.png"></div>
-
-        <!--left-->
-        <{include file="common_left.html"}>
-
-    </div>
-    <div class="vip_right">
-    	<div class="shangchuan">
-        	<div class="sc_left">
-            	<div class="wode"><img src="images/mm01.png"></div>
-                <div class="genghuan"><input type="file"></div>
-                <div class="gh">更换图片</div>
-            </div>
-            <div class="sc_right">
-            	<ul class="xinxi">
-                	<li>我的帐号：小花 </li>
-                    <li>会员卡号：paxe596067</li>
-                    <li>会员等级：钻石会员</li>
-                    <li>积分总计：120积分</li>
+        <ul class="left_nav">
+        	<li>
+            	<div class="yiji">交易管理</div>
+                <ul class="list_menu">
+                	<li><a href="vip_dingdan.html">我的订单</a></li>
+                    <li><a href="vip_shoucang.html">我的收藏</a></li>
+                    <li><a href="vip_jifen.html">我的积分</a></li>
+                    <li><a href="" class="ccc01">我的晒单</a></li>
+                    <li><a href="vip_yuyue.html">我的预约</a></li>
                 </ul>
-                <div class="q1"><img src="images/a01.png"></div>
-                <div class="youxiang">邮箱未验证</div>
-                <div class="youxiang01">手机已验证</div>
-            </div>
-        </div>
-        <div class="a1"><img src="images/a1.png"></div>
-        <ul class="dingdan">
-        	<li style="width:15%;">订单编号</li>
-            <li style="width:35%;">商品信息</li>
-            <li style="width:10%;">订单金额</li>
-            <li style="width:18%;">下单时间</li>
-            <li style="width:12%;">订单状态</li>
-            <li style="width:10%;">评价</li>
-        </ul>
-        <ul class="dan_box">
-        	<li class="dan01">
-            	<div class="bianhao01">897306435873783</div>
-                <div class="bianhao02"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒经典四爪女钻戒求婚订婚女戒</a></div>
-                <div class="bianhao03">4870.00</div>
-                <div class="bianhao04">2014-12-22 12:01</div>
-                <div class="bianhao05">已付款</div>
-                <div class="bianhao06">已评价</div>
             </li>
-            <li class="dan01">
-            	<div class="bianhao01">897306435873783</div>
-                <div class="bianhao02"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒经典四爪女钻戒求婚订婚女戒</a></div>
-                <div class="bianhao03">4870.00</div>
-                <div class="bianhao04">2014-12-22 12:01</div>
-                <div class="bianhao05">已付款</div>
-                <div class="bianhao06">已评价</div>
+            <li>
+            	<div class="yiji">会员中心</div>
+                <ul class="list_menu">
+                	<li><a href="vip_GRziliao.html">个人资料</a></li>
+                    <li><a href="vip_anquan.html">帐号安全</a></li>
+                    <li><a href="vip_anquan_xiugai_mima.html">修改密码</a></li>
+                    <li><a href="vip_ziliao.html">会员资料</a></li>
+                    <li><a href="vip_dizhi.html">我的地址</a></li>
+                    <li><a href="vip_guanzhu.html">我的关注</a></li>
+                    <li><a href="vip_toupiao.html">我的投票</a></li>
+                </ul>
             </li>
-            <li class="dan01">
-            	<div class="bianhao01">897306435873783</div>
-                <div class="bianhao02"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒经典四爪女钻戒求婚订婚女戒</a></div>
-                <div class="bianhao03">4870.00</div>
-                <div class="bianhao04">2014-12-22 12:01</div>
-                <div class="bianhao05">已付款</div>
-                <div class="bianhao06">已评价</div>
-            </li>
-            <li class="dan01">
-            	<div class="bianhao01">897306435873783</div>
-                <div class="bianhao02"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒经典四爪女钻戒求婚订婚女戒</a></div>
-                <div class="bianhao03">4870.00</div>
-                <div class="bianhao04">2014-12-22 12:01</div>
-                <div class="bianhao05">已付款</div>
-                <div class="bianhao06">已评价</div>
-            </li>
-            <li class="dan01">
-            	<div class="bianhao01">897306435873783</div>
-                <div class="bianhao02"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒经典四爪女钻戒求婚订婚女戒</a></div>
-                <div class="bianhao03">4870.00</div>
-                <div class="bianhao04">2014-12-22 12:01</div>
-                <div class="bianhao05">已付款</div>
-                <div class="bianhao06">已评价</div>
-            </li>
-            <li class="dan01">
-            	<div class="bianhao01">897306435873783</div>
-                <div class="bianhao02"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒经典四爪女钻戒求婚订婚女戒</a></div>
-                <div class="bianhao03">4870.00</div>
-                <div class="bianhao04">2014-12-22 12:01</div>
-                <div class="bianhao05">已付款</div>
-                <div class="bianhao06">已评价</div>
-            </li>
-            <li class="dan01">
-            	<div class="bianhao01">897306435873783</div>
-                <div class="bianhao02"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒经典四爪女钻戒求婚订婚女戒</a></div>
-                <div class="bianhao03">4870.00</div>
-                <div class="bianhao04">2014-12-22 12:01</div>
-                <div class="bianhao05">已付款</div>
-                <div class="bianhao06">已评价</div>
-            </li>
-            <li class="dan01">
-            	<div class="bianhao01">897306435873783</div>
-                <div class="bianhao02"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒经典四爪女钻戒求婚订婚女戒</a></div>
-                <div class="bianhao03">4870.00</div>
-                <div class="bianhao04">2014-12-22 12:01</div>
-                <div class="bianhao05">已付款</div>
-                <div class="bianhao06">已评价</div>
+            <li>
+            	<div class="yiji">服务中心</div>
+                <ul class="list_menu">
+                	<li><a href="vip_tuikuan.html">退款申请</a></li>
+                    <li><a href="vip_fanxiu.html">返修/换货</a></li>
+                    <li><a href="vip_tousu.html">投拆建议</a></li>
+                </ul>
             </li>
         </ul>
     </div>
+  <div class="vip_right" style="position:relative;">
+    	<div class="com_dan">
+        	<div class="com_dan_left">我的晒单</div>
+            <div class="com_dan_right071"><a href="">全部评论  <span>5</span></a><a href="">已评论  <span>8</span></a><a href="">该晒单  <span>20</span></a></div>
+        </div>
+        <ul class="sp01">
+        	<li style="width:35%;">商品信息</li>
+            <li style="width:15%;">评论晒单</li>
+            <li style="width:50%;"><a href="">管理晒单</a></li>
+        </ul>
+        <ul class="ju_box">
+        	<li class="ju01">
+            	<div class="ju01_left"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒<br>经典四爪女钻戒求婚订婚女戒</a></div>
+                <div class="ju01_center">已评价已晒单</div>
+                <div class="ju01_right">
+                	<ul class="baaaa">
+                    	<li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="ju01">
+            	<div class="ju01_left"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒<br>经典四爪女钻戒求婚订婚女戒</a></div>
+                <div class="ju01_center">已评价已晒单</div>
+                <div class="ju01_right">
+                	<ul class="baaaa">
+                    	<li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="ju01">
+            	<div class="ju01_left"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒<br>经典四爪女钻戒求婚订婚女戒</a></div>
+                <div class="ju01_center">已评价已晒单</div>
+                <div class="ju01_right">
+                	<ul class="baaaa">
+                    	<li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="ju01">
+            	<div class="ju01_left"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒<br>经典四爪女钻戒求婚订婚女戒</a></div>
+                <div class="ju01_center">已评价已晒单</div>
+                <div class="ju01_right">
+                	<ul class="baaaa">
+                    	<li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="ju01">
+            	<div class="ju01_left"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒<br>经典四爪女钻戒求婚订婚女戒</a></div>
+                <div class="ju01_center">已评价已晒单</div>
+                <div class="ju01_right">
+                	<ul class="baaaa">
+                    	<li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="ju01">
+            	<div class="ju01_left"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒<br>经典四爪女钻戒求婚订婚女戒</a></div>
+                <div class="ju01_center">已评价已晒单</div>
+                <div class="ju01_right">
+                	<ul class="baaaa">
+                    	<li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="ju01">
+            	<div class="ju01_left"><a href="zhubao_xq.html">普罗蒂Proty钻石排钻女戒群镶钻戒<br>经典四爪女钻戒求婚订婚女戒</a></div>
+                <div class="ju01_center">已评价已晒单</div>
+                <div class="ju01_right">
+                	<ul class="baaaa">
+                    	<li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                        <li><img src="images/ba.png"></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+       	<div class="shengcheng"><a href="PROTY_jia.html">生成个人中心</a></div>
+  </div>
 </div>
 <!--footer-->
 <{include file="common_foot.html"}>
+
+
