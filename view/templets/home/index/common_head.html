@@ -1,1 +1,122 @@
-1111
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>普罗蒂</title>
+    <link href="<{$templets}>/index/css/base.css" rel="stylesheet" type="text/css">
+    <link href="<{$templets}>/index/css/fenye.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="<{$templets}>/index/js/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="<{$templets}>/index/js/index.js"></script>
+    <script>
+        $(function () {
+            $(".yi01").hover(function () {
+                var x = $(".yi01").index(this);
+                $(".erjinav").hide();
+                $(".erjinav").eq(x).show();
+            }, function () {
+
+            })
+        })
+    </script>
+    <script>
+        $(function () {
+            $(".erjinav").hover(function () {
+
+            }, function () {
+                $(this).hide();
+            })
+        })
+    </script>
+</head>
+<style>
+    body{overflow:hidden;}
+</style>
+<body>
+<div class="header">
+    <div class="header_content">
+        <div class="login"><a href="/index.php/home/index/gr_tiaokuan">注册</a><a href="/index.php/home/index/gr_denglu">登录</a></div>
+        <div class="login_text">立即注册成为会员</div>
+    </div>
+</div>
+<div class="logo"><a href="/index.php/home/index/index"><img src="<{$templets}>/index/images/logo.png"></a></div>
+<div class="nav_box">
+    <ul class="nav">
+        <li class="yiyiyi">
+            <a href="/index.php/home/index/daoru01" class="yi01">俱乐部</a>
+            <ul class="erjinav">
+                <li><a href="/index.php/home/index/julebu">服务方式</a></li>
+                <li><a href="/index.php/home/index/julebu">服务内容</a></li>
+                <li><a href="/index.php/home/index/julebu">会员优势</a></li>
+            </ul>
+        </li>
+        <li class="yiyiyi">
+            <a href="/index.php/home/index/daoru02" class="yi01">星座珠宝</a>
+            <ul class="erjinav">
+            </ul>
+        </li>
+        <li class="yiyiyi">
+            <a href="/index.php/home/index/daoru03" class="yi01">珠宝世界</a>
+            <ul class="erjinav">
+                <li><a href="/index.php/home/index/zhubao">项链</a></li>
+                <li><a href="/index.php/home/index/zhubao">吊坠</a></li>
+                <li><a href="/index.php/home/index/zhubao">戒指</a></li>
+                <li><a href="/index.php/home/index/zhubao">耳环</a></li>
+                <li><a href="/index.php/home/index/zhubao">手链</a></li>
+                <li><a href="/index.php/home/index/zhubao">腕表</a></li>
+                <li><a href="/index.php/home/index/zhubao">对戒</a></li>
+                <li><a href="/index.php/home/index/zhubao">男士珠宝</a></li>
+            </ul>
+        </li>
+        <li class="yiyiyi">
+            <a href="/index.php/home/index/daoru04" class="yi01">高级定制系列</a>
+            <ul class="erjinav">
+                <li><a href="/index.php/home/index/dingzhi_liulan">PROTY海盗梦系列</a></li>
+                <li><a href="/index.php/home/index/dingzhi_liulan">PROTY帝王花系列</a></li>
+                <li><a href="/index.php/home/index/dingzhi_liulan">PROTY风暴系列</a></li>
+                <li><a href="/index.php/home/index/dingzhi_liulan">PROTY大洋之花系列</a></li>
+                <li><a href="/index.php/home/index/dingzhi_liulan">PROTY八爪鱼系列</a></li>
+                <li><a href="/index.php/home/index/dingzhi_liulan">PROTY大卫之印系列</a></li>
+                <li><a href="/index.php/home/index/dingzhi_liulan">PROTY海盗皇后系列</a></li>
+                <li><a href="/index.php/home/index/dingzhi_liulan">PROTY美人鱼系列</a></li>
+            </ul>
+        </li>
+        <li class="yiyiyi">
+            <a href="/index.php/home/index/daoru05" class="yi01">经典珠宝</a>
+            <ul class="erjinav">
+                <li><a href="/index.php/home/index/jingdian_liulan">PROTY帝王花系列</a></li>
+                <li><a href="/index.php/home/index/jingdian_liulan">PROTY海盗梦系列</a></li>
+                <li><a href="/index.php/home/index/jingdian_liulan">PROTY海盗爵士系列</a></li>
+                <li><a href="/index.php/home/index/jingdian_liulan">PROTY海洋之心系列</a></li>
+                <li><a href="/index.php/home/index/jingdian_liulan">PROTY王者之风系列</a></li>
+                <li><a href="/index.php/home/index/jingdian_liulan">PROTY海盗之旅系列</a></li>
+                <li><a href="/index.php/home/index/jingdian_liulan">PROTY封印系列</a></li>
+                <li><a href="/index.php/home/index/jingdian_liulan">PROTY黄钻系列</a></li>
+            </ul>
+        </li>
+        <li class="yiyiyi">
+            <a href="/index.php/home/index/daoru06" class="yi01">PROTY之星</a>
+            <ul class="erjinav">
+                <li><a href="/index.php/home/index/PROTY_xing">PROTY之星</a></li>
+                <li><a href="/index.php/home/index/PROTY_shaitu">全部晒图</a></li>
+                <li><a href="/index.php/home/index/PROTY_about">关于PTOTY之星</a></li>
+            </ul>
+        </li>
+        <li class="yiyiyi">
+            <a href="/index.php/home/index/daoru07" class="yi01">品牌故事</a>
+            <ul class="erjinav">
+                <li><a href="/index.php/home/index/pinpai">品牌故事</a></li>
+                <li><a href="/index.php/home/index/pinpai">产品故事</a></li>
+                <li><a href="/index.php/home/index/pinpai">海上帝王花</a></li>
+            </ul>
+        </li>
+        <li class="yiyiyi">
+            <a href="/index.php/home/index/daoru08" class="yi01">网络精品店</a>
+            <ul class="erjinav">
+            </ul>
+        </li>
+    </ul>
+    <div style="clear:both;"></div>
+</div>

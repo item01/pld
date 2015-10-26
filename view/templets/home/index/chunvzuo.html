@@ -1,151 +1,141 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="description" content="Free Web tutorials">
-<meta name="keywords" content="HTML,CSS,JavaScript">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>普罗蒂</title>
-<link href="css/base.css" rel="stylesheet" type="text/css">
-<link href="css/julebu.css" rel="stylesheet" type="text/css">
-<link href="css/xingzuo.css" rel="stylesheet" type="text/css">
-<script src="js/jquery.js"></script>
-<script src="js/xingzuo.js"></script>
-<script type="text/javascript">
-    $(function(){
-        $('.zhuan_left03,.liulan').click(function(){
-            $('html,body').animate({scrollTop: '800px'}, 800);});
-    });
-</script>
+<{include file="common_head1.html"}>
+    <link href="<{$templets}>/index/css/xingzuo.css" rel="stylesheet" type="text/css">
+    <script src="<{$templets}>/index/js/xingzuo.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.zhuan_left03,.liulan').click(function(){
+                $('html,body').animate({scrollTop: '800px'}, 800);});
+        });
+    </script>
 </head>
 
-<body style="background-image:url(images/xingzuo_back.jpg);background-repeat:no-repeat;background-position:top center;background-size:cover;">
+<body style="background-image:url(<{$templets}>/index/images/xingzuo_back.jpg);background-repeat:no-repeat;background-position:top center;background-size:cover;">
 <div class="top_nav" style="position:fixed;left:0;top:0;">
     <ul class="nav01">
-                    <li><a href="daoru01.html">俱乐部</a></li>
-                    <li><a href="daoru02.html" class="curr_a1">星座珠宝</a></li>
-                    <li><a href="daoru03.html">珠宝世界</a></li>
-                    <li><a href="daoru04.html">高级定制系列</a></li>
-                    <li><a href="daoru05.html">经典珠宝</a></li>
-                    <li><a href="daoru06.html">PROTY之星</a></li>
-                    <li><a href="daoru07.html">品牌故事</a></li>
-                    <li><a href="daoru08.html">网络精品店</a></li>
-                </ul>
+        <li><a href="<{U('home/index/daoru01')}>">俱乐部</a></li>
+        <li><a href="/index.php/home/index/daoru02" class="curr_a1">星座珠宝</a></li>
+        <li><a href="/index.php/home/index/daoru03">珠宝世界</a></li>
+        <li><a href="/index.php/home/index/daoru04">高级定制系列</a></li>
+        <li><a href="/index.php/home/index/daoru05">经典珠宝</a></li>
+        <li><a href="/index.php/home/index/daoru06">PROTY之星</a></li>
+        <li><a href="/index.php/home/index/daoru07">品牌故事</a></li>
+        <li><a href="/index.php/home/index/daoru08">网络精品店</a></li>
+    </ul>
 </div>
-<div class="logo" style="position:static;margin-top:80px;"><a href="index.html"><img src="images/logo.png"></a></div>
+<div class="logo" style="position:static;margin-top:80px;"><a href="/index.php/home/index/index"><img src="<{$templets}>/index/images/logo.png"></a></div>
 
-          <div class="left_right">
-                        <div class="jule_tu_content" style="float:left;width:445px;">
-                            <div class="julebu" style="padding-top:150px;"><img src="images/xingzuo01.png" height="213" width="445"></div>
-                            <div class="liulan"><a>查看详情</a></div>
-                        </div>
-                        <div class="zhuanpan">
-                         	<div class="zhuan">
-                            	<div class="zhuan_left">
-                                	<div class="zhuan_left01"><img src="images/xingzuo_img.png" width="142" height="60"></div>
-                                    <div class="zhuan_left02">狮子座的人，自信自强，气度非凡，极具领导统御能力，永不服输，是天生的贵族、王者。只是有时过度追求利，甚至有些自负，莽撞、以自我为中心。</div>
-                                    <div class="zhuan_left03"><a>查看本月运势详解</a></div>
-                                </div>
-                            	<div class="zhuan_right"><img src="images/baoshi.png" width="200" height="200"></div>
-                            </div>
-                            <div class="xingzuozu">
-                            	<a href="xingzuo.html"><img src="images/s01.png" width="81" height="80"></a>
-							</div>
-                            <div class="xingzuozu" style="left:445px;top:88px;">
-                            	<a href=""><img src="images/s002.png" width="82" height="80"></a>
-							</div>
-                            <div class="xingzuozu" style="left:542px;top:192px;">
-                            	<a href=""><img src="images/s03.png" width="82" height="80"></a>
-							</div>
-                            <div class="xingzuozu" style="left:567px;top:325px;">
-                            	<a href=""><img src="images/s04.png" width="82" height="80"></a>
-							</div>
-                            <div class="xingzuozu" style="left:517px;top:451px;">
-                            	<a href=""><img src="images/s05.png" width="82" height="80"></a>
-							</div>
-                            <div class="xingzuozu" style="left:430px;top:530px;">
-                            	<a href=""><img src="images/s06.png" width="82" height="80"></a>
-							</div>
-                            <div class="xingzuozu" style="left:303px;top:565px;">
-                            	<a href=""><img src="images/s07.png" width="82" height="80"></a>
-							</div>
-                            <div class="xingzuozu" style="left:178px;top:528px;">
-                            	<a href=""><img src="images/s08.png" width="82" height="80"></a>
-							</div>
-                            <div class="xingzuozu" style="left:93px;top:449px;">
-                            	<a href=""><img src="images/s09.png" width="82" height="80"></a>
-							</div>
-                            <div class="xingzuozu" style="left:49px;top:325px;">
-                            	<a href=""><img src="images/s010.png" width="82" height="80"></a>
-							</div>
-                            <div class="xingzuozu" style="left:76px;top:194px;">
-                            	<a href=""><img src="images/s011.png" width="82" height="80"></a>
-							</div>
-                            <div class="xingzuozu" style="left:164px;top:87px;">
-                            	<a href=""><img src="images/s012.png" width="82" height="80"></a>
-							</div>
-                        </div>
-                     </div>
-          <div class="cedaohang">
-                     	<ul class="ce_nav">
-                        	<li class="xai">
-                            	<img src="images/n01.png" width="97" height="24">
-                            </li>
-                            <li>
-                            	<img src="images/n02.png" width="97" height="24">
-                            </li>
-                            <li style="width:46px;">
-                            	<img src="images/n03.png" width="46" height="22">
-                            </li>
-                            
-                        </ul>
-                     </div>
-          <div class="xq01" style="display:block;">
-                     	<div class="yunshi"><img src="images/yunshi.png" width="278" height="33"></div>
-                        <div class="yunshi_text">
-                        	这是非常精彩的一个月！31日的水瓶座满月将你与情人间发生的事推向重要阶段。这次满月很友好，所以8月前四天发生的事让你们相当主动，并结合得更加紧密。土星巩固了你的情感，使你感觉稳定而安全。8日火星进入狮子座，预示着某段重要情感将开始为期2年的新周期。应采取积极的生活态度，考虑向你爱的人许下承诺，或是与你想要亲密合作的专家签约。 <br>
-                            <br>
-                            金星仍在逆行，所以爱情方面可以讨论未来，但别确定任何事。逆行期间金星能量减弱，无法散发出最强的爱之能量。金星也主宰收益，这也是要等待下个月金星恢复顺行的另一个原因，不管你多想与商业伙伴齐心协力，合作共赢。9月6日之后你就能制定规划，相信自己的未来会像梦想中一样辉煌——做好准备，届时要迅速行动。9月18日至10月10日水星将会逆行，这也是你要注意的日期。仿佛你要在各种逆行星体间小心行走，如履薄冰，但有时生活就是如此。现在你有足够的时间来完美地规划行动。 <br>
-                            <br>
-                            14日的狮子座新月会引发一系列快乐的焰火。新月会带来机遇，这次的狮子座新月让你有机会追寻对自己至关重要的梦想。天王星也带来令人兴奋的惊喜，所以别假设自己无法满足心灵的愿望。一切都对你有利。<br>
-                            <br>
-                            没错，木星将在11日离开狮子座，你要将上天赋予的王冠交给处女座了。你已在木星的庇护下度过了12个月，但别郁闷，因为当木星进入处女座后，你会看到过去12个月的努力有大部分都会带来丰硕成果。这是十年来最利于财务成功的年份。<br>
-                            <br>
-                            26日是今年最幸运的日子，你也能对我上面提到的这些有初步感受。大量金钱会自动找上门。这种金钱都源于你的收入，而非任何赌博或礼物所得。 <br>
-                            <br>
-                            本月结束时也有财务事件发生。29日的满月发生在代表他人金钱的八宫，并与海王星非常接近。你会出售艺术品或卖掉自己的剧本（海王星掌管银幕及各种创意工作）。若这与你的生活毫不相关，那就要小心了，因为海王星会给你的财务问题蒙上糖果般的色彩。多提问，若某事毫无意义，就要寻求援助及充分的解释。土星相位不良，所以要保持理性，此次满月与一厢情愿无关，你必须客观、做一切要做的事。 <br>
-                            <br>
-                            对爱情而言这是相当浪漫的月份，特别是4日金木合于狮子座。这一相位每十二年才会发生一次，上一次金木合于狮子座发生在2003年8月21日，所以对你而言这是五星级的一天。你也会在同一天得知绝佳的职业发展，这使你相当兴奋。这一天简直不可能更好了。 <br>
-                            <br>
-                            火星于8月8日至9月24日在狮子座运行，使你在心灵方面有巨大的优势，它能强化你的外表并提升你的外形。得到意中人的关注意味着在爱情中你已走完了一半路程。你自信、大胆、幽默，魅力让人无法抗拒。31日至9月1日，金星与火星在狮子座相合。真希望在8月我们每个人都是狮子座！ 
-                        </div>
-                        <div class="yunshi"><img src="images/xingyunshi.png" width="203" height="34"></div>
-                        <div class="yunshi_text">
-                        	狮子座的幸运石：红宝石、钻石
-                            <br>
-                            狮子座领导欲强烈，喜欢领导所有人朝着自己的奋斗目标前进。所以狮子座的幸运石是尊贵的红宝石，特别是对狮子座男性来说。狮子座男性如果佩戴的领带夹、袖扣或者戒指镶有红宝石的话，就更能显示狮子座作为王者的领袖风范了。 如果是狮子座的女性的话就更需要佩戴镶嵌有红宝石的饰物了。女性佩戴的饰物种类比起男性则有更大的选择空间，比如戒指、项链、手镯等等。如果在这些佩戴的饰物上能镶有红宝石的话，则更能突显你的豪华尊贵、出类拔萃的魅力。
-                        </div>
-                        <div class="lieju">
-                        	<div class="li_left"><img src="images/li.png" width="136" height="33"></div>
-                        	<div class="li_right"><a href="zhubao.html">查看更多</a></div>
-                        </div>
-                        <ul class="zz_jian">
-                        	<li><a href="zhubao_xq.html"><img src="images/bao01.png" width="187" height="196"></a></li>
-                            <li><a href="zhubao_xq.html"><img src="images/bao02.png" width="223" height="220"></a></li>
-                            <li><a href="zhubao_xq.html"><img src="images/bao02.png" width="223" height="220"></a></li>
-                            <li><a href="zhubao_xq.html"><img src="images/bao03.png" width="225" height="207"></a></li>
-                        </ul>
-          </div>
-          <div class="xq01">
-          	  <div class="tuijian"><img src="images/tuijian.png" width="224" height="28"></div>
-              <div class="tuijian_text">当思念无法言表，当爱意无法诉说，不如让proty来帮你，我的爱需要私人定制。</div>
-              <div class="zhubao"><a href="zhubao_xq.html"><img src="images/zhubao.png" width="1177" height="480"></a></div>
-          </div>
-          <div class="xq01">
-          	  <div class="tuijian"><img src="images/shaitu.png" width="161" height="28"></div>
-          	  <div class="tuijian_text">只需秀图，就可以赢大奖，你说值不值，你敢秀，我就敢送。</div>
-              <div class="dianji"><a href="daoru06.html">点击查看</a></div>
-          </div>
+<div class="left_right">
+    <div class="jule_tu_content" style="float:left;width:445px;">
+        <div class="julebu" style="padding-top:150px;"><img src="<{$templets}>/index/images/xingzuo01.png" height="213" width="445"></div>
+        <div class="liulan"><a>查看详情</a></div>
+    </div>
+    <div class="zhuanpan">
+        <div class="zhuan">
+            <div class="zhuan_left">
+                <div class="zhuan_left01"><img src="<{$templets}>/index/images/xingzuo_img.png" width="142" height="60"></div>
+                <div class="zhuan_left02">狮子座的人，自信自强，气度非凡，极具领导统御能力，永不服输，是天生的贵族、王者。只是有时过度追求利，甚至有些自负，莽撞、以自我为中心。</div>
+                <div class="zhuan_left03"><a>查看本月运势详解</a></div>
+            </div>
+            <div class="zhuan_right"><img src="<{$templets}>/index/images/baoshi.png" width="200" height="200"></div>
+        </div>
+        <div class="xingzuozu">
+            <a href=""><img src="<{$templets}>/index/images/s001.png" width="81" height="80"></a>
+        </div>
+        <div class="xingzuozu" style="left:445px;top:88px;">
+            <a href="/index.php/home/index/chunvzuo"><img src="<{$templets}>/index/images/s02.png" width="82" height="80"></a>
+        </div>
+        <div class="xingzuozu" style="left:542px;top:192px;">
+            <a href=""><img src="<{$templets}>/index/images/s03.png" width="82" height="80"></a>
+        </div>
+        <div class="xingzuozu" style="left:567px;top:325px;">
+            <a href=""><img src="<{$templets}>/index/images/s04.png" width="82" height="80"></a>
+        </div>
+        <div class="xingzuozu" style="left:517px;top:451px;">
+            <a href=""><img src="<{$templets}>/index/images/s05.png" width="82" height="80"></a>
+        </div>
+        <div class="xingzuozu" style="left:430px;top:530px;">
+            <a href=""><img src="<{$templets}>/index/images/s06.png" width="82" height="80"></a>
+        </div>
+        <div class="xingzuozu" style="left:303px;top:565px;">
+            <a href=""><img src="<{$templets}>/index/images/s07.png" width="82" height="80"></a>
+        </div>
+        <div class="xingzuozu" style="left:178px;top:528px;">
+            <a href=""><img src="<{$templets}>/index/images/s08.png" width="82" height="80"></a>
+        </div>
+        <div class="xingzuozu" style="left:93px;top:449px;">
+            <a href=""><img src="<{$templets}>/index/images/s09.png" width="82" height="80"></a>
+        </div>
+        <div class="xingzuozu" style="left:49px;top:325px;">
+            <a href=""><img src="<{$templets}>/index/images/s010.png" width="82" height="80"></a>
+        </div>
+        <div class="xingzuozu" style="left:76px;top:194px;">
+            <a href=""><img src="<{$templets}>/index/images/s011.png" width="82" height="80"></a>
+        </div>
+        <div class="xingzuozu" style="left:164px;top:87px;">
+            <a href=""><img src="<{$templets}>/index/images/s012.png" width="82" height="80"></a>
+        </div>
+    </div>
+</div>
+<div class="cedaohang">
+    <ul class="ce_nav">
+        <li class="xai">
+            <img src="<{$templets}>/index/images/n01.png" width="97" height="24">
+        </li>
+        <li>
+            <img src="<{$templets}>/index/images/n02.png" width="97" height="24">
+        </li>
+        <li style="width:46px;">
+            <img src="<{$templets}>/index/images/n03.png" width="46" height="22">
+        </li>
 
-<!--footer-->
+    </ul>
+</div>
+<div class="xq01" style="display:block;">
+    <div class="yunshi"><img src="<{$templets}>/index/images/yunshi.png" width="278" height="33"></div>
+    <div class="yunshi_text">
+        这是非常精彩的一个月！31日的水瓶座满月将你与情人间发生的事推向重要阶段。这次满月很友好，所以8月前四天发生的事让你们相当主动，并结合得更加紧密。土星巩固了你的情感，使你感觉稳定而安全。8日火星进入狮子座，预示着某段重要情感将开始为期2年的新周期。应采取积极的生活态度，考虑向你爱的人许下承诺，或是与你想要亲密合作的专家签约。 <br>
+        <br>
+        金星仍在逆行，所以爱情方面可以讨论未来，但别确定任何事。逆行期间金星能量减弱，无法散发出最强的爱之能量。金星也主宰收益，这也是要等待下个月金星恢复顺行的另一个原因，不管你多想与商业伙伴齐心协力，合作共赢。9月6日之后你就能制定规划，相信自己的未来会像梦想中一样辉煌——做好准备，届时要迅速行动。9月18日至10月10日水星将会逆行，这也是你要注意的日期。仿佛你要在各种逆行星体间小心行走，如履薄冰，但有时生活就是如此。现在你有足够的时间来完美地规划行动。 <br>
+        <br>
+        14日的狮子座新月会引发一系列快乐的焰火。新月会带来机遇，这次的狮子座新月让你有机会追寻对自己至关重要的梦想。天王星也带来令人兴奋的惊喜，所以别假设自己无法满足心灵的愿望。一切都对你有利。<br>
+        <br>
+        没错，木星将在11日离开狮子座，你要将上天赋予的王冠交给处女座了。你已在木星的庇护下度过了12个月，但别郁闷，因为当木星进入处女座后，你会看到过去12个月的努力有大部分都会带来丰硕成果。这是十年来最利于财务成功的年份。<br>
+        <br>
+        26日是今年最幸运的日子，你也能对我上面提到的这些有初步感受。大量金钱会自动找上门。这种金钱都源于你的收入，而非任何赌博或礼物所得。 <br>
+        <br>
+        本月结束时也有财务事件发生。29日的满月发生在代表他人金钱的八宫，并与海王星非常接近。你会出售艺术品或卖掉自己的剧本（海王星掌管银幕及各种创意工作）。若这与你的生活毫不相关，那就要小心了，因为海王星会给你的财务问题蒙上糖果般的色彩。多提问，若某事毫无意义，就要寻求援助及充分的解释。土星相位不良，所以要保持理性，此次满月与一厢情愿无关，你必须客观、做一切要做的事。 <br>
+        <br>
+        对爱情而言这是相当浪漫的月份，特别是4日金木合于狮子座。这一相位每十二年才会发生一次，上一次金木合于狮子座发生在2003年8月21日，所以对你而言这是五星级的一天。你也会在同一天得知绝佳的职业发展，这使你相当兴奋。这一天简直不可能更好了。 <br>
+        <br>
+        火星于8月8日至9月24日在狮子座运行，使你在心灵方面有巨大的优势，它能强化你的外表并提升你的外形。得到意中人的关注意味着在爱情中你已走完了一半路程。你自信、大胆、幽默，魅力让人无法抗拒。31日至9月1日，金星与火星在狮子座相合。真希望在8月我们每个人都是狮子座！
+    </div>
+    <div class="yunshi"><img src="<{$templets}>/index/images/xingyunshi.png" width="203" height="34"></div>
+    <div class="yunshi_text">
+        狮子座的幸运石：红宝石、钻石
+        <br>
+        狮子座领导欲强烈，喜欢领导所有人朝着自己的奋斗目标前进。所以狮子座的幸运石是尊贵的红宝石，特别是对狮子座男性来说。狮子座男性如果佩戴的领带夹、袖扣或者戒指镶有红宝石的话，就更能显示狮子座作为王者的领袖风范了。 如果是狮子座的女性的话就更需要佩戴镶嵌有红宝石的饰物了。女性佩戴的饰物种类比起男性则有更大的选择空间，比如戒指、项链、手镯等等。如果在这些佩戴的饰物上能镶有红宝石的话，则更能突显你的豪华尊贵、出类拔萃的魅力。
+    </div>
+    <div class="lieju">
+        <div class="li_left"><img src="<{$templets}>/index/images/li.png" width="136" height="33"></div>
+        <div class="li_right"><a href="/index.php/home/index/zhubao">查看更多</a></div>
+    </div>
+    <ul class="zz_jian">
+        <li><a href="/index.php/home/index/zhubao_xq"><img src="<{$templets}>/index/images/bao01.png" width="187" height="196"></a></li>
+        <li><a href="/index.php/home/index/zhubao_xq"><img src="<{$templets}>/index/images/bao02.png" width="223" height="220"></a></li>
+        <li><a href="/index.php/home/index/zhubao_xq"><img src="<{$templets}>/index/images/bao02.png" width="223" height="220"></a></li>
+        <li><a href="/index.php/home/index/zhubao_xq"><img src="<{$templets}>/index/images/bao03.png" width="225" height="207"></a></li>
+    </ul>
+</div>
+<div class="xq01">
+    <div class="tuijian"><img src="<{$templets}>/index/images/tuijian.png" width="224" height="28"></div>
+    <div class="tuijian_text">当思念无法言表，当爱意无法诉说，不如让proty来帮你，我的爱需要私人定制。</div>
+    <div class="zhubao"><a href="/index.php/home/index/zhubao_xq"><img src="<{$templets}>/index/images/zhubao.png" width="1177" height="480"></a></div>
+</div>
+<div class="xq01">
+    <div class="tuijian"><img src="<{$templets}>/index/images/shaitu.png" width="161" height="28"></div>
+    <div class="tuijian_text">只需秀图，就可以赢大奖，你说值不值，你敢秀，我就敢送。</div>
+    <div class="dianji"><a href="<{U('home/index/daoru06')}>">点击查看</a></div>
+</div>
+
+
 <{include file="common_foot.html"}>
