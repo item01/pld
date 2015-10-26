@@ -143,7 +143,7 @@ class indexController extends Controller{
 	public function daoru05(){
 		$this->display("daoru05.html");
 	}
-	//经典分类
+	//经典1
 	public function jingdian(){
 		$this->display("jingdian.html");
 	}
