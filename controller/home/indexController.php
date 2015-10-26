@@ -267,16 +267,7 @@ class indexController extends Controller{
 	public function yuanwang_queren(){
 		$this->display("yuanwang_queren.html");
 	}
-	//风采页面方法
-	public function get_fc($tid=""){
-		$arr=$this->M->get_all("SELECT * from `lx_fengcai` where `tid` =$tid");
-		foreach ($arr as $key => &$e) {
-			$e['miaoshu']=htmlspecialchars_decode($e['miaoshu']);  //把内容转化成html格式	
-		}
-		
-		$this->assign("index_list",$arr);
-		
-	}
+
 
 	//视频专区页面
 	public function video($id="",$tid="",$page=1){
