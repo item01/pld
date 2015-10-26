@@ -18,7 +18,7 @@ define('CONTROLLER_PATH', ROOT_PATH.'/controller');
 define('MODEL_PATH', ROOT_PATH.'/model');
 define('VIEW_PATH', ROOT_PATH.'/view');
 define('LOG_PATH', ROOT_PATH.'/error/');
-define('TEMPLETS',$url.'/view/templets/');
+define('TEMPLETS',$url.'/view/templets');
 define('SYS_COMMON_PATH', SYSTEM_PATH.'/common');
 define('URL', $url);
 
