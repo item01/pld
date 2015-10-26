@@ -1,17 +1,9 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="description" content="Free Web tutorials">
-<meta name="keywords" content="HTML,CSS,JavaScript">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>普罗蒂</title>
-<link href="css/base.css" rel="stylesheet" type="text/css">
-<link href="css/vip.css" rel="stylesheet" type="text/css">
-<link href="css/dingdan.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/gr.js"></script>
-<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<!--header-->
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/vip.css" rel="stylesheet" type="text/css">
+<link href="<{$templets}>/index/css/dingdan.css" rel="stylesheet" type="text/css">
+
+<script src="<{$templets}>/index/Scripts/swfobject_modified.js" type="text/javascript"></script>
 <script>
 $(function(){
 	$(".yi01").hover(function(){
@@ -33,170 +25,15 @@ $(function(){
 	})
 </script>
 </head>
+<!--left-->
+<{include file="common_head2.html"}>
 
-<body style="background-image:url(images/gr_back.png);">
-<div class="header" style="position:static;">
-	<div class="header_content" style="overflow:visible;">
-    	<div class="vip01">尊敬的    小花，您好&nbsp;&nbsp;|<a href="">退出</a></div>
-        <div class="vip02">
-        	<div class="gouwu">购物车<span>2</span>件</div>
-            <div class="jairu">
-            	<div class="zuijin">最近加入的宝贝：</div>
-                <ul class="bao">
-                	<li>
-                    	<div class="bao_left"><a href="zhubao_xq.html"><img src="images/chanpin05.png"></a></div>
-                        <div class="bao_right">
-                        	<div class="bao_name"><a href="zhubao_xq.html">精美吊坠精美吊坠精美吊坠</a></div>
-                            <div class="bao_name01">款式类型：经典</div>
-                        </div>
-                        <div class="bao_right01">
-                        	<div class="bao_jiage">￥<span>39999.90</span></div>
-                            <div class="bao_jiage01"><a href="">删除</a></div>
-                        </div>
-                    </li>
-                    <li>
-                    	<div class="bao_left"><a href="zhubao_xq.html"><img src="images/chanpin05.png"></a></div>
-                        <div class="bao_right">
-                        	<div class="bao_name"><a href="zhubao_xq.html">精美吊坠精美吊坠精美吊坠</a></div>
-                            <div class="bao_name01">款式类型：经典</div>
-                        </div>
-                        <div class="bao_right01">
-                        	<div class="bao_jiage">￥<span>39999.90</span></div>
-                            <div class="bao_jiage01"><a href="">删除</a></div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="chakan"><a href="yuanwang.html">查看我的愿望中心</a></div>
-            </div>
-        </div>
-        <div class="vip03">
-        	<div class="gouwu">我的 PROTY</div>
-            <ul class="me">
-            	<li><a href="vip.html">用户中心</a></li>
-                <li><a href="yuanwang.html">我的愿望中心</a></li>
-                <li><a href="vip_dingdan.html">我的订单</a></li>
-            </ul>
-        </div>
-        <div class="vip04">400-155-3023</div>
-        <div style="clear:both;"></div>
-    </div>
-</div>
-<div class="logo" style="position:static;margin-top:38px;"><a href="index.html"><img src="images/logo.png"></a></div>
-<div class="nav_box" style="position:static;margin-top:18px;">
-    <ul class="nav">
-        <li class="yiyiyi">
-            <a href="daoru01.html" class="yi01">俱乐部</a>
-            <ul class="erjinav">
-                <li><a href="julebu.html">服务方式</a></li>
-                <li><a href="julebu.html">服务内容</a></li>
-                <li><a href="julebu.html">会员优势</a></li>
-            </ul>
-        </li>
-        <li class="yiyiyi">
-        	<a href="daoru02.html" class="yi01">星座珠宝</a>
-            <ul class="erjinav">
-            </ul>
-        </li>
-        <li class="yiyiyi">
-        	<a href="daoru03.html" class="yi01">珠宝世界</a>
-            <ul class="erjinav">
-                    	<li><a href="zhubao.html">项链</a></li>
-                        <li><a href="zhubao.html">吊坠</a></li>
-                        <li><a href="zhubao.html">戒指</a></li>
-                        <li><a href="zhubao.html">耳环</a></li>
-                        <li><a href="zhubao.html">手链</a></li>
-                        <li><a href="zhubao.html">腕表</a></li>
-                        <li><a href="zhubao.html">对戒</a></li>
-                        <li><a href="zhubao.html">男士珠宝</a></li>
-                    </ul>
-        </li>
-        <li class="yiyiyi">
-        	<a href="daoru04.html" class="yi01">高级定制系列</a>
-            <ul class="erjinav">
-                    <li><a href="dingzhi_liulan.html">PROTY海盗梦系列</a></li>
-                    <li><a href="dingzhi_liulan.html">PROTY帝王花系列</a></li>
-                    <li><a href="dingzhi_liulan.html">PROTY风暴系列</a></li>
-                    <li><a href="dingzhi_liulan.html">PROTY大洋之花系列</a></li>
-                    <li><a href="dingzhi_liulan.html">PROTY八爪鱼系列</a></li>
-                    <li><a href="dingzhi_liulan.html">PROTY大卫之印系列</a></li>
-                    <li><a href="dingzhi_liulan.html">PROTY海盗皇后系列</a></li>
-                    <li><a href="dingzhi_liulan.html">PROTY美人鱼系列</a></li>
-            </ul>
-        </li>
-        <li class="yiyiyi">
-        	<a href="daoru05.html" class="yi01">经典珠宝</a>
-            <ul class="erjinav">
-                <li><a href="jingdian_liulan.html">PROTY帝王花系列</a></li>
-                <li><a href="jingdian_liulan.html">PROTY海盗梦系列</a></li>
-                <li><a href="jingdian_liulan.html">PROTY海盗爵士系列</a></li>
-                <li><a href="jingdian_liulan.html">PROTY海洋之心系列</a></li>
-                <li><a href="jingdian_liulan.html">PROTY王者之风系列</a></li>
-                <li><a href="jingdian_liulan.html">PROTY海盗之旅系列</a></li>
-                <li><a href="jingdian_liulan.html">PROTY封印系列</a></li>
-                <li><a href="jingdian_liulan.html">PROTY黄钻系列</a></li>
-    		</ul>
-        </li>
-        <li class="yiyiyi">
-        	<a href="daoru06.html" class="yi01">PROTY之星</a>
-            <ul class="erjinav">
-                <li><a href="PROTY_xing.html">PROTY之星</a></li>
-                <li><a href="PROTY_shaitu.html">全部晒图</a></li>
-                <li><a href="PROTY_about.html">关于PTOTY之星</a></li>
-        	</ul>
-        </li>
-        <li class="yiyiyi">
-        	<a href="daoru07.html" class="yi01">品牌故事</a>
-            <ul class="erjinav">
-                    <li><a href="pinpai.html">品牌故事</a></li>
-                    <li><a href="pinpai.html">产品故事</a></li>
-                    <li><a href="pinpai.html">海上帝王花</a></li>
-            </ul>
-        </li>
-        <li class="yiyiyi">
-        	<a href="daoru08.html" class="yi01">网络精品店</a>
-            <ul class="erjinav">
-            </ul>
-        </li>
-    </ul>
-    <div style="clear:both;"></div>
-</div>
+<!--left-->
+<{include file="common_head3.html"}>
 <div class="about_top"><img src="images/dd01.png"></div>
 <div class="vip_content">
-	<div class="vip_left">
-    	<div class="vip_top"><img src="images/vip_left.png"></div>
-        <ul class="left_nav">
-        	<li>
-            	<div class="yiji">交易管理</div>
-                <ul class="list_menu">
-                	<li><a href="vip_dingdan.html">我的订单</a></li>
-                    <li><a href="vip_shoucang.html">我的收藏</a></li>
-                    <li><a href="vip_jifen.html">我的积分</a></li>
-                    <li><a href="vip_shaidan.html">我的晒单</a></li>
-                    <li><a href="vip_yuyue.html">我的预约</a></li>
-                </ul>
-            </li>
-            <li>
-            	<div class="yiji">会员中心</div>
-                <ul class="list_menu">
-                	<li><a href="vip_GRziliao.html">个人资料</a></li>
-                    <li><a href="vip_anquan.html">帐号安全</a></li>
-                    <li><a href="" class="ccc01">修改密码</a></li>
-                    <li><a href="vip_ziliao.html">会员资料</a></li>
-                    <li><a href="vip_dizhi.html">我的地址</a></li>
-                    <li><a href="vip_guanzhu.html">我的关注</a></li>
-                    <li><a href="vip_toupiao.html">我的投票</a></li>
-                </ul>
-            </li>
-            <li>
-            	<div class="yiji">服务中心</div>
-                <ul class="list_menu">
-                	<li><a href="vip_tuikuan.html">退款申请</a></li>
-                    <li><a href="vip_fanxiu.html">返修/换货</a></li>
-                    <li><a href="vip_tousu.html">投拆建议</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    <!--left-->
+    <{include file="common_left.html"}>
   <div class="vip_right">
     	<div class="com_dan">修改密码</div>
         <ul class="mima_box">

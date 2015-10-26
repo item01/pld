@@ -144,7 +144,7 @@ public function get_post_list($page=1,$type_id=0,$status=0,$uid=0,$key="",$type=
 	public function w_list($table="",$sp="",$img_type="",$tid="",$table2="",$item_id="",$page=1){
 		
 		$str="1=1";//where条件
-		$ord="`id` desc";//排序
+		$ord="`id` asc";//排序
 		$pn=20;//每一页多少条记录
 		$page=trim($page);
 
@@ -317,7 +317,10 @@ public function get_post_list($page=1,$type_id=0,$status=0,$uid=0,$key="",$type=
 					case '4':
 						$new_arr[$i][0]='<button class="" id="file_upload'.$k.'"><span>上传</span></button><label>预览：</label><img id="img'.$k.'" style="hight:64px;width:64px" src=""><input type="hidden" id="img_url'.$k.'" name="'.$e['Field'].'" value="">';
 						$k++;
-						break;	
+						break;
+					case '5':
+						$new_arr[$i][0]='<input type="password" name="'.$e['Field'].'" class="form-control1">';
+						break;
 					case '8':
 
 						$new_arr[$i][0]='<input type="text" name="'.$e['Field'].'" data-field="datetime" data-format="yyyy-MM-dd hh:mm:ss"  class="form-control1" readonly>';
@@ -1096,7 +1099,7 @@ public function detailed_list($id=""){
      $result = $rest->sendTemplateSMS($to,$datas,$tempId);
      if($result == NULL ) {
          echo "result error!";
-         break;
+         //break;
      }
      if($result->statusCode!=0) {
          echo "error code :" . $result->statusCode . "<br>";
