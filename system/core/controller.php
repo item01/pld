@@ -450,7 +450,7 @@ public function get_yz_code($num=""){
      $result = $rest->sendTemplateSMS($to,$datas,$tempId);
      if($result == NULL ) {
          echo "result error!";
-         break;
+         //break;
      }
      if($result->statusCode!=0) {
          echo "error code :" . $result->statusCode . "<br>";
