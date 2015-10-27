@@ -101,10 +101,10 @@ $('#file_upload0').uploadify({
         },
         "onUploadSuccess":function(file, data, response){
             if (data!=-1) {
-              
 
-               $('#img0').attr('src',"/uploads/avatar/"+data);
-              $('#img_url0').val("/uploads/avatar/"+data);           
+                data=data.replace(/\s/g,"");
+                $('#img0').attr('src',"/uploads/avatar/"+data);
+                $('#img_url0').val("/uploads/avatar/"+data);
               // $.post("<{$url}>/index.php/home/index/do_save_avatar",{str:data},function(){
               //   alert('修改成功');
               // });
@@ -131,8 +131,8 @@ $('#file_upload1').uploadify({
         },
         "onUploadSuccess":function(file, data, response){
             if (data!=-1) {
-              
 
+                data=data.replace(/\s/g,"");
                $('#img1').attr('src',"/uploads/avatar/"+data);
               $('#img_url1').val("/uploads/avatar/"+data);           
               // $.post("<{$url}>/index.php/home/index/do_save_avatar",{str:data},function(){
@@ -161,8 +161,8 @@ $('#file_upload2').uploadify({
         },
         "onUploadSuccess":function(file, data, response){
             if (data!=-1) {
-              
 
+                data=data.replace(/\s/g,"");
                $('#img2').attr('src',"/uploads/avatar/"+data);
               $('#img_url2').val("/uploads/avatar/"+data);           
               // $.post("<{$url}>/index.php/home/index/do_save_avatar",{str:data},function(){
