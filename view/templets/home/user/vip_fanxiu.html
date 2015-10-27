@@ -3,6 +3,7 @@
 <link href="<{$templets}>/index/css/vip.css" rel="stylesheet" type="text/css">
 <link href="<{$templets}>/index/css/dingdan.css" rel="stylesheet" type="text/css">
 <link href="<{$templets}>/index/css/ziliao.css" rel="stylesheet" type="text/css">
+<link href="<{$templets}>/index/css/shaidan.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="js/city.js"></script>
 <script>
@@ -41,27 +42,37 @@ $(function(){
         	<div class="com_dan_left">返修/换货</div>
         </div>
         <div class="z_shenqon">申请返修</div>
+      <form action="backchange" method="post">
         <div class="fanxxx01">
         	<div class="fanxxx01_left">订单编号:</div>
-            <div class="fanxxx01_right"><input type="text" class="hchch"><a href="">查询</a></div>
+            <div class="fanxxx01_right"><input type="text" class="hchch" name="ordernum"><a href="vip_dingdan">查询</a></div>
         </div>
         <div class="fanxxx01">
         	<div class="fanxxx01_left">返修类型:</div>
-            <div class="fanxxx01_right"><label><input type="radio" name="a">返修</label><label><input type="radio" name="a">换货</label></div>
+            <div class="fanxxx01_right"><label><input type="radio" name="backtype" value="返修">返修</label><label><input type="radio" name="backtype" value="换货">换货</label></div>
         </div>
         <div class="fanxxx01">
         	<div class="fanxxx01_left">问题描述:</div>
-            <div class="fanxxx01_right"><textarea></textarea></div>
+            <div class="fanxxx01_right"><textarea name="problem"></textarea></div>
         </div>
         <div class="fanxxx01">
         	<div class="fanxxx01_left">图片信息:</div>
             <div class="fanxxx01_right">
-            	<input type="file">
+            <!--	<input type="file">-->
+
+                <ul class="baaaa">
+                    <li><img src="<{$templets}>/index/images/xiazai.png"></li>
+                    <li><img src="<{$templets}>/index/images/xiazai.png"></li>
+                    <li><img src="<{$templets}>/index/images/xiazai.png"></li>
+                    <li><img src="<{$templets}>/index/images/xiazai.png"></li>
+
+                </ul>
+
                 <div class="jiejue">为了帮助我们更好的解决问题，请您上传图片<br><span>最多可上传5张图片，每张图片大小不超过5M，支持bmp,gif,jpg,png,jpeg格式文件</span></div>
             </div>
         </div>
         <div class="tititi"><input type="submit" value="提交申请"></div>
-        
+      </form>
         
         
         
@@ -73,12 +84,14 @@ $(function(){
             <td width="20%">申请时间</td>
             <td width="20%">状态</td>
           </tr>
+            <{section name=v loop=$list}>
           <tr>
-            <td>6783546556768679</td>
-            <td>商品名称</td>
-            <td>2015-2-14</td>
-            <td>已退回</td>
+            <td><{$list[v].ordernum}></td>
+            <td><{$list[v].id}></td>
+            <td><{$list[v].c_time|date_format:'%Y-%m-%d'}></td>
+            <td><{if $list[v].backstatus == 1}>yi<{elseif $list[v].backstatus eq 2}>er<{elseif $list[v].backstatus eq 3}>san<{else $list[v].backstatus eq 4}>si<{/if}></td>
           </tr>
+            <{/section}>
         </table>
   </div>
 </div>

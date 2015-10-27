@@ -62,33 +62,67 @@ $(function(){
         <div class="com_dan">
         	<div class="com_dan_left">退款申请</div>
         </div>
+      <form action="refund" method="post">
         <ul class="mima_box">
+            <li>
+                <div class="mima_left" style="width:200px;"><span>*</span>  订单编号：</div>
+                <div class="mima_right"><input type="text" name="ordernum"></div>
+            </li>
         	<li>
             	<div class="mima_left" style="width:200px;"><span>*</span>   开户人姓名：</div>
-                <div class="mima_right"><input type="text"></div>
+                <div class="mima_right"><input type="text" name="u_name"></div>
             </li>
             <li>
             	<div class="mima_left" style="width:200px;"><span>*</span>   开户行名称：</div>
-                <div class="mima_right"><input type="text"></div>
+                <div class="mima_right"><input type="text" name="bank"></div>
             </li>
             <li>
             	<div class="mima_left" style="width:200px;"><span>*</span>   开户银行帐号：</div>
-                <div class="mima_right"><input type="text"></div>
+                <div class="mima_right"><input type="text" name="bankcard"></div>
             </li>
             <li>
             	<div class="mima_left" style="width:200px;"><span>*</span>   金额：</div>
-                <div class="mima_right"><input type="text"></div>
+                <div class="mima_right"><input type="text" name="bmoney"></div>
             </li>
             <li>
             	<div class="mima_left" style="width:200px;"><span>*</span>   退款原因：</div>
-                <div class="mima_right"><textarea style="width:400px;height:100px;"></textarea></div>
+                <div class="mima_right"><textarea style="width:400px;height:100px;" name="breason"></textarea></div>
             </li>
         </ul>
-        <div class="chengnuo"><label><input type="checkbox">承诺遵守PROTY退款协议</label></div>
-        <div class="tijiao" style="margin-left:225px;"><input type="submit" value="提交"></div>
-        
+
+        <div class="chengnuo"><label><input id="chengnuo" type="checkbox">承诺遵守PROTY退款协议</label></div>
+        <div class="tijiao" style="margin-left:225px;"><input id="chengnuo1" disabled type="submit" value="提交"></div>
+      </form>
   </div>
 </div>
+<script>
+$(function(){
+        $("#chengnuo").click(function(){
+            if ($("#chengnuo").is(":checked")){
+                $("#chengnuo1").attr("disabled",false)
+            }else{
+                $("#chengnuo1").attr("disabled","disabled")
+            };
+        })
+
+        $("#chengnuo1").click(function(){
+            alert();
+//            if ($("#chengnuo").is(":checked")){
+//                $("#chengnuo1").attr("disabled",false)
+//            }else{
+//                $("#chengnuo1").attr("disabled","disabled")
+//            };
+
+
+        });
+
+
+
+
+});
+
+
+</script>
 <!--footer-->
 <{include file="common_foot.html"}>
 

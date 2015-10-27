@@ -27,7 +27,7 @@ class userController extends Controller{
         $this->display("vip_shoucang.html");
     }
     public function vip_jifen(){
-        //$this->assign ( "p", 0 );
+        $this->assign ( "p", a );
         $this->display("vip_jifen.html");
     }
     public function vip_shaidan(){
@@ -61,9 +61,12 @@ class userController extends Controller{
     public function tuikaun(){
         $this->display("tuikuan.html");
     }
+
     public function vip_fanxiu(){
+        $this->get_fanxiu();
         $this->display("vip_fanxiu.html");
     }
+
     public function vip_tousu(){
         $this->display("vip_tousu.html");
     }
@@ -71,6 +74,52 @@ class userController extends Controller{
         $this->display("vip_tuikuan.html");
     }
 
+
+    public function tousu()
+    {
+        $data = $_POST;
+        $data['c_time'] = time();
+        $data['uid'] = 3;
+        $data['status'] = 1;
+        $arr = $this->M->insert('lx_suggest', $data);
+        if ($arr) {
+            R("home/user/index");
+        }
+    }
+    public function backchange(){
+        $data = $_POST;
+        $data['c_time']=time();
+        $data['uid']=3;
+        $data['status']=1;
+        $data['backstatus']=1;
+        $arr=$this->M->insert('lx_backchange',$data);
+        if($arr){
+            R("home/user/index");
+        }
+    }
+    public function refund(){
+        $data = $_POST;
+        $data['c_time']=time();
+        $data['uid']=3;
+        $data['status']=1;
+
+        $arr=$this->M->insert('lx_refund',$data);
+        if($arr){
+            R("home/user/index");
+        }
+    }
+
+
+
+
+
+
+    public function get_fanxiu(){
+
+        $arr = $this->M->get_all ( "SELECT * from `lx_backchange` where `uid`=3" );
+        $this->assign ( "list", $arr );
+
+    }
 
 
 
