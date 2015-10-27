@@ -43,19 +43,20 @@ $(function(){
         </div>
         <div class="tousu_hezi">
         	<div class="tousu_left">
+                <form action="tousu" method="post">
                 <ul class="mima_box">
                     <li>
                         <div class="mima_left" style="width:60px;">标题：</div>
-                        <div class="mima_right"><input type="text"></div>
+                        <div class="mima_right"><input type="text" name="stitle"></div>
                     </li>
                     <li>
                         <div class="mima_left" style="width:60px;">内容：</div>
-                        <div class="mima_right"><textarea style="width:330px;height:100px;"></textarea></div>
+                        <div class="mima_right"><textarea style="width:330px;height:100px;" name="scontent"></textarea></div>
                     </li>
                 </ul>
                 <div class="chengnuo" style="margin-left:70px;color:#999;">* 请补齐联系信息以便我们能及时与您沟通解决</div>
                 <div class="tijiao" style="margin-left:70px;"><input type="submit" value="提交"></div>
-            </div>
+             </form>  </div>
             <div class="tousu_right">
             	“留言与投诉”的步骤：<br>
                 1、点击帮助中心，查找相关问题，并阅读相应解答内容<br>
