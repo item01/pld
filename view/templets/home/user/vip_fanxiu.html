@@ -71,7 +71,7 @@ $(function(){
                 <div class="jiejue">为了帮助我们更好的解决问题，请您上传图片<br><span>最多可上传5张图片，每张图片大小不超过5M，支持bmp,gif,jpg,png,jpeg格式文件</span></div>
             </div>
         </div>
-        <div class="tititi"><input type="submit" value="提交申请"></div>
+        <div class="tititi"><input type="submit" id="chengnuo1" value="提交申请"></div>
       </form>
         
         
@@ -95,7 +95,20 @@ $(function(){
         </table>
   </div>
 </div>
+<script>
+    $("#chengnuo1").click(function(){
+    var ordernum=$('input[name="ordernum"]').val();
+    var backtype=$('input[name="backtype"]').val();
+    var problem=$('textarea[name="problem"]').val();
+    if (ordernum=="") {alert("订单不能为空");return false};
+    if (backtype=="") {alert("类型不能为空");return false};
+    if (problem=="") {alert("退款原因不能为空");return false};
+
+
+});
+</script>
 <!--footer-->
+
 <{include file="common_foot.html"}>
 
 
