@@ -509,7 +509,7 @@ class indexController extends Controller
 			}
 			$this->display();
 		}
-	/*退出登录*/
+	//退出登录
 	public function logout(){
 		$model=D('User');
 		$model->logout();
