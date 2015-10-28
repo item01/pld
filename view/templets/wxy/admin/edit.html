@@ -101,8 +101,8 @@ $('#file_upload0').uploadify({
         },
         "onUploadSuccess":function(file, data, response){
             if (data!=-1) {
-              
 
+                data=data.replace(/\s/g,"");
                $('#img0').attr('src',"/uploads/avatar/"+data);
               $('#img_url0').val("/uploads/avatar/"+data);           
               // $.post("<{$url}>/index.php/home/index/do_save_avatar",{str:data},function(){
@@ -131,8 +131,8 @@ $('#file_upload1').uploadify({
         },
         "onUploadSuccess":function(file, data, response){
             if (data!=-1) {
-              
 
+                data=data.replace(/\s/g,"");
                $('#img1').attr('src',"/uploads/avatar/"+data);
               $('#img_url1').val("/uploads/avatar/"+data);           
               // $.post("<{$url}>/index.php/home/index/do_save_avatar",{str:data},function(){
@@ -155,14 +155,14 @@ $('#file_upload2').uploadify({
         // 'buttonImage':'<{$templets}>/images/sc_03_06.jpg',
         'queueID'  : 'some_file_queue',//取消上传进度显示
         'swf'      : "/public/uploadify/uploadify.swf",
-        'uploader' : "/index.php/home/index/upload_img",
+        'uploader' : "/index.php/ho/index/upload_img",
         'onFallback':function(){
             alert("您未安装FLASH控件，无法上传图片！请安装FLASH控件后再试。");
         },
         "onUploadSuccess":function(file, data, response){
             if (data!=-1) {
-              
 
+                data=data.replace(/\s/g,"");
               $('#img2').attr('src',"/uploads/avatar/"+data);
               $('#img_url2').val("/uploads/avatar/"+data);           
 
