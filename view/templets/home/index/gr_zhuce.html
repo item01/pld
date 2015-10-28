@@ -138,47 +138,135 @@ $(function(){
             <li><img src="<{$templets}>/index/images/shouji02.png" width="71" height="16"></li>
             <li><img src="<{$templets}>/index/images/shouji03.png" width="90" height="16"></li>
         </ul>
+        <form id="form3">
         <div class="shuru01" style="display:block;">
-        	<div class="haoma"><input type="text"><div class="dwlo">手机</div></div>
-            <div class="haoma"><input type="text"><div class="dwlo">会员名</div></div>
-            <div class="haoma"><input type="password"><div class="dwlo">设置密码</div></div>
-            <div class="haoma"><input type="password"><div class="dwlo">确认密码</div></div>
-            <div class="haoma"><input type="text" style="width:48px;"><div class="dwlo">验证码</div><a href="">免费获取手机验证码</a></div>
+        	<div class="haoma"><input type="text" name="mobile"><div class="dwlo">手机</div></div>
+            <div class="haoma"><input type="text" name="u_name"><div class="dwlo">会员名</div></div>
+            <div class="haoma"><input type="password" name="Password"><div class="dwlo">设置密码</div></div>
+            <div class="haoma"><input type="password" name="sPassword"><div class="dwlo">确认密码</div></div>
+            <div class="haoma"><input type="text" style="width:48px;" name="p_code"><div class="dwlo">验证码</div><a href="">免费获取手机验证码</a></div>
             <div class="yan">
-            	<input type="text">
-                <div class="dwlo">验证码</div>
-                <img src="<{$templets}>/index/images/yanzheng.png">
+                <input type="text" style="width:48px;" name="code"><div class="dwlo">验证码</div><img style="width:100px;height:22px" onclick="javascript:this.src='/home/reg/get_yz_code/num/'+Math.random()" src="/home/reg/get_yz_code" alt="">
                 <a href="">换一张</a>
             </div>
-            <div class="ti01"><input type="submit" value="注册"></div>
+            <input type="reset" id="dffv" style="display:none">
+            <div class="ti01"><input type="button" value="注册" id="w_vv"></div>
         </div>
+        </form>
+        <script>
+            $(function(){
+                $("#w_vv").click(function(){
+                var mobile=$('input[name="mobile"]').val();
+                var u_name=$('input[name="u_name"]').val();
+                var Password=$('input[name="Password"]').val();
+                var sPassword=$('input[name="sPassword"]').val();
+                if (mobile=="") {alert("联系电话不能为空");return false};
+                if (u_name=="") {alert("会员名不能为空");return false};
+                if (Password=="") {alert("密码不能为空");return false};
+                if (sPassword!=Password) {alert("确认密码与密码不相同！");return false};
+                if (!mobile.match(/^(((1[0-9][0-9]{1})|159|153)+\d{8})$/)) {
+                        alert("手机号码格式不正确！");
+                        $('select[name="tel"]').focus();
+                        return false;
+                }
+                var data=$("#form3").serialize();
+                    //alert(data);return false;
+                $.post("/index.php/home/index/add_user/",data,function(sb){
+                    if (sb>0) {alert("注册成功");
+                        $("#dffv").click();}
+                    else{
+                        alert("注册失败");alert(sb);
+                    }
+                })
+            })
+            })
+        </script>
+        <form id="form4">
         <div class="shuru01">
-        	<div class="haoma"><input type="text"><div class="dwlo">邮箱</div></div>
-            <div class="haoma"><input type="text"><div class="dwlo">会员名</div></div>
-            <div class="haoma"><input type="password"><div class="dwlo">设置密码</div></div>
-            <div class="haoma"><input type="password"><div class="dwlo">确认密码</div></div>
-            
+            <div class="haoma"><input type="text" name="email"><div class="dwlo">邮箱</div></div>
+            <div class="haoma"><input type="text" id="un2" name="u_name"><div class="dwlo">会员名</div></div>
+            <div class="haoma"><input type="password" id="pw2" name="Password"><div class="dwlo">设置密码</div></div>
+            <div class="haoma"><input type="password" id="spw2" name="sPassword"><div class="dwlo">确认密码</div></div>
             <div class="yan">
-            	<input type="text" >
-                <div class="dwlo">验证码</div>
-                <img src="<{$templets}>/index/images/yanzheng.png">
+                <input type="text" style="width:48px;" name="code"><div class="dwlo">验证码</div><img style="width:100px;height:22px" onclick="javascript:this.src='/home/reg/get_yz_code/num/'+Math.random()" src="/home/reg/get_yz_code" alt="">
+
                 <a href="">换一张</a>
             </div>
-            <div class="ti01"><input type="submit" value="注册"></div>
+            <input type="reset" id="dffd" style="display:none">
+            <div class="ti01"><input type="button" value="注册" id="w_mm"></div>
         </div>
+        </form>
+        <script>
+            $(function(){
+                $("#w_mm").click(function(){
+                    var email=$('input[name="email"]').val();
+                    var un2=$('input[id="un2"]').val();
+                   //alert(un2);
+                    var Pw2=$('input[id="Pw2"]').val();
+                    var sPw2=$('input[id="sPw2"]').val();
+                    if (email=="") {alert("邮箱不能为空");return false};
+                    if (un2=="") {alert("会员名不能为空");return false};
+                    if (Pw2=="") {alert("密码不能为空");return false};
+                    if (sPw2!=Pw2) {alert("确认密码与密码不相同！");return false};
+                    if (!email.match(/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/)) {
+                        alert("邮箱格式不正确！");
+                        $('select[name="email"]').focus();
+                        return false;
+                    }
+                    var data=$("#form4").serialize();
+                    //alert(data);return false;
+                    $.post("/index.php/home/index/add_user/",data,function(sb){
+                        if (sb>0) {alert("注册成功");
+                            $("#dffd").click();}
+                        else{
+                            alert("注册失败");alert(sb);
+                        }
+                    })
+                })
+            })
+        </script>
+        <form id="form5">
         <div class="shuru01">
-        	<div class="haoma"><input type="text"><div class="dwlo">会员卡号</div></div>
-            <div class="haoma"><input type="text" style="width:84px;"><div class="dwlo">手机</div><a href="">获取开卡密码</a></div>
-        	<div class="haoma"><input type="password" ><div class="dwlo">输入密码</div></div>
+        	<div class="haoma"><input type="text" name="cardnum"><div class="dwlo">会员卡号</div></div>
+            <div class="haoma"><input type="text" style="width:84px;" id="mo2" name="mobile"><div class="dwlo">手机</div>
+                <a href="">获取开卡密码</a></div>
+        	<div class="haoma"><input type="password" id="pc2" name="p_code"><div class="dwlo">输入密码</div></div>
             <div class="yan">
-            	<input type="text">
-                <div class="dwlo">验证码</div>
-                <img src="<{$templets}>/index/images/yanzheng.png">
+                <input type="text" style="width:48px;" name="code"><div class="dwlo">验证码</div><img style="width:100px;height:22px" onclick="javascript:this.src='/home/reg/get_yz_code/num/'+Math.random()" src="/home/reg/get_yz_code" alt="">
                 <a href="">换一张</a>
             </div>
-            <div class="ti01"><input type="submit" value="注册"></div>
+            <input type="reset" id="dffn" style="display:none">
+            <div class="ti01"><input type="button" value="注册" id="www"></div>
         </div>
+        </form>
+        <script>
+            $(function(){
+                $("#www").click(function(){
+                    var cardnum=$('input[name="cardnum"]').val();
+                    var mo2=$('input[id="mo2"]').val();
+                    var pc2=$('input[id="pc2"]').val();
+                    if (mo2=="") {alert("手机号不能为空");return false};
+                    if (cardnum=="") {alert("卡号不能为空");return false};
+                    if (pc2=="") {alert("密码不能为空");return false};
+                    if (!mo2.match(/^(((1[0-9][0-9]{1})|159|153)+\d{8})$/)) {
+                        alert("手机号码格式不正确！");
+                        $('select[name="mo2"]').focus();
+                        return false;
+                    }
+                    var data=$("#form5").serialize();
+                    //alert(data);return false;
+                    $.post("/index.php/home/index/add_user/",data,function(sb){
+                        if (sb>0) {alert("注册成功");
+                            $("#dffn").click();}
+                        else{
+                            alert("注册失败");alert(sb);
+                        }
+                    })
+                })
+            })
+        </script>
     </div>
 </div>
+
 <!--footer-->
 <{include file="common_foot.html"}>
