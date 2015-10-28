@@ -483,7 +483,7 @@ class indexController extends Controller
 		echo $this->M->insert_id();
 
 	}
-	//登录
+	/*登录*/
 	public function denglu(){
 		//$data=$_post;
 			if(IS_POST){
