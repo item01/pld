@@ -1,0 +1,111 @@
+<!--header-->
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/vip.css" rel="stylesheet" type="text/css">
+<link href="<{$templets}>/index/css/dingdan.css" rel="stylesheet" type="text/css">
+<link href="<{$templets}>/index/css/ziliao.css" rel="stylesheet" type="text/css">
+<link href="<{$templets}>/index/css/shaidan.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="<{$templets}>/index/js/gr.js"></script>
+<script type="text/javascript" src="<{$templets}>/index/js/city.js"></script>
+<script>
+    $(function(){
+        $(".yi01").hover(function(){
+            var x=$(".yi01").index(this);
+            $(".erjinav").hide();
+            $(".erjinav").eq(x).show();
+        },function(){
+
+        })
+    })
+</script>
+<script>
+    $(function(){
+        $(".erjinav").hover(function(){
+
+        },function(){
+            $(this).hide();
+        })
+    })
+</script>
+
+</head>
+<!--left-->
+<{include file="common_head2.html"}>
+
+<!--left-->
+<{include file="common_head3.html"}>
+<div class="about_top"><img src="images/dd01.png"></div>
+
+<div class="vip_content">
+    <!--left-->
+    <{include file="common_left.html"}>
+    <div class="vip_right">
+        <div class="com_dan">
+            <div class="com_dan_left">我的地址</div>
+        </div>
+        <form action="/home/user/dealaddralter/id/<{$id}>" method="post">
+            <ul class="mima_box">
+                <li>
+                    <div class="mima_left"><span>*</span>   收货人：</div>
+                    <div class="mima_right"><input type="text" name="consignee"></div>
+                </li>
+                <li>
+                    <div class="mima_left"><span>*</span>   手机：</div>
+                    <div class="mima_right"><input type="text" name="phone"></div>
+                </li>
+                <li>
+                    <div class="mima_left"><span>*</span>   地址：</div>
+                    <div class="mima_right">
+                        <div class="zeng" style="margin-top:5px;">
+                            <select id="province" runat="server" name="province"></select>
+                            <select id="city" runat="server" name="city"> </select>
+                            <select id="county" runat="server" name="county"></select>
+                            <script type="text/javascript">
+                                setup()
+                            </script>
+                        </div>
+                        <div class="wenben"><textarea placeholder="街道名称/详细住址" name="address"></textarea></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="mima_left"><span>*</span>   邮编：</div>
+                    <div class="mima_right"><input type="text" name="zipcode"></div>
+                </li>
+            </ul>
+            <ul class="qubc">
+                <li><input type="submit" id="chengnuo1" value="保存"></li>
+                <!--<li><input type="button" value="取消"></li>-->
+                <li style="width:200px;margin-top:5px;"><label><input type="checkbox" style="width:20px;" name="addrstatus" value="1">设置为默认地址</label></li>
+            </ul>
+        </form>
+    </div>
+</div>
+<!--footer-->
+<{include file="common_foot.html"}>
+
+
+<script>
+    $("#chengnuo1").click(function(){
+        var consignee=$('input[name="consignee"]').val();
+        var phone=$('input[name="phone"]').val();
+        var province=$('input[name="province"]').val();
+        var address=$('textarea[name="address"]').val();
+        var zipcode=$('input[name="zipcode"]').val();
+        if (consignee=="") {alert("收货人不能为空");return false};
+        if (phone=="") {alert("手机不能为空");return false};
+        if (province=="") {alert("省份不能为空");return false};
+        if (address=="") {alert("详细地址不能为空");return false};
+        if (zipcode=="") {alert("邮箱不能为空");return false};
+        if (!phone.match(/^(((1[0-9][0-9]{1})|159|153)+\d{8})$/)) {
+            alert("手机号码格式不正确！");
+            $('input[name="phone"]').focus();
+            return false;
+        }
+        if (!zipcode.match(/^[1-9]\d{5}$/)) {
+            alert("邮编格式不正确！");
+            $('input[name="zipcode"]').focus();
+            return false;
+        }
+        if (consignee.length>5) {alert("名字太长啦");return false};
+
+    });
+</script>

@@ -72,7 +72,7 @@ $(function(){
             </li>
         </ul>
         <ul class="qubc">
-        	<li><input type="submit" value="保存"></li>
+        	<li><input type="submit" id="chengnuo1" value="保存"></li>
             <!--<li><input type="button" value="取消"></li>-->
             <li style="width:200px;margin-top:5px;"><label><input type="checkbox" style="width:20px;" name="addrstatus" value="1">设置为默认地址</label></li>
         </ul>
@@ -83,4 +83,29 @@ $(function(){
 <{include file="common_foot.html"}>
 
 
+<script>
+    $("#chengnuo1").click(function(){
+        var consignee=$('input[name="consignee"]').val();
+        var phone=$('input[name="phone"]').val();
+        var province=$('input[name="province"]').val();
+        var address=$('textarea[name="address"]').val();
+        var zipcode=$('input[name="zipcode"]').val();
+        if (consignee=="") {alert("收货人不能为空");return false};
+        if (phone=="") {alert("手机不能为空");return false};
+        if (province=="") {alert("省份不能为空");return false};
+        if (address=="") {alert("详细地址不能为空");return false};
+        if (zipcode=="") {alert("邮箱不能为空");return false};
+        if (!phone.match(/^(((1[0-9][0-9]{1})|159|153)+\d{8})$/)) {
+            alert("手机号码格式不正确！");
+            $('input[name="phone"]').focus();
+            return false;
+        }
+        if (!zipcode.match(/^[1-9]\d{5}$/)) {
+            alert("邮编格式不正确！");
+            $('input[name="zipcode"]').focus();
+            return false;
+        }
+        if (consignee.length>5) {alert("名字太长啦");return false};
 
+    });
+</script>

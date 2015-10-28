@@ -57,7 +57,7 @@ $(function(){
                 <td><{$list[v].bmoney}></td>
                 <td><{$list[v].bankcard}></td>
                 <td><{$list[v].c_time|date_format:'%Y-%m-%d'}></td>
-                <td><{if $list[v].backstatus == 1}>已处理<{elseif $list[v].backstatus == 0}>处理中<{/if}></td>
+                <td><{if $list[v].dealstatus eq 1}>已处理<{elseif $list[v].dealstatus eq 0}>处理中<{/if}></td>
             </tr>
             <{/section}>
         </table>
@@ -119,14 +119,9 @@ $(function(){
                 if (bankcard=="") {alert("银行不能为空");return false};
                 if (bmoney=="") {alert("卡号不能为空");return false};
                 if (breason=="") {alert("退款原因不能为空");return false};
-                if (email=="") {alert("邮箱不能为空");return false};
+
 
             })
-
-
-
-
-
 
 
 

@@ -55,33 +55,19 @@ $(function(){
                 <td width="15%">操作</td>
                 <td width="15%"></td>
               </tr>
-              <tr>
-                <td>陈珍</td>
-                <td>上海上海市闸北区</td>
-                <td>上海上海市闸北区额饿哦额偶尔</td>
-                <td>130000</td>
-                <td>1395488979</td>
-                <td><a href="">修改</a><a href="">删除</a></td>
-                <td><a href="" class="nimo">默认地址</a></td>
-              </tr>
-              <tr>
-                <td>陈珍</td>
-                <td>上海上海市闸北区</td>
-                <td>上海上海市闸北区额饿哦额偶尔</td>
-                <td>130000</td>
-                <td>1395488979</td>
-                <td><a href="">修改</a><a href="">删除</a></td>
-                <td><a href="" class="nimo">设为默认地址</a></td>
-              </tr>
-              <tr>
-                <td>陈珍</td>
-                <td>上海上海市闸北区</td>
-                <td>上海上海市闸北区额饿哦额偶尔</td>
-                <td>130000</td>
-                <td>1395488979</td>
-                <td><a href="">修改</a><a href="">删除</a></td>
-                <td><a href="" class="nimo">设为默认地址</a></td>
-              </tr>
+                <{section name=v loop=$list}>
+                <tr>
+                    <td><{$list[v].consignee}></td>
+                    <td><{$list[v].us}></td>
+                    <td><{$list[v].address}></td>
+                    <td><{$list[v].zipcode}></td>
+                    <td><{$list[v].phone}></td>
+                    <td><a href="/home/user/addralter/id/<{$list[v].id}>">修改</a><a href="javascript:void(0)" class="w_del" aid="<{$list[v].id}>">删除</a></td>
+                    <td> <{if $list[v].addrstatus == 1}><a href="" class="nimo" >默认地址</a>
+                        <{elseif $list[v].addrstatus eq 0}><a href="/home/user/addrstatus/id/<{$list[v].id}>" class="nimo" >设置默认地址</a><{/if}></td>
+
+                </tr>
+                <{/section}>
               
               
             </table>
@@ -89,6 +75,36 @@ $(function(){
         </div>
   </div>
 </div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script src="http://apps.bdimg.com/libs/layer/2.0/layer.js"></script>
+
+<script>
+    $(function(){
+
+        $(".w_del").click(function(){
+
+            var id=$(this).attr("aid");
+               //alert(id);
+            layer.confirm('真的要删除吗？', {
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                $.get("/home/user/addrdelete/id/"+id,function(data){
+                    if (data>0) {
+                        alert("删除成功");
+                        location.reload();
+                    }else{
+                        alert("失败");alert(data);
+                    }
+
+                })
+
+            }, function(){
+
+            });
+        })
+    })
+</script>
 <!--footer-->
 <{include file="common_foot.html"}>
 
