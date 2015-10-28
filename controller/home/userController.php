@@ -50,6 +50,7 @@ class userController extends Controller{
         $this->display("vip_ziliao.html");
     }
     public function vip_dizhi(){
+        $this->get_dizhi();
         $this->display("vip_dizhi.html");
     }
     public function vip_guanzhu(){
@@ -57,9 +58,6 @@ class userController extends Controller{
     }
     public function vip_toupiao(){
     $this->display("vip_toupiao.html");
-    }
-    public function tuikaun(){
-        $this->display("tuikuan.html");
     }
 
     public function vip_fanxiu(){
@@ -151,12 +149,64 @@ class userController extends Controller{
 
     }
     public function get_tuikuan(){
-
         $arr = $this->M->get_all ( "SELECT * from `lx_refund` where `uid`=3" );
         $this->assign ( "list", $arr );
-
+    }
+    public function get_dizhi(){
+        $arr = $this->M->get_all("select * from `lx_addr` where `uid`=3");
+        $this->assign("list",$arr);
+    }
+     public function addrdelete($id=""){
+         //var_dump($id);die;
+         $arr=$this->M->delete('lx_addr',"`id`='".$id."'");
+         echo 4;
+     }
+    public function addrstatus($id=""){
+        $this->M->query("UPDATE `lx_addr` SET `addrstatus`=0 WHERE `addrstatus`=1 ");
+        $arr=$this->M->query("UPDATE `lx_addr` SET `addrstatus`=1 WHERE `id`=$id ");
+        if($arr){
+            R("home/user/vip_dizhi");
+        }
+    }
+    public function addralter($id=""){
+        $this->assign("id",$id);
+        $this->display("vip_dizhixiugai.html");
     }
 
+    public function dealaddralter($id=""){
+        if($_POST['addrstatus']==1) {
+            $data['uid'] = 3;
+            $data['us'] = $_POST['province'] . $_POST['city'] . $_POST['county'];
+            $data['address'] = $_POST['address'];
+            $data['consignee'] = $_POST['consignee'];
+            $data['zipcode'] = $_POST['zipcode'];
+            $data['phone'] = $_POST['phone'];
+            $data['addrstatus'] = 1;
+            $this->M->query("UPDATE `lx_addr` SET `addrstatus`=0 WHERE `addrstatus`=1 ");
+            $data['status'] = 1;
+            $data['c_time'] = time();
+
+            $arr=$this->M->update('lx_addr',$data,"`id`='".$id."'");
+
+            if($arr){R("home/user/vip_dizhi");}
+        }else{
+            $data['uid'] = 3;
+            $data['us'] = $_POST['province'] . $_POST['city'] . $_POST['county'];
+            $data['address'] = $_POST['address'];
+            $data['consignee'] = $_POST['consignee'];
+            $data['zipcode'] = $_POST['zipcode'];
+            $data['phone'] = $_POST['phone'];
+            $data['addrstatus'] = 0;
+            $data['status'] = 1;
+            $data['c_time'] = time();
+            $arr=$this->M->update('lx_addr',$data,"`id`='".$id."'");
+            if($arr){R("home/user/vip_dizhi");}
+        }
+
+
+        //$arr=$this->M->update('lx_addr',$data,"`id`='".$id."'");
+
+    }
 
 
 
