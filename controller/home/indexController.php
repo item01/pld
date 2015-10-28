@@ -8,24 +8,16 @@
 class indexController extends Controller{
 
 	//共有部分
-	public function __construct(){
 
-		parent::__construct();
-		error_reporting(0);
-		$date['date']=date('Y年m月d日');
-		$date['week']=week();
-		$this->assign('date',$date);
-		$this->assign('key',"");
-		
+	public function vip(){
 
-
-		$this->common_header();
-
-
+		echo 1;
+		$this->display("vip.html");
 	}
 
-	/*业务逻辑部分*/
 
+
+	/*业务逻辑部分*/
 	//QQ设置
 	public function get_qq(){
 		$arr=$this->M->get_all("SELECT * from `lx_qq` order by `c_time` DESC limit 4");
@@ -77,197 +69,99 @@ class indexController extends Controller{
 
 	//首页视图
 	public function index(){
+		//人才招聘
+		$arr=$this->M->get_all("SELECT * from `lx_article` where `tid`=27 order by `s_time` DESC limit 7");
+		foreach($arr as $key=>&$v){
+			$v['a_title']=ClearHtml($v['a_title'],10);
+			$v['s_time']=date('Y-m-d',$v['s_time']);
+		}
+		unset($v);
+		//健康常识
+		$arr1=$this->M->get_all("SELECT * from `lx_article` where `tid`=23 order by `s_time` DESC limit 7");
+		foreach($arr1 as $key=>&$v1){
+			$v1['a_title']=ClearHtml($v1['a_title'],10);
+			$v1['s_time']=date('Y-m-d',$v1['s_time']);
+		}
+		unset($v1);
+		//院务公开
+		$arr2=$this->M->get_all("SELECT * from `lx_article` where `tid`=42 order by `s_time` DESC limit 7");
+		foreach($arr2 as $key=>&$v2){
+			$v2['a_title']=ClearHtml($v2['a_title'],10);
+			$v2['s_time']=date('Y-m-d',$v2['s_time']);
+		}
+		unset($v2);
+
+		$this->assign("pin",$arr);
+		$this->assign("jk",$arr1);
+		$this->assign("yw",$arr2);
+
+		//新闻动态和患者心声
+		$newsList=$this->M->get_all("SELECT * FROM `lx_article` where `tid`=15");
+		$imgList=match_img($newsList,3);
+		$newsList=$this->M->get_all("SELECT * FROM `lx_article` where `tid`=15 limit 5");
+		$newsList1=$this->M->get_all("SELECT * FROM `lx_article` where `tid`=16");
+		$imgList1=match_img($newsList1,3);
+		$pattern = "/<img.+src=\"?(.+\.(jpg|gif|jpeg|png))\"?.+>/";
+		foreach ($imgList as $key => &$v) {
+			$content=html_entity_decode($v['content']);
+			preg_match($pattern,$content,$match);
+			$v['imgAddr']=$match[1];
+		}
+		unset($v);
+		foreach ($imgList1 as $key => &$v) {
+			$content=html_entity_decode($v['content']);
+			preg_match($pattern,$content,$match);
+			$v['imgAddr']=$match[1];
+		}	
+		unset($v);
+		foreach ($newsList as $key => &$e) {
+			$e['s_time']=date('Y-m-d',$e['s_time']);
+		}
+		unset($e);
+		$mingyiList=$this->M->get_all("SELECT `id`,`d_name`,`d_pic` FROM `lx_doctor` limit 7");
+		$this->assign('imgList',$imgList);
+		$this->assign('imgList1',$imgList1);
+		$this->assign('newsList',$newsList);
+		$this->assign('mingyiList',$mingyiList);
 		$this->display("index.html");
 	}
-	//俱乐部
-	public function daoru01(){
-		$this->display("daoru01.html");
-	}
-	//服务方式
-	public function julebu(){
-		$this->display("julebu.html");
-	}
-	//星空珠宝
-		public function daoru02(){
-			$this->display("daoru02.html");
+
+	//关于博爱页面
+	public function about($id="",$tid=""){
+		$this->get_type_list($tid);
+		if ($id==13) {
+			R("home/index/fengcai/id/13/tid/".$tid);exit;
 		}
-	//处女座
-	public function chunvzuo(){
-		$this->display("chunvzuo.html");
-	}
-	//星座详情
-	public function xingzuo(){
-		$this->display("xingzuo.html");
-	}
-	//珠宝世界
-		public function daoru03(){
-			$this->display("daoru03.html");
+
+		if ($id==14) {
+			R("home/index/fengcai/id/14/tid/".$tid);exit;
 		}
-	//项链
-	public function zhubao(){
-		$this->display("zhubao.html");
-	}
-	//珠宝详情
-	public function zhubao_xq(){
-		$this->display("zhubao_xq.html");
-	}
-	//珠宝search
-	public function zhubao_search(){
-		$this->display("zhubao_search.html");
-	}
-	//高级定制
-	public function daoru04(){
-		$this->display("daoru04.html");
-	}
-	//定制
-	public function dingzhi(){
-		$this->display("dingzhi.html");
-	}
-	//定制分类
-	public function dingzhi_fenlei(){
-		$this->display("dingzhi_fenlei.html");
-	}
-	//定制详情
-	public function dingzhi_fenlei_xq(){
-		$this->display("dingzhi_fenlei_xq.html");
-	}
-	//定制预约
-	public function dingzhi_fenlei_xq_yuyue(){
-		$this->display("dingzhi_fenlei_xq_yuyue.html");
-	}
-	//定制浏览
-	public function dingzhi_liulan(){
-		$this->display("dingzhi_liulan.html");
-	}
-	//经典珠宝
-	public function daoru05(){
-		$this->display("daoru05.html");
-	}
-	//经典1
-	public function jingdian(){
-		$this->display("jingdian.html");
-	}
-	//经典分类
-	public function jingdian_fenlei(){
-		$this->display("jingdian_fenlei.html");
-	}
-	//经典分类详情
-	public function jingdian_fenlei_xq(){
-		$this->display("jingdian_fenlei_xq.html");
-	}
-	//经典浏览
-	public function jingdian_liulan(){
-		$this->display("jingdian_liulan.html");
-	}
-	//proty之星
-	public function daoru06(){
-		$this->display("daoru06.html");
-	}
-	//proty星
-	public function proty_about(){
-		$this->display("proty_about.html");
-	}
-	//proty关于
-	public function proty_xing(){
-		$this->display("proty_xing.html");
-	}
-	//proty详情
-	public function proty_jia_xq(){
-		$this->display("proty_jia_xq.html");
-	}
-	//proty晒图
-	public function proty_shaitu(){
-		$this->display("proty_shaitu.html");
-	}
-	//proty晒图search
-	public function proty_shaitu_search(){
-		$this->display("proty_shaitu_search.html");
-	}
-	//proty家
-	public function proty_jia(){
-		$this->display("proty_jia.html");
-	}
-	//品牌故事
-	public function daoru07(){
-		$this->display("daoru07.html");
-	}
-	//品牌故事1
-	public function pinpai(){
-		$this->display("pinpai.html");
-	}
-	//网络精品
-	public function daoru08(){
-		$this->display("daoru08.html");
-	}
-	//关于proty
-	public function gr_about(){
-		$this->display("gr_about.html");
-	}
-	//最新资讯
-	public function gr_zixun(){
-		$this->display("gr_zixun.html");
-	}
-	//店铺
-	public function gr_dianpu(){
-		$this->display("gr_dianpu.html");
-	}
-	//法律条款
-	public function gr_fltiaokuan(){
-		$this->display("gr_fltiaokuan.html");
-	}
-	//常见问题
-	public function gr_wenti(){
-		$this->display("gr_wenti.html");
-	}
-	//联系我们
-	public function gr_contact(){
-		$this->display("gr_contact.html");
-	}
-	//登录
-	public function gr_denglu(){
-		$this->display("gr_denglu.html");
-	}
-	//条款
-	public function gr_tiaokuan(){
-		$this->display("gr_tiaokuan.html");
-	}
-	//注册
-	public function gr_zhuce(){
-		$this->display("gr_zhuce.html");
-	}
-	//注册详情
-	public function gr_zixun_xq(){
-		$this->display("gr_zixun_xq.html");
-	}
-	//付款
-	public function fukuan(){
-		$this->display("fukuan.html");
-	}
-	//付款完成
-	public function fukuan_wancheng(){
-		$this->display("fukuan_wancheng.html");
-	}
-	//积分兑换1
-	public function jifen_duihuan01(){
-		$this->display("jifen_duihuan01.html");
-	}
-	//积分兑换2
-	public function jifen_duihuan02(){
-		$this->display("jifen_duihuan02.html");
-	}
-	//积分兑换3
-	public function jifen_GZ(){
-		$this->display("jifen_GZ.html");
-	}
-	//愿望清单
-	public function yuanwang(){
-		$this->display("yuanwang.html");
-	}
-	//愿望确认
-	public function yuanwang_queren(){
-		$this->display("yuanwang_queren.html");
+
+		$this->get_about($id);
+		$this->assign("id",$id);
+		$this->display("about.html");
 	}
 
+	//风采页面
+	public function fengcai($id="",$tid=""){
+		$this->get_type_list($tid);
+		$this->assign("id",$id);
+		
+		$this->get_fc($id);//员工风采
+
+		$this->display("fengcai.html");
+	}
+
+	//风采页面方法
+	public function get_fc($tid=""){
+		$arr=$this->M->get_all("SELECT * from `lx_fengcai` where `tid` =$tid");
+		foreach ($arr as $key => &$e) {
+			$e['miaoshu']=htmlspecialchars_decode($e['miaoshu']);  //把内容转化成html格式	
+		}
+		
+		$this->assign("index_list",$arr);
+		
+	}
 
 	//视频专区页面
 	public function video($id="",$tid="",$page=1){
@@ -290,7 +184,14 @@ class indexController extends Controller{
 		$this->display("video.html");
 	}
 
-
+	//新闻列表页面
+	public function news($id="",$tid=""){
+		$this->get_type_list($tid);
+		$this->assign("id",$id);
+		$this->get_news($id);
+		$this->assign("tid",$tid);
+		$this->display("news.html");
+	}
 
 	//新闻详情页面
 	public function news_xq($id="",$tid=7){

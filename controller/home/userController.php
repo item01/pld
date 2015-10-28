@@ -9,7 +9,7 @@ class userController extends Controller{
 
     public function __construct() {
         parent::__construct();
-        error_reporting(0);
+        error_reporting(E_ALL);
        // $this->get_help ();
         // $this->QQ_callback();
        // $this->get_set ();
@@ -71,7 +71,11 @@ class userController extends Controller{
         $this->display("vip_tousu.html");
     }
     public function vip_tuikuan(){
+        $this->get_tuikuan();
         $this->display("vip_tuikuan.html");
+    }
+    public function vip_dizhi_tianjia(){
+        $this->display("vip_dizhi_tianjia.html");
     }
 
 
@@ -102,21 +106,53 @@ class userController extends Controller{
         $data['c_time']=time();
         $data['uid']=3;
         $data['status']=1;
-
+        $data['dealstatus']=0;
         $arr=$this->M->insert('lx_refund',$data);
         if($arr){
             R("home/user/index");
         }
     }
+    public function addr(){
+       // $data = $_POST;
 
+        if($_POST['addrstatus']==1) {
+            $data['uid'] = 3;
+            $data['us'] = $_POST['province'] . $_POST['city'] . $_POST['county'];
+            $data['address'] = $_POST['address'];
+            $data['consignee'] = $_POST['consignee'];
+            $data['zipcode'] = $_POST['zipcode'];
+            $data['phone'] = $_POST['phone'];
+            $data['addrstatus'] = 1;
+            $this->M->query("UPDATE `lx_addr` SET `addrstatus`=0 WHERE `addrstatus`=1 ");
+            $data['status'] = 1;
+            $data['c_time'] = time();
 
-
-
-
+            $arr = $this->M->insert('lx_addr', $data);
+            if($arr){R("home/user/index");}
+        }else{
+            $data['uid'] = 3;
+            $data['us'] = $_POST['province'] . $_POST['city'] . $_POST['county'];
+            $data['address'] = $_POST['address'];
+            $data['consignee'] = $_POST['consignee'];
+            $data['zipcode'] = $_POST['zipcode'];
+            $data['phone'] = $_POST['phone'];
+            $data['addrstatus'] = 0;
+            $data['status'] = 1;
+            $data['c_time'] = time();
+            $arr = $this->M->insert('lx_addr', $data);
+            if($arr){R("home/user/index");}
+    }
+    }
 
     public function get_fanxiu(){
 
         $arr = $this->M->get_all ( "SELECT * from `lx_backchange` where `uid`=3" );
+        $this->assign ( "list", $arr );
+
+    }
+    public function get_tuikuan(){
+
+        $arr = $this->M->get_all ( "SELECT * from `lx_refund` where `uid`=3" );
         $this->assign ( "list", $arr );
 
     }
