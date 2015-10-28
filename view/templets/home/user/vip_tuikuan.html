@@ -49,15 +49,17 @@ $(function(){
             <td width="10%">申请时间</td>
             <td width="10%">处理状态</td>
           </tr>
-          <tr>
-            <td>38495505068</td>
-            <td>王小二</td>
-            <td>重庆交通银行鲁能支行</td>
-            <td>5684884939202045</td>
-            <td>20000.00</td>
-            <td>2015-2-45</td>
-            <td>未处理</td>
-          </tr>
+            <{section name=v loop=$list}>
+            <tr>
+                <td><{$list[v].ordernum}></td>
+                <td><{$list[v].u_name}></td>
+                <td><{$list[v].bank}></td>
+                <td><{$list[v].bmoney}></td>
+                <td><{$list[v].bankcard}></td>
+                <td><{$list[v].c_time|date_format:'%Y-%m-%d'}></td>
+                <td><{if $list[v].backstatus == 1}>已处理<{elseif $list[v].backstatus == 0}>处理中<{/if}></td>
+            </tr>
+            <{/section}>
         </table>
         <div class="com_dan">
         	<div class="com_dan_left">退款申请</div>
@@ -105,16 +107,25 @@ $(function(){
             };
         })
 
-        $("#chengnuo1").click(function(){
-            alert();
-//            if ($("#chengnuo").is(":checked")){
-//                $("#chengnuo1").attr("disabled",false)
-//            }else{
-//                $("#chengnuo1").attr("disabled","disabled")
-//            };
+
+            $("#chengnuo1").click(function(){
+                var ordernum=$('input[name="ordernum"]').val();
+                var name=$('input[name="u_name"]').val();
+                var bankcard=$('input[name="bankcard"]').val();
+                var bmoney=$('input[name="bmoney"]').val();
+                var breason=$('textarea[name="breason"]').val();
+                if (ordernum=="") {alert("订单不能为空");return false};
+                if (name=="") {alert("姓名不能为空");return false};
+                if (bankcard=="") {alert("银行不能为空");return false};
+                if (bmoney=="") {alert("卡号不能为空");return false};
+                if (breason=="") {alert("退款原因不能为空");return false};
+                if (email=="") {alert("邮箱不能为空");return false};
+
+            })
 
 
-        });
+
+
 
 
 
