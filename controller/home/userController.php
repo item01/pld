@@ -38,7 +38,11 @@ class userController extends Controller{
         $this->display("vip_yuyue.html");
     }
     public function vip_GRziliao(){
+
+        $this->get_nav();
+        $this->get_nav_son();
         $this->display("vip_GRziliao.html");
+
     }
     public function vip_anquan(){
         $this->display("vip_anquan.html");
@@ -77,6 +81,59 @@ class userController extends Controller{
     }
 
 
+
+
+    public function get_fanxiu(){
+
+        $arr = $this->M->get_all ( "SELECT * from `lx_backchange` where `uid`=3" );
+        $this->assign ( "list", $arr );
+
+    }
+    public function get_tuikuan(){
+        $arr = $this->M->get_all ( "SELECT * from `lx_refund` where `uid`=3" );
+        $this->assign ( "list", $arr );
+    }
+    public function get_dizhi(){
+        $arr = $this->M->get_all("select * from `lx_addr` where `uid`=3");
+        $this->assign("list",$arr);
+    }
+     public function addrdelete($id=""){
+         //var_dump($id);die;
+         $arr=$this->M->delete('lx_addr',"`id`='".$id."'");
+         echo 4;
+     }
+
+    public function get_nav(){
+    $arr=$this->M->get_all("select * from `lx_othernav`");
+    $this->assign("list",$arr);
+    }
+    public function get_nav_son(){
+        $arr=$this->M->get_all("select * from `lx_otherinfo` WHERE `tid`=1");
+        $this->assign("list1",$arr);
+        $arr=$this->M->get_all("select * from `lx_otherinfo` WHERE `tid`=2");
+        $this->assign("list2",$arr);
+        $arr=$this->M->get_all("select * from `lx_otherinfo` WHERE `tid`=3");
+        $this->assign("list3",$arr);
+        $arr=$this->M->get_all("select * from `lx_otherinfo` WHERE `tid`=4");
+        $this->assign("list4",$arr);
+        $arr=$this->M->get_all("select * from `lx_otherinfo` WHERE `tid`=5");
+        $this->assign("list5",$arr);
+    }
+
+
+    public function addrstatus($id=""){
+        $this->M->query("UPDATE `lx_addr` SET `addrstatus`=0 WHERE `addrstatus`=1 ");
+        $arr=$this->M->query("UPDATE `lx_addr` SET `addrstatus`=1 WHERE `id`=$id ");
+        if($arr){
+            R("home/user/vip_dizhi");
+        }
+    }
+
+
+    public function addralter($id=""){
+        $this->assign("id",$id);
+        $this->display("vip_dizhixiugai.html");
+    }
     public function tousu()
     {
         $data = $_POST;
@@ -111,7 +168,7 @@ class userController extends Controller{
         }
     }
     public function addr(){
-       // $data = $_POST;
+        // $data = $_POST;
 
         if($_POST['addrstatus']==1) {
             $data['uid'] = 3;
@@ -139,40 +196,8 @@ class userController extends Controller{
             $data['c_time'] = time();
             $arr = $this->M->insert('lx_addr', $data);
             if($arr){R("home/user/index");}
-    }
-    }
-
-    public function get_fanxiu(){
-
-        $arr = $this->M->get_all ( "SELECT * from `lx_backchange` where `uid`=3" );
-        $this->assign ( "list", $arr );
-
-    }
-    public function get_tuikuan(){
-        $arr = $this->M->get_all ( "SELECT * from `lx_refund` where `uid`=3" );
-        $this->assign ( "list", $arr );
-    }
-    public function get_dizhi(){
-        $arr = $this->M->get_all("select * from `lx_addr` where `uid`=3");
-        $this->assign("list",$arr);
-    }
-     public function addrdelete($id=""){
-         //var_dump($id);die;
-         $arr=$this->M->delete('lx_addr',"`id`='".$id."'");
-         echo 4;
-     }
-    public function addrstatus($id=""){
-        $this->M->query("UPDATE `lx_addr` SET `addrstatus`=0 WHERE `addrstatus`=1 ");
-        $arr=$this->M->query("UPDATE `lx_addr` SET `addrstatus`=1 WHERE `id`=$id ");
-        if($arr){
-            R("home/user/vip_dizhi");
         }
     }
-    public function addralter($id=""){
-        $this->assign("id",$id);
-        $this->display("vip_dizhixiugai.html");
-    }
-
     public function dealaddralter($id=""){
         if($_POST['addrstatus']==1) {
             $data['uid'] = 3;
