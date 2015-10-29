@@ -38,7 +38,7 @@ class userController extends Controller{
         $this->display("vip_yuyue.html");
     }
     public function vip_GRziliao(){
-
+        $this->get_ziliao();
         $this->get_nav();
         $this->get_nav_son();
         $this->display("vip_GRziliao.html");
@@ -119,6 +119,14 @@ class userController extends Controller{
         $arr=$this->M->get_all("select * from `lx_otherinfo` WHERE `tid`=5");
         $this->assign("list5",$arr);
     }
+    public function get_ziliao(){
+
+
+    }
+
+
+
+
 
 
     public function addrstatus($id=""){
@@ -227,12 +235,54 @@ class userController extends Controller{
             $arr=$this->M->update('lx_addr',$data,"`id`='".$id."'");
             if($arr){R("home/user/vip_dizhi");}
         }
-
-
         //$arr=$this->M->update('lx_addr',$data,"`id`='".$id."'");
+        }
 
-    }
+    /**
+     *
+     */
+    public function deal_grziliao(){
 
+            $data['u_name']=$_POST['u_name'];
+            $data['biryear']=$_POST['biryear'];
+            $data['t_name']=$_POST['t_name'];
+            $data['birmonth']=$_POST['birmonth'];
+            $data['birday']=$_POST['birday'];
+            $data['marriage']=$_POST['marriage'];
+            $data['addr']=$_POST['province'].$_POST['city'].$_POST['county'].$_POST['addr'];
+
+
+            $data['jewel']=$_POST['jewel'];
+            $data['interest']=$_POST['interest'];
+            $data['profession']=$_POST['profession'];
+            $data['income']=$_POST['income'];
+            $data['wedding']=$_POST['wedding'];
+            $data['wedmonth']=$_POST['wedmonth'];
+            $data['wedday']=$_POST['wedday'];
+            $data['spouse']=$_POST['spouse'];
+            $data['spmonth']=$_POST['spmonth'];
+            $data['spday']=$_POST['spday'];
+            $data['receive']='';
+            foreach($_POST['receive'] as $k=>$v){
+                $data['receive'].=$v.",";
+            }
+            $data['jewel']='';
+           foreach($_POST['jewel'] as $k=>$v){
+               $data['jewel'].=$v.",";
+              }
+             $data['interest']='';
+           foreach($_POST['interest'] as $k=>$v){
+              $data['interest'].=$v.",";
+              }
+            $arruser=$this->M->get_one("select `biryear` from `lx_user` WHERE `id`=3");
+              if($arruser){
+                  $arr=$this->M->update('lx_user',$data,"`id`=3");
+                  if($arr){R("home/user/vip_GRziliao");}
+              }else{
+                  $arr=$this->M->insert('lx_user',$data,"`id`=3");
+                  if($arr){R("home/user/vip_GRziliao");}
+              }
+        }
 
 
 
