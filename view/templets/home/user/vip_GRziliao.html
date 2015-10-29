@@ -131,74 +131,51 @@ $(function(){
         <div class="zhankai">
         	<ul class="jieshou">
             	<li>
-                	<div class="jieshou_left">接收渠道:</div>
+                	<div class="jieshou_left"><{section name=v loop=$list start=0 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
-                    	<label><input type="checkbox">电子邮件</label>
-                        <label><input type="checkbox">电话</label>
-                        <label><input type="checkbox">手机短信</label>
-                        <label><input type="checkbox">官方微信</label>
+                        <{section name=v loop=$list1}>
+                    	<label><input type="checkbox"><{$list1[v].info_name}></label>
+                        <{/section}>
                     </div>
                 </li>
                 <li>
-                	<div class="jieshou_left">珠宝喜好:</div>
+                	<div class="jieshou_left"><{section name=v loop=$list start=1 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
-                    	<label><input type="checkbox">白钻</label>
-                        <label><input type="checkbox">彩钻</label>
-                        <label><input type="checkbox">黄金</label>
-                        <label><input type="checkbox">铂金</label>
-                        <label><input type="checkbox">K金</label>
-                        <label><input type="checkbox">碧玺</label>
-                        <label><input type="checkbox">蓝宝石</label>
-                        <label><input type="checkbox">红宝石</label>
-                        <label><input type="checkbox">祖母绿</label>
-                        <label><input type="checkbox">其他</label>
+                        <{section name=v loop=$list2}>
+                        <label><input type="checkbox"><{$list2[v].info_name}></label>
+                        <{/section}>
                     </div>
                 </li>
                 <li>
-                	<div class="jieshou_left">兴趣爱好:</div>
+                	<div class="jieshou_left"><{section name=v loop=$list start=2 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
-                    	<label><input type="checkbox">艺术/收藏</label>
-                        <label><input type="checkbox">文学</label>
-                        <label><input type="checkbox">汽车信息</label>
-                        <label><input type="checkbox">电影/音乐</label>
-                        <label><input type="checkbox">美容及个人护理</label>
-                        <label><input type="checkbox">摄影</label>
-                        <label><input type="checkbox">美食佳肴</label>
-                        <label><input type="checkbox">电子产品</label>
-                        <label><input type="checkbox">运动</label>
-                        <label><input type="checkbox">旅游</label>
-                        <label><input type="checkbox">时装</label>
-                        <label><input type="checkbox">品酒</label>
-                        <label><input type="checkbox">高尔夫</label>
-                        <label><input type="checkbox">投资</label>
-                        <label><input type="checkbox">珠宝</label>
+                        <{section name=v loop=$list3}>
+                        <label><input type="checkbox"><{$list3[v].info_name}></label>
+                        <{/section}>
                     </div>
                 </li>
                 <li>
-                	<div class="jieshou_left">职业:</div>
+                	<div class="jieshou_left"><{section name=v loop=$list start=3 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
                     	<select style="width:200px;margin-left:10px;">
-                            <option>学生</option>
-                            <option>教师</option>
-                            <option>php工程师</option>
-                            <option>前端开发工程师</option>
-                            <option>发型设计师</option>
-                            <option>自由职业</option>
+                            <{section name=v loop=$list4}>
+                            <option><{$list4[v].info_name}></option>
+                            <{/section}>
                         </select>
                     </div>
                 </li>
                 <li>
-                	<div class="jieshou_left">个人月收入:</div>
+                	<div class="jieshou_left"><{section name=v loop=$list start=4 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
                     	<select style="width:200px;margin-left:10px;">
-                            <option>3000-5000</option>
-                            <option>5000-10000</option>
-                            <option>10000以上</option>
+                            <{section name=v loop=$list5}>
+                            <option><{$list5[v].info_name}></option>
+                            <{/section}>
                         </select>
                     </div>
                 </li>
                 <li>
-            	<div class="jieshou_left">结婚纪念日:</div>
+            	<div class="jieshou_left"><{section name=v loop=$list start=5 max=1}><{$list[v].nav}><{/section}>:</div>
                 <div class="jieshou_right" style="margin-left:10px;">
                 	<select name="year" onchange="initDate()">
                         <script type="text/javascript">  
@@ -209,7 +186,7 @@ $(function(){
                         </script>  
                     </select>  
                      
-                     <select name="month" onchange="initDate()">  
+                     <select name="month" onchange="initDate()">
                         <script type="text/javascript">  
                             for(var i = 1; i <= 12; i++){  
                                 document.write("<option value=" + i + ">" + i + "</option>");  
@@ -227,7 +204,7 @@ $(function(){
                 </div>
             </li>
             	<li>
-            	<div class="jieshou_left">配偶生日:</div>
+            	<div class="jieshou_left"><{section name=v loop=$list start=6 max=1}><{$list[v].nav}><{/section}>:</div>
                 <div class="jieshou_right" style="margin-left:10px;">
                 	<select name="year" onchange="initDate()">
                         <script type="text/javascript">  
@@ -261,8 +238,16 @@ $(function(){
         <div class="tijiao" style="margin-left:225px;margin-bottom:40px;"><input type="submit" value="提交"></div>
         
   </div>
-</div>
-<!--footer-->
+
+
+    <script>
+
+        $(function () {
+            $("select[name='year']").val(2015);
+        })
+    </script>
+
+    <!--footer-->
 <{include file="common_foot.html"}>
 
 
