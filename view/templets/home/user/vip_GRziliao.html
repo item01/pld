@@ -45,6 +45,7 @@ $(function(){
 
     <{include file="common_left.html"}>
   <div class="vip_right">
+      <form action="deal_grziliao" method="post">
     	<div class="com_dan">
         	<div class="com_dan_left">个人资料</div>
         </div>
@@ -56,25 +57,25 @@ $(function(){
             </li>
         	<li>
             	<div class="mima_left" style="width:200px;"><span>*</span>   姓名：</div>
-                <div class="mima_right"><input type="text"></div>
+                <div class="mima_right"><input type="text" name="t_name"></div>
             </li>
             <li>
             	<div class="mima_left" style="width:200px;">呢称：</div>
-                <div class="mima_right"><input type="text"></div>
+                <div class="mima_right"><input type="text" name="u_name"></div>
             </li>
             <li>
             	<div class="mima_left" style="width:200px;"><span>*</span>   生日：</div>
                 <div class="mima_right">
-                	<select name="year" onchange="initDate()">
+                	<select name="biryear" onchange="initDate()">
                         <script type="text/javascript">  
                             var year=new Date().getFullYear();  
-                            for(var i = year - 30;i <= year + 30; i++){  
-                                document.write("<option value=" + i + ">" + i + "</option>");  
+                            for(var i = year - 30;i <= year + 30; i++){
+                                document.write("<option  value=" + i + ">" + i + "</option>");
                             }  
                         </script>  
                     </select>  
                      
-                     <select name="month" onchange="initDate()">  
+                     <select name="birmonth" onchange="initDate()">
                         <script type="text/javascript">  
                             for(var i = 1; i <= 12; i++){  
                                 document.write("<option value=" + i + ">" + i + "</option>");  
@@ -82,7 +83,7 @@ $(function(){
                         </script>  
                     </select>  
            
-                     <select name="day">  
+                     <select name="birday">
                         <script type="text/javascript">  
                             for(var i = 1; i <= 31; i++){  
                                 document.write("<option value=" + i + ">" + i + "</option>");  
@@ -94,7 +95,7 @@ $(function(){
             <li>
             	<div class="mima_left" style="width:200px;">婚姻状况：</div>
                 <div class="mima_right">
-                	<select>
+                	<select name="marriage">
                     	<option>未婚</option>
                         <option>已婚</option>
                     </select>
@@ -117,7 +118,7 @@ $(function(){
                     <script type="text/javascript">
 						setup()
 					</script>
-                    <textarea style="width:300px;height:50px;"></textarea> 
+                    <textarea style="width:300px;height:50px" name="addr"></textarea>
                 </div>
             </li>
         </ul>
@@ -134,7 +135,7 @@ $(function(){
                 	<div class="jieshou_left"><{section name=v loop=$list start=0 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
                         <{section name=v loop=$list1}>
-                    	<label><input type="checkbox"><{$list1[v].info_name}></label>
+                    	<label><input type="checkbox" name="receive[]" value="<{$list1[v].id}>"><{$list1[v].info_name}></label>
                         <{/section}>
                     </div>
                 </li>
@@ -142,7 +143,7 @@ $(function(){
                 	<div class="jieshou_left"><{section name=v loop=$list start=1 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
                         <{section name=v loop=$list2}>
-                        <label><input type="checkbox"><{$list2[v].info_name}></label>
+                        <label><input type="checkbox" name="jewel[]" value="<{$list2[v].id}>"><{$list2[v].info_name}></label>
                         <{/section}>
                     </div>
                 </li>
@@ -150,14 +151,14 @@ $(function(){
                 	<div class="jieshou_left"><{section name=v loop=$list start=2 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
                         <{section name=v loop=$list3}>
-                        <label><input type="checkbox"><{$list3[v].info_name}></label>
+                        <label><input type="checkbox" name="interest[]" value="<{$list3[v].id}>"><{$list3[v].info_name}></label>
                         <{/section}>
                     </div>
                 </li>
                 <li>
                 	<div class="jieshou_left"><{section name=v loop=$list start=3 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
-                    	<select style="width:200px;margin-left:10px;">
+                    	<select style="width:200px;margin-left:10px" name="profession">
                             <{section name=v loop=$list4}>
                             <option><{$list4[v].info_name}></option>
                             <{/section}>
@@ -167,7 +168,7 @@ $(function(){
                 <li>
                 	<div class="jieshou_left"><{section name=v loop=$list start=4 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
-                    	<select style="width:200px;margin-left:10px;">
+                    	<select style="width:200px;margin-left:10px;" name="income">
                             <{section name=v loop=$list5}>
                             <option><{$list5[v].info_name}></option>
                             <{/section}>
@@ -177,7 +178,7 @@ $(function(){
                 <li>
             	<div class="jieshou_left"><{section name=v loop=$list start=5 max=1}><{$list[v].nav}><{/section}>:</div>
                 <div class="jieshou_right" style="margin-left:10px;">
-                	<select name="year" onchange="initDate()">
+                	<select name="wedding" onchange="initDate()" id="year1">
                         <script type="text/javascript">  
                             var year=new Date().getFullYear();  
                             for(var i = year - 30;i <= year + 30; i++){  
@@ -186,7 +187,7 @@ $(function(){
                         </script>  
                     </select>  
                      
-                     <select name="month" onchange="initDate()">
+                     <select name="wedmonth" onchange="initDate()" id="month1">
                         <script type="text/javascript">  
                             for(var i = 1; i <= 12; i++){  
                                 document.write("<option value=" + i + ">" + i + "</option>");  
@@ -194,7 +195,7 @@ $(function(){
                         </script>  
                     </select>  
            
-                     <select name="day">  
+                     <select name="wedday" id="day1">
                         <script type="text/javascript">  
                             for(var i = 1; i <= 31; i++){  
                                 document.write("<option value=" + i + ">" + i + "</option>");  
@@ -206,7 +207,7 @@ $(function(){
             	<li>
             	<div class="jieshou_left"><{section name=v loop=$list start=6 max=1}><{$list[v].nav}><{/section}>:</div>
                 <div class="jieshou_right" style="margin-left:10px;">
-                	<select name="year" onchange="initDate()">
+                	<select name="spouse" onchange="initDate()" id="year2">
                         <script type="text/javascript">  
                             var year=new Date().getFullYear();  
                             for(var i = year - 30;i <= year + 30; i++){  
@@ -215,7 +216,7 @@ $(function(){
                         </script>  
                     </select>  
                      
-                     <select name="month" onchange="initDate()">  
+                     <select name="spmonth" onchange="initDate()" id="month2">
                         <script type="text/javascript">  
                             for(var i = 1; i <= 12; i++){  
                                 document.write("<option value=" + i + ">" + i + "</option>");  
@@ -223,7 +224,7 @@ $(function(){
                         </script>  
                     </select>  
            
-                     <select name="day">  
+                     <select name="spday" id="day2">
                         <script type="text/javascript">  
                             for(var i = 1; i <= 31; i++){  
                                 document.write("<option value=" + i + ">" + i + "</option>");  
@@ -234,9 +235,9 @@ $(function(){
             </li>
             </ul>
         </div>
-         <div class="chengnuo"><label><input type="checkbox">本人愿意接收PROTY发出的最新消息或推广优惠</label></div>
-        <div class="tijiao" style="margin-left:225px;margin-bottom:40px;"><input type="submit" value="提交"></div>
-        
+         <div class="chengnuo"><label><input type="checkbox" id="chengnuo">本人愿意接收PROTY发出的最新消息或推广优惠</label></div>
+        <div class="tijiao" style="margin-left:225px;margin-bottom:40px;"><input type="submit"  id="chengnuo1" disabled  value="提交"></div>
+        </form>
   </div>
 
 
@@ -244,6 +245,30 @@ $(function(){
 
         $(function () {
             $("select[name='year']").val(2015);
+
+
+            $("#chengnuo").click(function(){
+                if ($("#chengnuo").is(":checked")){
+                    $("#chengnuo1").attr("disabled",false)
+                }else{
+                    $("#chengnuo1").attr("disabled","disabled")
+                };
+            })
+
+
+            $("#chengnuo1").click(function(){
+                var u_name=$('input[name="u_name"]').val();
+                var t_name=$('input[name="t_name"]').val();
+                var county=$('select[name="county"]').val();
+                var addr=$('textarea[name="addr"]').val();
+                if (t_name=="") {alert("姓名不能为空");return false};
+                if (u_name=="") {alert("昵称不能为空");return false};
+                if (county=="") {alert("地区不能为空");return false};
+                if (addr=="") {alert("详细地址不能为空");return false};
+
+
+
+            })
         })
     </script>
 
