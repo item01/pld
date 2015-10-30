@@ -53,15 +53,15 @@ $(function(){
         <ul class="mima_box">
         	<li>
             	<div class="mima_left" style="width:200px;">卡号：</div>
-                <div class="mima_right">4850605789</div>
+                <div class="mima_right"><{$ziliao.cardnum}></div>
             </li>
         	<li>
             	<div class="mima_left" style="width:200px;"><span>*</span>   姓名：</div>
-                <div class="mima_right"><input type="text" name="t_name"></div>
+                <div class="mima_right"><input type="text" value="<{$ziliao.t_name}>" name="t_name"></div>
             </li>
             <li>
             	<div class="mima_left" style="width:200px;">呢称：</div>
-                <div class="mima_right"><input type="text" name="u_name"></div>
+                <div class="mima_right"><input type="text" value="<{$ziliao.u_name}>" name="u_name"></div>
             </li>
             <li>
             	<div class="mima_left" style="width:200px;"><span>*</span>   生日：</div>
@@ -118,7 +118,7 @@ $(function(){
                     <script type="text/javascript">
 						setup()
 					</script>
-                    <textarea style="width:300px;height:50px" name="addr"></textarea>
+                    <textarea style="width:300px;height:50px" name="addr"><{$ziliao.addr}></textarea>
                 </div>
             </li>
         </ul>
@@ -135,7 +135,8 @@ $(function(){
                 	<div class="jieshou_left"><{section name=v loop=$list start=0 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
                         <{section name=v loop=$list1}>
-                    	<label><input type="checkbox" name="receive[]" value="<{$list1[v].id}>"><{$list1[v].info_name}></label>
+                    	<label><input type="checkbox" id="<{$list1[v].id}>" <{if $list1[v].id|in_array:$ziliao.receive}>checked<{/if}>
+                                      name="receive[]" value="<{$list1[v].id}>"><{$list1[v].info_name}></label>
                         <{/section}>
                     </div>
                 </li>
@@ -143,7 +144,7 @@ $(function(){
                 	<div class="jieshou_left"><{section name=v loop=$list start=1 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
                         <{section name=v loop=$list2}>
-                        <label><input type="checkbox" name="jewel[]" value="<{$list2[v].id}>"><{$list2[v].info_name}></label>
+                        <label><input type="checkbox" name="jewel[]"  <{if $list2[v].id|in_array:$ziliao.jewel}>checked<{/if}> value="<{$list2[v].id}>"><{$list2[v].info_name}></label>
                         <{/section}>
                     </div>
                 </li>
@@ -151,7 +152,7 @@ $(function(){
                 	<div class="jieshou_left"><{section name=v loop=$list start=2 max=1}><{$list[v].nav}><{/section}>:</div>
                     <div class="jieshou_right">
                         <{section name=v loop=$list3}>
-                        <label><input type="checkbox" name="interest[]" value="<{$list3[v].id}>"><{$list3[v].info_name}></label>
+                        <label><input type="checkbox" name="interest[]" <{if $list3[v].id|in_array:$ziliao.interest}>checked<{/if}>  value="<{$list3[v].id}>"><{$list3[v].info_name}></label>
                         <{/section}>
                     </div>
                 </li>
@@ -244,16 +245,38 @@ $(function(){
     <script>
 
         $(function () {
-            $("select[name='year']").val(2015);
+            $("select[name='biryear']").val("<{$ziliao.biryear}>");
+            $("select[name='birmonth']").val("<{$ziliao.birmonth}>");
+            $("select[name='birday']").val("<{$ziliao.birday}>");
+            $("select[name='marriage']").val("<{$ziliao.marriage}>");
+            $("select[name='province']").val("<{$ziliao.province}>");
+            //$("select[name='province']").document.write("<option value=<{$ziliao.province}> selected = 'selected'><{$ziliao.province}></option>");
+            $("select[name='city']").val("<{$ziliao.city}>");
+            //alert("<{$ziliao.city}>");
+            $("select[name='county']").val("<{$ziliao.county}>");
+            $("select[name='profession']").val("<{$ziliao.profession}>");
+            $("select[name='income']").val("<{$ziliao.income}>");
+            $("select[name='province']").val("<{$ziliao.province}>");
 
+            $("select[name='wedding']").val("<{$ziliao.wedding}>");
+            $("select[name='wedmonth']").val("<{$ziliao.wedmonth}>");
+            $("select[name='wedday']").val("<{$ziliao.wedday}>");
+            $("select[name='spouse']").val("<{$ziliao.spouse}>");
+            $("select[name='spmonth']").val("<{$ziliao.spmonth}>");
+            $("select[name='spday']").val("<{$ziliao.spday}>");
 
             $("#chengnuo").click(function(){
                 if ($("#chengnuo").is(":checked")){
                     $("#chengnuo1").attr("disabled",false)
                 }else{
                     $("#chengnuo1").attr("disabled","disabled")
-                };
+                }
             })
+
+
+
+
+            });
 
 
             $("#chengnuo1").click(function(){
@@ -269,10 +292,10 @@ $(function(){
 
 
             })
-        })
+
     </script>
 
     <!--footer-->
 <{include file="common_foot.html"}>
 
-
+    <{$ziliao.receive}>
