@@ -119,9 +119,15 @@ class userController extends Controller{
         $arr=$this->M->get_all("select * from `lx_otherinfo` WHERE `tid`=5");
         $this->assign("list5",$arr);
     }
+
     public function get_ziliao(){
-
-
+        $arr=$this->M->get_one("select * from `lx_user` WHERE `id`=3");
+        $arr['receive']=explode(',',$arr['receive']);
+        $arr['jewel']=explode(',',$arr['jewel']);
+        $arr['interest']=explode(',',$arr['interest']);
+        $this->assign("ziliao",$arr);
+        /*P( $arr['receive']);
+       echo $arr['receive'];*/
     }
 
 
@@ -249,9 +255,10 @@ class userController extends Controller{
             $data['birmonth']=$_POST['birmonth'];
             $data['birday']=$_POST['birday'];
             $data['marriage']=$_POST['marriage'];
-            $data['addr']=$_POST['province'].$_POST['city'].$_POST['county'].$_POST['addr'];
-
-
+            $data['addr']=$_POST['addr'];
+            $data['province']=$_POST['province'];
+            $data['city']=$_POST['city'];
+            $data['county']=$_POST['county'];
             $data['jewel']=$_POST['jewel'];
             $data['interest']=$_POST['interest'];
             $data['profession']=$_POST['profession'];
