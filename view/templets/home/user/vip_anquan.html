@@ -39,24 +39,38 @@ $(function(){
     <div class="vip_right">
     	<div class="com_dan">账号安全</div>
         <div class="bangding">
-        	<div class="bangding01">手机验证</div>
-            <div class="bangding02">手机验证后，修改密码将必须要通过手机验证，避免他人恶意修改您的密码</div>
+			<{if $a eq 0 }>
+        	<div class="bangding01" style="background-image:url(<{$templets}>/index/images/anquan02.png)">手机验证</div>
+            <div class="bangding02" ">手机验证后，修改密码将必须要通过手机验证，避免他人恶意修改您的密码</div>
             <div class="bangding03">
-            	<div class="an"><a href="vip_shouji_yanzheng01.html">立即验证</a></div>
+            	<div class="an"><a href="/home/user/vip_shouji_yanzheng01">立即验证</a></div>
             </div>
+			<{else}>
+	   	<div class="bangding01" style="background-image:url(<{$templets}>/index/images/anquan01.png)">手机验证</div>
+	   	<div class="bangding02" ">手机验证后，修改密码将必须要通过手机验证，避免他人恶意修改您的密码</div>
+	     <div class="bangding03">
+		<div class="an"><a href="/home/user/vip_shouji_yanzheng01">去修改</a></div>
+	</div>
+
+		<{/if}>
         </div>
+
         <div class="bangding">
-        	<div class="bangding01">邮箱验证</div>
+			<{if $b eq 0 }>
+        	<div class="bangding01" style="background-image:url(<{$templets}>/index/images/anquan02.png)">邮箱验证</div>
             <div class="bangding02">邮箱验证后，可第一时间收到最新订单信息等</div>
             <div class="bangding03">
-            	<div class="an"><a href="vip_youxiang_yanzheng01.html">立即验证</a></div>
+            	<div class="an"><a href="/home/user/vip_youxiang_yanzheng01">立即验证</a></div>
             </div>
+	        <{else}>
+			<div class="bangding01" style="background-image:url(<{$templets}>/index/images/anquan01.png)">邮箱验证</div>
+			<div class="bangding02">邮箱验证后，可第一时间收到最新订单信息等</div>
+			<div class="bangding03">
+				<div class="an"><a href="/home/user/vip_youxiang_yanzheng01">去修改</a></div>
+			</div>
+			<{/if}>
         </div>
-        <div class="bangding">
-        	<div class="bangding01">密码修改</div>
-            <div class="bangding02">邮箱验证后方可进行密码修改</div>
-           
-        </div>
+
     </div>
 </div>
 <!--footer-->

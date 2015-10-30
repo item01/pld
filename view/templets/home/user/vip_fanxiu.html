@@ -62,14 +62,19 @@ $(function(){
 
                 <ul class="baaaa">
 
-                    <li style="position: relative"><input id="img_url0" type="hidden" name="backpic" value=""><img id="ImgPr0" src="<{$templets}>/index/images/xiazai.png"><input type="file" id="up0" style="display:block;width:80px;height:58px;position: absolute;left:0;top:0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
-filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;background: none;border: none;"></li>
+                    <li style="position: relative"><input id="img_url0" type="hidden" name="backpic" value=""><img id="ImgPr0" src="<{$templets}>/index/images/xiazai.png"><input  type="file" id="up0" style="display:block;width:80px;height:58px;position: absolute;left:0;top:0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;background: none;border: none;">
+                        <input type="hidden" id="img_url" name="'.$e[1].'" value="'.$e[2].'">';</li>
                     <li style="position: relative"><input id="img_url1" type="hidden" name="backpic2" value=""><img id="ImgPr1" src="<{$templets}>/index/images/xiazai.png"><input type="file" id="up1" style="display:block;width:80px;height:58px;position: absolute;left:0;top:0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;background: none;border: none;"></li>
                     <li style="position: relative"><input id="img_url2" type="hidden" name="backpic3" value=""><img id="ImgPr2" src="<{$templets}>/index/images/xiazai.png"><input type="file" id="up2" style="display:block;width:80px;height:58px;position: absolute;left:0;top:0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;background: none;border: none;"></li>
                     <li style="position: relative"><input id="img_url3" type="hidden" name="backpic4" value=""><img id="ImgPr3" src="<{$templets}>/index/images/xiazai.png"><input type="file" id="up3" style="display:block;width:80px;height:58px;position: absolute;left:0;top:0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;background: none;border: none;"></li>
+                    <li style="position: relative"><input id="img_url4" type="hidden" name="backpic4" value=""><img id="ImgPr3" src="<{$templets}>/index/images/xiazai.png"><input type="file" id="up3" style="display:block;width:80px;height:58px;position: absolute;left:0;top:0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;background: none;border: none;"></li>
+
+
 
 
                 </ul>
@@ -121,37 +126,36 @@ filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;background: n
 <script type="text/javascript">
     $(function() {
 
-        //for(var i=0;i<4;i++) {
-            $('up0').uploadify({
 
-                //'debug' : true,
-                'buttonText': '上传',
-                // 'width':'130',
-                // 'height':'40',
-                //'buttonImage':'<{$templets}>/images/sc_03_06.jpg',
-                'queueID': 'some_file_queue',//取消上传进度显示
-                'swf': "<{$url}>/public/uploadify/uploadify.swf",
-                'uploader': "<{$url}>/index.php/home/index/upload_img",
-                'onFallback': function () {
-                    alert("您未安装FLASH控件，无法上传图片！请安装FLASH控件后再试。");
-                },
-                "onUploadSuccess": function (file, data, response) {
-                    if (data != -1) {
-                        console.log(file);
-                        data = data.replace(/\s/g, "");
-                        $('#ImgPr0').attr('src', "/uploads/avatar/" + data);
-                        $('#img_url0').val("/uploads/avatar/" + data);
-                        // $.post("<{$url}>/index.php/home/index/do_save_avatar",{str:data},function(){
-                        //   alert('修改成功');
-                        // });
+        $('#ImgPr0').uploadify({
 
-                    } else {
-                        alert('上传失败，请重新上传');
-                    }
+            //'debug' : true,
+            //'buttonText': '上传图片',
+            // 'width':'130',
+            // 'height':'40',
+             'buttonImage':'<{$templets}>/index/images/xiazai.png',
+            'queueID': 'some_file_queue',//取消上传进度显示
+            'swf': "<{$url}>/public/uploadify/uploadify.swf",
+            'uploader': "<{$url}>/index.php/home/index/upload_img",
+            'onFallback': function () {
+                alert("您未安装FLASH控件，无法上传图片！请安装FLASH控件后再试。");
+            },
+            "onUploadSuccess": function (file, data, response) {
+                if (data != -1) {
+                  alert(data);
+                    data = data.replace(/\s/g, "");
+                    $('#SWFUpload_0').attr('src', "/uploads/avatar/" + data);
+                    $('#img_url').val("/uploads/avatar/" + data);
+                    // $.post("<{$url}>/index.php/home/index/do_save_avatar",{str:data},function(){
+                      alert('修改成功');
+                    // });
+
+                } else {
+                    alert('上传失败，请重新上传');
                 }
-                // Put your options here
-            });
-       // }
+            }
+            // Put your options here
+        });
     });
 </script>
 
