@@ -103,19 +103,28 @@ $(function(){
             </li>
             <li>
             	<div class="mima_left" style="width:200px;"><span>*</span>   手机：</div>
-                <div class="mima_right">136****5789  <span>已验证</span>  <a href="vip_shouji_yanzheng01.html">去修改>></a></div>
+                <{if $a eq 0 }>
+                <div class="mima_right">未填写  <a href="/home/user/vip_shouji_yanzheng01">去验证>></a></div>
+                <{else}>
+                <div class="mima_right"><{$a}> <span>已验证</span>  <a href="/home/user/vip_shouji_yanzheng01">去修改>></a></div>
+                <{/if}>
             </li>
             <li>
             	<div class="mima_left" style="width:200px;">邮箱：</div>
-                <div class="mima_right">未填写  <a href="vip_youxiang_yanzheng01.html">去验证>></a></div>
+                <{if $b eq 0 }>
+                <div class="mima_right">未填写  <a href="/home/user/vip_youxiang_yanzheng01">去验证>></a></div>
+                <{else}>
+                <div class="mima_right"><{$b}> <span>已验证</span>  <a href="/home/user/vip_youxiang_yanzheng01">去修改>></a></div>
+                <{/if}>
             </li>
             <li>
             	<div class="mima_left" style="width:200px;">联系地址：</div>
                 <div class="mima_right">
-                	<select id="province" runat="server" name="province"></select>
-                    <select id="city" runat="server" name="city"> </select>
-               		<select id="county" runat="server" name="county"></select>
+                	<select id="province"  name="province" ><option></option></select>
+                    <select id="city"  name="city" > <option></option></select>
+               		<select id="county"  name="county" ><option></option></select>
                     <script type="text/javascript">
+
 						setup()
 					</script>
                     <textarea style="width:300px;height:50px" name="addr"><{$ziliao.addr}></textarea>
@@ -249,14 +258,17 @@ $(function(){
             $("select[name='birmonth']").val("<{$ziliao.birmonth}>");
             $("select[name='birday']").val("<{$ziliao.birday}>");
             $("select[name='marriage']").val("<{$ziliao.marriage}>");
+
             $("select[name='province']").val("<{$ziliao.province}>");
-            //$("select[name='province']").document.write("<option value=<{$ziliao.province}> selected = 'selected'><{$ziliao.province}></option>");
+            $("select[name='province']").change();
+
             $("select[name='city']").val("<{$ziliao.city}>");
-            //alert("<{$ziliao.city}>");
+            $("select[name='city']").change();
+
             $("select[name='county']").val("<{$ziliao.county}>");
             $("select[name='profession']").val("<{$ziliao.profession}>");
             $("select[name='income']").val("<{$ziliao.income}>");
-            $("select[name='province']").val("<{$ziliao.province}>");
+//            $("select[name='province']").val("<{$ziliao.province}>");
 
             $("select[name='wedding']").val("<{$ziliao.wedding}>");
             $("select[name='wedmonth']").val("<{$ziliao.wedmonth}>");

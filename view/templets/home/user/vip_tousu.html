@@ -55,7 +55,7 @@ $(function(){
                     </li>
                 </ul>
                 <div class="chengnuo" style="margin-left:70px;color:#999;">* 请补齐联系信息以便我们能及时与您沟通解决</div>
-                <div class="tijiao" style="margin-left:70px;"><input type="submit" value="提交"></div>
+                <div class="tijiao" style="margin-left:70px;"><input type="submit" id="ahah" value="提交"></div>
              </form>  </div>
             <div class="tousu_right">
             	“留言与投诉”的步骤：<br>
@@ -68,6 +68,18 @@ $(function(){
         </div>
   </div>
 </div>
+
+<script>
+    $("#ahah").click(function(){
+        var stitle=$('input[name="stitle"]').val();
+        var scontent=$('input[name="scontent"]').val();
+        if (stitle=="") {alert("订单不能为空");return false};
+        if (scontent=="") {alert("类型不能为空");return false};
+
+
+
+    });
+</script>
 <!--footer-->
 <{include file="common_foot.html"}>
 

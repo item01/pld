@@ -38,13 +38,26 @@ $(function(){
     <!--left-->
     <{include file="common_left.html"}>
     <div class="vip_right">
+		<form action="/home/user/send_email" method="post">
     	<div class="com_dan">修改绑定邮箱</div>
         <div class="bangding_img"><img src="<{$templets}>/index/images/cg001.png"></div>
-    <div class="you"><input type="text" placeholder="邮箱验证"></div>
-    <div class="fa"><a href="/home/user/vip_youxiang_yanzheng02"><input type="submit" value="发送验证邮箱"></a></div>
-    
+    <div class="you"><input type="text" name="email" placeholder="邮箱验证"></div>
+    <div class="fa"><input type="submit" id="tijiao" value="发送验证邮箱"></div>
+		</form>
   </div>
 </div>
+<script>
+
+		$("#tijiao").click(function(){
+
+		var email = $('input[name="email"]').val();
+		if (email=="") {alert("邮箱不能为空");return false};
+		if (!email.match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)) {
+			alert("邮箱格式不正确");
+			return false
+		}
+		})
+</script>
 <!--footer-->
 <{include file="common_foot.html"}>
 
