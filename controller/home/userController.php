@@ -10,11 +10,8 @@ class userController extends Controller{
     public function __construct() {
         parent::__construct();
         error_reporting(E_ALL);
-       // $this->get_help ();
-        // $this->QQ_callback();
-       // $this->get_set ();
+        $this->get_anquan();
 
-       // $this->assign ( "p", 0 );
     }
 
     public function index(){
@@ -27,7 +24,7 @@ class userController extends Controller{
         $this->display("vip_shoucang.html");
     }
     public function vip_jifen(){
-        $this->assign ( "p", a );
+       //$this->assign ( "p", a );
         $this->display("vip_jifen.html");
     }
     public function vip_shaidan(){
@@ -45,6 +42,7 @@ class userController extends Controller{
 
     }
     public function vip_anquan(){
+
         $this->display("vip_anquan.html");
     }
     public function vip_anquan_xiugai_mima(){
@@ -79,6 +77,66 @@ class userController extends Controller{
     public function vip_dizhi_tianjia(){
         $this->display("vip_dizhi_tianjia.html");
     }
+    public function vip_shouji_yanzheng01(){
+        $this->display("vip_shouji_yanzheng01.html");
+    }
+    public function vip_shouji_yanzheng02(){
+        $this->display("vip_shouji_yanzheng02.html");
+    }
+
+    public function vip_youxiang_yanzheng01(){
+        $this->display("vip_youxiang_yanzheng01.html");
+    }
+
+    public function vip_youxiang_yanzheng03($email="",$salt=""){
+        $this->get_email($email,$salt);
+        $this->display("vip_youxiang_yanzheng03.html");
+    }
+    public function vip_anquan_xiugai_CG(){
+        $this->display("vip_anquan_xiugai_CG.html");
+    }
+
+
+
+
+
+    public function send_email(){
+
+        $to=$_POST['email'];
+        $smtp=$this->load("smtp",false);
+
+        $smtp->smtp("smtp.163.com",25,true,"wxyxxxxx15@163.com","wxy112233");
+        $nums = "";
+        for($i=0;$i<20;$i++){
+            $nums.=dechex(mt_rand(0,15));
+        }
+        $this->M->query("UPDATE `lx_user` SET `salt`= '".$nums."' WHERE `id`=3 ");
+
+        $content="<a href='http://localhost/home/user/vip_youxiang_yanzheng03/email/$to/salt/$nums'>sdasd</a><h1>5412</h1>";
+
+        $title='您好~ ';
+        $aa=$smtp->sendmail($to,"wxyxxxxx15@163.com",$title,$content,"HTML");
+
+        unset($smtp);
+        $this->assign("email",$to);
+        $this->display("vip_youxiang_yanzheng02.html");
+
+
+    }
+
+        public function get_email($email="",$salt=""){
+            $arr = $this->M->get_one("select `salt` from `lx_user` WHERE `id`=3");
+            foreach($arr as $k=>$v){
+                $arr=$v;
+            }
+            //echo$salt;
+            if($arr==$salt){
+             $this->M->query("UPDATE `lx_user` SET `email`='".$email."' WHERE `id`=3 ");
+              //  echo$salt;
+         }else{
+            // echo$salt;
+         }
+        }
 
 
 
@@ -106,6 +164,20 @@ class userController extends Controller{
     public function get_nav(){
     $arr=$this->M->get_all("select * from `lx_othernav`");
     $this->assign("list",$arr);
+    }
+    public function get_anquan(){
+        $a=$this->M->get_one("select `mobile` from `lx_user` WHERE `id`=3");
+        $b=$this->M->get_one("select `email` from `lx_user` WHERE `id`=3");
+        foreach($a as $k=>$v){
+            $a=$v;
+        }
+        foreach($b as $k=>$v){
+            $b=$v;
+        }
+        $this->assign("a",$a);
+        $this->assign("b",$b);
+        //var_dump($b);
+
     }
     public function get_nav_son(){
         $arr=$this->M->get_all("select * from `lx_otherinfo` WHERE `tid`=1");
@@ -164,7 +236,12 @@ class userController extends Controller{
         $data['c_time']=time();
         $data['uid']=3;
         $data['status']=1;
-        $data['backstatus']=1;
+        if($data['backtype'=='返修']){
+            $data['backstatus']=1;
+        }else{
+            $data['backstatus']=3;
+        }
+
         $arr=$this->M->insert('lx_backchange',$data);
         if($arr){
             R("home/user/index");
